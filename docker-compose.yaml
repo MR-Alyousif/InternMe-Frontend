@@ -1,0 +1,30 @@
+version: '3'
+
+services:
+  api:
+    build: .
+    image: intern_me:latest
+    ports:
+      - 8080:8080
+    depends_on:
+      - db
+    volumes:
+      - ./fs-storage:/app/fs-storage  # storing images?
+    networks:
+      - intern_me-network
+
+  db:
+    image: mongo:7.0
+    ports:
+      - 27017:27017
+    volumes:
+      - intern_me-db:/data/db
+    networks:
+      - intern_me-network
+
+volumes:
+  intern_me-db:
+
+networks:
+  intern_me-network:
+    driver: bridge
