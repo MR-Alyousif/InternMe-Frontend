@@ -5,7 +5,7 @@ import db from '../db'
 // --------- Student ---------
 
 type SkillType = 'technical' | 'soft'
-type Skill = { type: SkillType; skill: string }
+type Skill = { _type: SkillType; skill: string }
 
 type Project = { title: string; brief: string }
 
@@ -26,25 +26,27 @@ interface IProfileStudent {
   }
   skills: Skill[]
   projects: Project[]
+  userUsername: string
 }
 
 const profileStudentSchema = new Schema<IProfileStudent>({
   basicInfo: {
     name: {
-      first: String,
-      last: String
+      first: { type: String, required: true, default: 'FIRST' },
+      last: { type: String, required: true, default: 'LAST' }
     },
     // email: String [this is ommited as the User object already has this info]
-    phone: String,
+    phone: { type: String, required: true, default: '05XXXXXXXX' },
     education: {
-      university: String,
-      major: String
+      university: { type: String, required: true, default: 'XXXX XXXXXX' },
+      major: { type: String, required: true, default: 'XXXXXX XXXXXX' }
     },
-    bio: String,
+    bio: { type: String, required: true, default: 'XXXXXXXXXXXXXXXX' },
     resume: String // fs path
   },
-  skills: [{ type: String, skill: String }],
-  projects: [{ title: String, brief: String }]
+  skills: [{ _type: String, skill: String }],
+  projects: [{ title: String, brief: String }],
+  userUsername: { type: String, required: true, unique: true }
 })
 
 const ProfileStudent = db.model<IProfileStudent>(
@@ -65,17 +67,19 @@ interface IProfileCompany {
     phone: string
     logo: string // fs path
   }
+  userUsername: string
 }
 
 const profileCompanySchema = new Schema<IProfileCompany>({
   basicInfo: {
-    name: String,
-    website: String,
-    location: String,
+    name: { type: String, required: true, default: '' },
+    website: { type: String, required: true, default: '' },
+    location: { type: String, required: true, default: '' },
     // email: String, [this is ommited as the User object already has this info]
-    phone: String,
+    phone: { type: String, required: true, default: '' },
     logo: String // fs path
-  }
+  },
+  userUsername: { type: String, required: true, unique: true }
 })
 
 const ProfileCompany = db.model<IProfileCompany>(

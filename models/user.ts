@@ -1,4 +1,4 @@
-import { Schema } from 'mongoose'
+import { ObjectId, Schema } from 'mongoose'
 
 import db from '../db'
 
@@ -9,7 +9,7 @@ interface IUser {
   username: string
   password: string // hashed
   role: Role
-  profileId: string
+  profileId: ObjectId
 }
 
 const userSchema = new Schema<IUser>({
@@ -17,7 +17,7 @@ const userSchema = new Schema<IUser>({
   username: { type: String, required: true, unique: true },
   password: { type: String, required: true }, // hashed
   role: { type: String, required: true },
-  profileId: Schema.ObjectId
+  profileId: { type: Schema.ObjectId, required: false } // but create it on /users/register
 })
 
 const User = db.model<IUser>('User', userSchema)
