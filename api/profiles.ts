@@ -218,7 +218,7 @@ const FS_STORAGE = multer({
   }
 }).single('file')
 
-// TODO: update all companies offers if logo changed!
+// TODO: update all company's offers if logo changed!
 router.post('/img/upload', (req, res) => {
   FS_STORAGE(req, res, async (err) => {
     if (err instanceof multer.MulterError) {
