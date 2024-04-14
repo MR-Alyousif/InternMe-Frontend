@@ -1,7 +1,11 @@
 import { IOnFlyUser } from '../../models/user'
 
-declare module 'express-serve-static-core' {
-  interface Request {
-    user?: IOnFlyUser
+declare global {
+  namespace Express {
+    interface Request {
+      user?: IOnFlyUser
+      filename?: string
+      fileValidationError?: string
+    }
   }
 }

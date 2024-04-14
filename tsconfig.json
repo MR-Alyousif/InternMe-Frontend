@@ -7,8 +7,10 @@
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "typeRoots": ["@types"]
+    "baseUrl": "./",
+    "typeRoots": ["@types"],
+    "allowJs": true
   },
-  "include": ["/**/*.ts"],
-  "exclude": ["node_modules"]
+  "include": ["/**/*.ts", "/**/*.js"],
+  "exclude": ["node_modules", "@types"]
 }

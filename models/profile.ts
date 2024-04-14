@@ -22,7 +22,7 @@ interface IProfileStudent {
       major: string
     }
     bio: string
-    resume: string // fs path
+    photo: string // fs path
   }
   skills: Skill[]
   projects: Project[]
@@ -42,7 +42,7 @@ const profileStudentSchema = new Schema<IProfileStudent>({
       major: { type: String, required: true, default: 'XXXXXX XXXXXX' }
     },
     bio: { type: String, required: true, default: 'XXXXXXXXXXXXXXXX' },
-    resume: String // fs path
+    photo: String // fs path
   },
   skills: [{ _type: String, skill: String }],
   projects: [{ title: String, brief: String }],
