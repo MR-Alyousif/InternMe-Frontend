@@ -4,6 +4,7 @@ import bodyParser from 'body-parser'
 
 import routerUsers from './api/users'
 import routerProfiles from './api/profiles'
+import routerOffers from './api/offers'
 
 const app = express()
 app.use(cors())
@@ -14,6 +15,7 @@ const routerV1 = express.Router()
 routerV1.get('/ping', (req, res) => res.send({ ping: 'pong' }))
 routerV1.use('/users', routerUsers)
 routerV1.use('/profiles', routerProfiles)
+routerV1.use('/offers', routerOffers)
 app.use('/api/v1', routerV1)
 
 const port = process.env.API_PORT || 8080
