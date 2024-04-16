@@ -1,0 +1,190 @@
+@import url('https://fonts.googleapis.com/css2?family=Days+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+header{
+    left: 0;
+    top: 0;
+    
+}
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #010517;
+    text-align: center;
+    color: white;
+    
+}
+#nav{
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 20px;
+    background-color: transparent;
+    position: relative;
+    z-index: 3;
+
+}
+#InternMe{
+    font-size:32px;
+    font-family:'Days One';
+    background: linear-gradient(to right,#F1C6B9,#FB7E65);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#shortCut{
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    border: 0;
+    padding: 0;
+
+}
+#pages{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto auto;
+    grid-column-gap: 1px;
+    grid-row-gap: 5px;
+    padding: 0;
+
+}
+.circle{
+    background-color: #F1C6B9;
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    padding: 0;
+
+}
+a{
+    text-decoration: none;
+    color: #F1C6B9;
+    font-size: 25px;
+}
+#backImg{
+    width:  100%; 
+    height:auto;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    opacity: 0.6;
+}
+
+
+.sign{
+    display: grid;
+    grid-template-columns: auto;
+    position: absolute;
+    left: 0;
+    justify-content: center;
+    width: 100%;
+    margin-top: 80px;
+    z-index: 2;
+}
+#title{
+    font-size: 44px;
+    font-family: "Yeseva One";
+    color: #F1C6B9;
+    margin: 0;
+    padding: 0;
+}
+#tline{
+    font-family:'Yeseva One'; 
+    color: #FB7E65; 
+
+    padding-bottom: 10px;
+    margin-bottom: 0;
+}
+
+
+.info{
+    display: grid;
+    grid-template-columns: auto;
+    width: 100%;
+    padding-left: 50px;
+}
+.info > p{
+    text-align: start;
+    font-size: 20px;
+    font-family: "Inter";
+    color: #F1C6B9;
+}
+.info > input{
+    width: 500px;
+    height: 35px;
+    border-radius: 10px;
+    padding: 5px 0 5px 15px;
+    background-image: linear-gradient(to right, #000B42,#021471);
+    font-weight: bold;
+    font-size: 15px;
+    color: white;
+}
+
+#forgot{
+    margin-top: 10px;
+    margin-bottom: 20px;
+    background-color: transparent;
+    border: 0;
+    color: #F1C6B9;
+    font-size: 15px;
+    text-align: end;
+    margin-right: 35px;
+}
+#in{
+    margin-bottom: 10px;
+    width: 350px;
+    margin-left: 120px;
+    height: 60px;
+    border-radius: 12px;
+    font-size: 15px;
+    font-weight: bold;
+    color: white;
+    background-image: linear-gradient(to right,#110561, #FB7E65);
+    border: 0;
+}
+#dont{
+    background-color: transparent;
+    border: 0;
+    color: #F1C6B9; 
+    margin-bottom: 10px;
+    font-size: 15px;
+}
+label{
+    color: #F1C6B9;
+    font-size: 15px;
+}
+#options{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-column-gap: 20px;
+    justify-content: center;
+    padding: 0;
+}
+#options > button{
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    background-image: linear-gradient(to left, #000B42,#021471);
+    font-weight: bold; 
+}
+#options > button > img{
+    width: 30px;
+    height: 30px;
+}
+
+#rule{
+    width: 100px;
+    height: 35px;
+    border-radius: 8px;
+    padding: 5px 0 5px 15px;
+    background-image: linear-gradient(to right, #000B42,#021471);
+    font-weight: bold;
+    font-size: 15px;
+    color: gray;
+}

@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Days+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap');
+header{
+    top: 0;
+    
+}
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #000324;
+;
+}
+#nav{
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 20px;
+    background-color: #010517;
+    
+}
+#InternMe{
+    font-size:32px;
+    font-family:'Days One';
+    background: linear-gradient(to right,#F1C6B9,#FB7E65);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+#pages{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    
+    grid-column-gap: 30px;
+}
+a{
+    text-decoration: none;
+    color: #F1C6B9;
+    font-size: 25px;
+}
+img{
+    max-width: 100%; 
+    height:auto;
+    margin-top: 8%;
+}
+.uni{
+    font-family: "Yeseva One";
+    position: absolute;
+    text-align: center;
+    padding-top: 50px;
+    
+}
+.two_column{
+    display: grid; 
+    grid-template-columns: auto auto; 
+    color: white; 
+    padding-left: 15%; 
+    padding-right: 15%; 
+    font-size: 24px; 
+    grid-column-gap: 40px;
+    font-size: 30px;
+    justify-content: space-evenly;
+}
+#companies{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 100px;
+}
+#companies > img {
+    max-height: 200pX;
+}
+#arrowNext{
+    position: absolute;
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: space-between;
+    grid-column-gap: 1200px;
+    top:1575px;
+}
+.arrow{
+    border: 5px solid #FB7E65;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+}

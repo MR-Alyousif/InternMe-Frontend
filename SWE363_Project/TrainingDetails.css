@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Days+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+header{
+    top: 0;
+    
+}
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #010517;
+    text-align: center;
+}
+#nav{
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 20px;
+    background-color: #010517;
+}
+#InternMe{
+    font-size:32px;
+    font-family:'Days One';
+    background: linear-gradient(to right,#F1C6B9,#FB7E65);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+#pages{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    
+    grid-column-gap: 30px;
+}
+a{
+    text-decoration: none;
+    color: #F1C6B9;
+    font-size: 25px;
+}
+img{
+    width: 80%; 
+    height:auto;
+
+}
+
+.info{
+    text-align: start;
+    padding-left: 33%;
+    padding-right: 33%;
+    position: absolute;
+    top: 150px;
+    right: 0;
+    left: 0;
+    font-size: 25px;
+    font-weight: bold;
+    font-family: "Inter";
+}
