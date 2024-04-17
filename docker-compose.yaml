@@ -9,7 +9,8 @@ services:
     depends_on:
       - db
     volumes:
-      - ./fs-storage:/app/fs-storage  # storing images?
+      #- ./fs-storage:/app/fs-storage  # storing images?
+      - ./:/app
     networks:
       - intern_me-network
 

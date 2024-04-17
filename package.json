@@ -2,7 +2,7 @@
   "name": "swe363_internme",
   "version": "1.0.0",
   "scripts": {
-    "start": "node -r ts-node/register --env-file=.env server.ts  # using ts-node in production env isn't advised; however, I'm relaxing best practices here because this project is only for educational purposes."
+    "start": "node --watch -r ts-node/register --env-file=.env server.ts  # using ts-node in production env isn't advised; however, I'm relaxing best practices here because this project is only for educational purposes."
   },
   "dependencies": {
     "base64url": "^3.0.1",
