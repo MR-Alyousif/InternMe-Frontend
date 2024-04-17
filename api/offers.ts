@@ -1,6 +1,6 @@
 import express from 'express'
 
-import { authenticate, authorizeOnlyCompany } from 'middlewares/auth'
+import { authenticate, authorizeOnlyCompany } from '../middlewares/auth'
 
 const router = express.Router()
 router.use(authenticate)
