@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Days+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@layer base { 
+    body {
+        background-color: #010517;
+    }
+}
+
+@layer components {
+  .font-days-one {
+    font-family: 'Days One', sans-serif;
+  }
+
+  .font-yeseva-one {
+    font-family: 'Yeseva One', serif;
+  }
+
+  .font-inter {
+        font-family: 'Inter', sans-serif;
+    }
+
+  .intern-me {
+    font-size: 32px;
+    background: linear-gradient(to right, #F1C6B9, #FB7E65);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
