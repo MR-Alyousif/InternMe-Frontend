@@ -2,10 +2,22 @@
   <ul id="nav">
     <label id="InternMe">InternMe</label>
     <ul id="pages">
-      <a href="">Explore</a>
-      <a href="">About</a>
+      <a routerLink="" routerLinkActive="active" ariaCurrentWhenActive="page"
+        >Home</a
+      >
+      <a
+        routerLink="/explore"
+        routerLinkActive="active"
+        ariaCurrentWhenActive="page"
+        >Explore</a
+      >
       <a href="">Contact</a>
-      <a href="">Login</a>
+      <a
+        routerLink="/sign-in"
+        routerLinkActive="active"
+        ariaCurrentWhenActive="page"
+        >Login</a
+      >
     </ul>
     <button id="shortCut">
       <ul id="links">
