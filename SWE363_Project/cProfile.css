@@ -118,7 +118,8 @@ a{
 
 
 .card{
-    margin-top: 50px;
+    margin-top: 4vw;
+    margin-bottom: 50px;
     background-color: #000539;
     border-radius: 20px;
     font-family: "Inter";
@@ -259,7 +260,7 @@ a{
 }
 .opportunity > .row1 > p{
     text-align: center;
-    width: fit-content;
+    width: max-content;
     font-size: 2vw;
     color: white;
 }
@@ -349,8 +350,10 @@ a{
         font-size: 3.8vw;
     }
     #edit{
-        width: 2vw;
-        height: 2vw;
+        width: 1vw;
+        height: 1vw;
+        margin: 0;
+
     }
     .row1 > button{
         position: relative;
@@ -380,6 +383,7 @@ a{
     #edit > img{
         width: 5.2vw;
         height: auto;
+
     }
     .row2{
         grid-template-columns: auto auto;
@@ -418,6 +422,28 @@ a{
         padding: 0;
     
     }
+    #edit > img{
+        width: 5.2vw;
+        height: auto;
+        padding-left: 50%;
+    }
+    ul{
+        padding-left: 8vw;
+    }
+    #add{
+        width: max-content;
+        margin-top: 2vw;
+        margin-bottom: 2vw;
+    }
+    .opportunity > .row1 > button{
+        margin-bottom: 0;
+        padding: 0 0 0 0;
+    }
+    .opportunity > .row1 > button > img{
+        margin: 0;
+        padding: 0;
+    }
+
 }
 
 

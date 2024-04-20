@@ -49,7 +49,7 @@ a{
     max-width: max-content;
     height: auto;
     overflow: hidden;
-    margin-top: 50px;
+    margin-top: 0;
 }
 #desk{
     width: 1514px; 
@@ -74,12 +74,13 @@ a{
 
 #profile{
     position: absolute;
-    top: -80px;
+    top: -50px;
     display: grid;
     grid-template-columns: auto;
     justify-content: center;
     margin-left: 25vw;
     margin-right: 25vw;
+    padding: 0;
 
 }
 #profile > img{
@@ -117,6 +118,7 @@ a{
     transform: translateX(-50%);
     left: 50%;
     width: 70vw;
+    height: max-content;
     align-self: center;
 
 }
@@ -129,6 +131,7 @@ a{
     padding-top: 5px;
     align-items: center;
     margin: 0;
+    height: fit-content;
 }
 .row1 > p{
     font-size: 38px;
@@ -140,6 +143,7 @@ a{
     padding: 0;
     background-color: transparent;
     border: 0;
+    margin: 0;
 }
 
 .row1 > button > img{
@@ -153,12 +157,16 @@ a{
 .row2{
     display: grid;
     grid-template-columns: auto auto auto;
-    grid-column-gap: 30px;
+    grid-column-gap: 0;
     justify-content: start;
     text-align: start;
     padding-left: 30px;
     padding-right: 70px;
     margin: 0;
+    text-align: start;
+}
+.row2 > ul{
+    padding: 0;
 }
 .row2 > p{
     text-align: start;
@@ -204,7 +212,7 @@ a{
 }
 
 .icons{
-    height: 25px;
+    height: 2vw;
     width: auto;
 }
 
@@ -232,6 +240,25 @@ a{
 
     
 }
+#skills{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-column-gap: 2vw;
+    justify-content: center;
+    padding: 0;
+    margin-bottom: 4vw;
+}
+.skill{
+    background-color: #CE8459;
+    width: max-content;
+    height: max-content;
+    text-align: center;
+    padding: 0.5vw 0.5vw 0.5vw 0.5vw;
+    border-radius: 20px;
+    font-size: 1.5vw;
+    margin-top: 2vw;
+
+}
 
 #shortCut{
     display: none;
@@ -240,8 +267,12 @@ a{
 
 @media only screen and (max-width: 1000px){
     #desk{
-        width: 150vw;
+       width: 150vw;
+        transform: translateX(-50%);
+        left: 50%;
     }
+
+
     #profile > img{
         width: 16vw;
         height: auto;
@@ -297,6 +328,7 @@ a{
         position: relative;
         bottom: 0;
         left: 0;
+        height: 3vw;
     }
     .signs{
         padding-top: 0;
@@ -313,8 +345,9 @@ a{
     }
     img{
         width: 6vw;
-       
     }
+
+
     
 }
 @media only screen and (max-width: 800px){
@@ -334,8 +367,19 @@ a{
     #cards{
         grid-template-columns: 1fr;
     }
-
     
+}
+@media only screen and (max-width: 700px){
+    body{
+        width: auto;
+    }
+    #container{
+        width: 100vw;
+        margin-top: 0;
+    }
+    #desk{
+        
+    }
 }
 
 @media only screen and (max-width: 1120px){
@@ -344,6 +388,7 @@ a{
     }
 
 }
+
 @media only screen and (max-width: 500px){
     
     #pages{
@@ -373,5 +418,18 @@ a{
         height: 1vw;
         padding: 0;
     
+    }
+    #profile{
+        margin-top: 0;
+        height: 20vw;
+    }
+    #desk{
+        margin-top: 50px;
+    }
+    #container{
+        margin-top: 0;
+    }
+    #name{
+        padding-top: 4vw;
     }
 }
