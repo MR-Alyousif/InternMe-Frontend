@@ -1,18 +1,41 @@
-<app-navbar></app-navbar>
+<header>
+  <ul id="nav">
+    <label id="InternMe">InternMe</label>
+    <ul id="pages">
+      <a href="">Explore</a>
+      <a href="">About</a>
+      <a href="">Contact</a>
+      <a href="">Login</a>
+    </ul>
+    <button id="shortCut">
+      <ul id="links">
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+      </ul>
+    </button>
+  </ul>
+</header>
 <div class="flex flex-col items-center justify-center gap-10">
   <section class="flex flex-col items-center justify-center">
     <div class="flex flex-col items-center justify-center gap-4">
       <h2 class="text-secondary-150 font-yeseva-one">University Students</h2>
       <div class="text-secondary-150 bg-secondary-150 h-[1px] w-[9.5rem]"></div>
       <h1
-        class="font-yeseva-one text-[4rem]/[4.5rem] max-w-[70rem] text-center text-secondary-200"
+        class="font-yeseva-one max-w-[70rem] text-center text-[4rem]/[4.5rem] text-secondary-200"
       >
         Explore your best training opportunities
       </h1>
     </div>
     <img
       src="../../../../../assets/homepage/Homepage.jpg"
-      class="-mt-28 -z-10"
+      class="-z-10 -mt-28"
     />
   </section>
 
@@ -30,7 +53,7 @@
     </div>
 
     <div
-      class="flex flex-row gap-7 text-slate-100 text-3xl font-yeseva-one max-w-[65.5%]"
+      class="font-yeseva-one flex max-w-[65.5%] flex-row gap-7 text-3xl text-slate-100"
     >
       <p>
         Empower students to effortlessly discover and pursue tailored training
@@ -51,7 +74,7 @@
     </div>
 
     <div
-      class="flex flex-row text-secondary-200 max-h-64 text-3xl font-yeseva-one items-center justify-center max-w-[65%] gap-32"
+      class="font-yeseva-one flex max-h-64 max-w-[65%] flex-row items-center justify-center gap-32 text-3xl text-secondary-200"
     >
       <img class="max-w-96" src="../../../../../assets/homepage/Cup.png" />
       <p class="-mt-4">
@@ -61,7 +84,7 @@
       </p>
     </div>
     <div
-      class="flex flex-row text-secondary-200 max-h-64 text-3xl font-yeseva-one items-center justify-center max-w-[65%] gap-32"
+      class="font-yeseva-one flex max-h-64 max-w-[65%] flex-row items-center justify-center gap-32 text-3xl text-secondary-200"
     >
       <p class="-mt-4">
         Empower students to effortlessly discover and pursue tailored training
@@ -112,7 +135,10 @@
     </div>
   </section>
 
-  <section class="flex flex-col items-center justify-center mt-36">
+  <!--<section class="flex flex-col items-center justify-center mt-36">
     <img class="max-h-72" src="../../../../../assets/homepage/Footer 1.png" />
-  </section>
+  </section>-->
 </div>
+<footer>
+  <img id="desk" src="assets/Footer.jpg" />
+</footer>
