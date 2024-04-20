@@ -6,7 +6,7 @@ import { AngularSvgIconModule } from 'angular-svg-icon';
 @Component({
   selector: 'app-sign-up',
   standalone: true,
-  imports: [NavbarComponent, ButtonComponent, AngularSvgIconModule.forRoot()],
+  imports: [NavbarComponent, ButtonComponent, AngularSvgIconModule],
   templateUrl: './sign-up.component.html',
   styleUrl: './sign-up.component.css'
 })

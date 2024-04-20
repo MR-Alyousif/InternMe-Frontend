@@ -32,9 +32,9 @@ export class ButtonComponent implements OnInit {
 
   impactClasses: Record<ButtonProps['tone'], Record<ButtonProps['impact'], string>> = {
     primary: {
-      bold: 'bg-primary text-primary-foreground shadow-md hover:bg-primary/90 focus-visible:ring-primary',
-      light: 'bg-primary/20 text-primary hover:bg-primary/30 focus-visible:ring-primary',
-      none: 'bg-transparent text-primary hover:bg-primary/10 focus-visible:ring-primary',
+      bold: 'bg-gradient-100 text-white shadow-md hover:bg-secondary-100/90 focus-visible:ring-secondary-100',
+      light: 'bg-gradient-100/20 text-white hover:bg-secondary-100/30 focus-visible:ring-secondary-100',
+      none: 'bg-transparent text-white hover:bg-secondary-100/10 focus-visible:ring-secondary-100',
     },
     danger: {
       bold: 'bg-destructive text-white shadow-md hover:bg-destructive/90 focus-visible:ring-destructive',
@@ -57,9 +57,9 @@ export class ButtonComponent implements OnInit {
       none: 'bg-transparent text-violet-600 hover:bg-violet-500/10 focus-visible:ring-violet-500',
     },
     light: {
-      bold: 'bg-muted text-muted-foreground shadow-md hover:bg-muted/90 focus-visible:ring-muted',
-      light: 'bg-muted/20 text-muted-foreground hover:bg-muted focus-visible:ring-muted',
-      none: 'bg-transparent text-muted-foreground hover:bg-muted focus-visible:ring-muted',
+      bold: 'bg-secondary-200 text-primary shadow-md hover:bg-gradient-100/90 focus-visible:ring-gradient-100',
+      light: 'bg-secondary-200/20 text-primary hover:bg-gradient-100 focus-visible:ring-gradient-100',
+      none: 'bg-transparent text-primary hover:bg-gradient-100 focus-visible:ring-gradient-100',
     },
   };
 
