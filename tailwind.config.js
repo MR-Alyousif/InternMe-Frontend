@@ -5,13 +5,17 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        background: '#010517',
+        'background': '#010517',
         'primary': '#242044',
         'secondary': {
           100: '#CE8459',
           200: '#F1C6B9',
+        },
+        'green': '#CCFF90',
+        'gradient': {
+          100: 'linear-gradient(to right,#110561, #FB7E65)'
         }
-      },
+      }
     },
   },
   corePlugins: {
