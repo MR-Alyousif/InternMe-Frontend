@@ -12,6 +12,7 @@ module.exports = {
           200: '#F1C6B9',
         },
         'green': '#CCFF90',
+        'dark-blue': '#190692',
         'gradient': {
           100: 'linear-gradient(to right,#110561, #FB7E65)'
         }
