@@ -67,6 +67,7 @@ a{
     color: #F1C6B9;
     font-size: 25px;
 }
+
 #backImg{
     width: 100%;
     height: auto;
@@ -74,7 +75,7 @@ a{
     left: 0;
     bottom:0;
     z-index: 1;
-    opacity: 0.6;
+    opacity: 0.8;
 
 }
 
@@ -182,15 +183,15 @@ label{
 }
 
 #light{
-    width: 100px;
-    height: 100px;
-    background-color: #FFF390;
+    width: 20vw;
+    height: 15vw;
+    background-color: #fad389;
     border-radius: 50%;
     position: fixed;
     z-index: 4;
-    right: 130px;
-    bottom: 380px;
-    filter: blur(30px);
+    right: 1.5vw;
+    bottom: 22vw;
+    filter: blur(5vw);
 }
 
 #background{

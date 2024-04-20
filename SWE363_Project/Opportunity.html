@@ -20,23 +20,23 @@
 <body>
     <img src="assets/job.png">
     <ul class="info">
-        <h1 style="text-align: center;margin: 50px 0 50px 0;">Add New Opportunity</h1>
+        <h1>Add New Opportunity</h1>
         <div>
-            <p>Company Name *</p>
+            <p class="lightest">Name *</p>
             <input type="text" >
         </div>
         <div>
-            <p>Major *</p>
+            <p class="lightest">Major *</p>
             <input type="text">
         </div>
         <div>
-            <p>Description *</p>
+            <p class="lightest">Description *</p>
             <textarea cols="10" rows="5" >
                </textarea>
         </div>
         <ul class="two_columns">
             <div>
-                <p>Starting Date *</p>
+                <p class="lighter">Starting Date *</p>
                 <input type="text" >
             </div>
             <div>
@@ -46,7 +46,7 @@
         </ul>
         <ul class="two_columns">
             <div>
-                <p>Location *</p>
+                <p class="lighter">Location *</p>
                 <input type="text" >
             </div>
             <div>
@@ -55,7 +55,7 @@
             </div>
         </ul>
         <div>
-            <p>Responsibilities *</p>
+            <p style="color: #f8eedb;">Responsibilities *</p>
             <textarea cols="10" rows="5" style="background: linear-gradient(to top left ,#1D1942,#514e65);" >
                </textarea>
         </div>
@@ -64,18 +64,18 @@
             <textarea cols="10" rows="5" style="background: linear-gradient(to top left ,#1D1942,#514e65);" >
                </textarea>
         </div>
-        <div style="position: relative;">
-            <div style="border-top: 4px solid #514e65; width: 25%; position: absolute; top: 30px; left: 38%;"></div>
-            <p Class="uni" style="text-align: center; color: #615e79; font-size: 50px; position: static; padding-top: 45px;">Optional Details</p>
-            <div style="border-bottom: 4px solid #514e65; width: 12%; position: absolute; top: 120px; left: 44%;"></div>
+        <div style="position: relative; margin-top: 2vw; margin-bottom: 0;">
+            <div style="border-top: 4px solid #514e65; width: 25%; position: absolute; top: 0; left: 38%;"></div>
+            <p style="text-align: center; color: #615e79; font-size: 3vw; position: static; padding-top: 2vw; padding-bottom: 2vw; margin-top: 0;">Optional Details</p>
+            <div style="border-bottom: 4px solid #514e65; width: 12%; position: absolute; bottom: 0; left: 44%;"></div>
         </div>
         <ul class="two_columns">
             <div>
-                <p>Required GPA <label style="font-size: 20px;">(out of 4)</label></p>
+                <p>Required GPA <label style="font-size: 1.5vw;">(out of 4)</label></p>
                 <input class="Optional" type="text" style="background: linear-gradient(to left ,#1D1942,#3c3952);">
             </div>
             <div>
-                <p>Required GPA <label style="font-size: 20px;">(out of 5)</label></p>
+                <p>Required GPA <label style="font-size: 1.5vw;">(out of 5)</label></p>
                 <input type="text" style="background: linear-gradient(to left ,#1D1942,#3c3952);">
             </div>
         </ul>
@@ -83,8 +83,10 @@
             <p>Skills</p>
             <input type="text" style="background: linear-gradient(to left ,#1D1942,#3c3952);">
         </div>
-        <input class="post" type="submit" value="Save">
-        <input class="post" type="submit" value="Post Offer">
+        <ul id="buttons">
+            <input class="post" type="submit" value="Save">
+            <input class="post" type="submit" value="Post Offer">
+        </ul>
     </ul>
     
 </body>
