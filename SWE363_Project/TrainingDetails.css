@@ -40,21 +40,118 @@ a{
     color: #F1C6B9;
     font-size: 25px;
 }
-img{
+#desk{
     width: 80%; 
     height:auto;
+    margin-top: 5vw;
 
 }
 
 .info{
     text-align: start;
-    padding-left: 33%;
-    padding-right: 33%;
+    padding-left: 30%;
+    padding-right: 30%;
     position: absolute;
-    top: 150px;
+    top: 15vw;
     right: 0;
     left: 0;
     font-size: 25px;
     font-weight: bold;
     font-family: "Inter";
+    
+}
+#logo{
+    width: 12vw;
+    padding-left: 35%;
+}
+h1{
+    text-align: center;
+    margin: 2vw 0 4vw 0; 
+    font-family: 'Inter'; 
+    font-weight: bold;
+    background: linear-gradient(to right, #f4dcab, white);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 4vw;
+}
+h2{
+    text-align: start;
+    margin: 4vw 0 0 0;
+    padding: 0; 
+    font-family: 'Inter'; 
+    font-weight: bold;
+    background: linear-gradient(to right, #F1C6B9, white);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;     
+    font-size: 2vw;
+}
+p{
+    font-size: 1.2vw;
+    color: white;
+    font-weight: lighter;
+
+}
+li{
+    font-size: 1.2vw;
+    color: white;
+    font-weight: lighter;
+}
+button{
+    width: 15vw;
+    height: 3vw;
+    margin-top: 3vw;
+    margin-left: 30%;
+    font-size: 1.5vw;
+    font-weight: bold;
+    color: #010517;
+    background-color: #F1C6B9;
+    border-radius: 20px;
+}
+#shortCut{
+    display: none;
+}
+
+@media only screen and (max-width:800px){
+
+    #pages{
+        grid-column-gap: 2vw;
+    }
+    #pages > a{
+        font-size: 2.8vw;
+    }
+    #InternMe{
+        font-size: 3.7vw;
+    }
+}
+@media only screen and (max-width: 500px){
+    
+    #pages{
+        display: none;
+    }
+    #shortCut{
+        display:contents;
+        width: 1vw;
+        height: 1vw;
+        background-color: transparent;
+        border: 0;
+        padding: 0;
+    }
+    #links{
+        display: grid;
+        grid-template-columns: auto auto auto;
+        grid-template-rows: auto auto auto;
+        grid-column-gap: 0.5vw;
+        grid-row-gap: 0.5vw;
+        padding: 0;
+    
+    }
+    .circle{
+        background-color: #F1C6B9;
+        border-radius: 50%;
+        width: 1vw;
+        height: 1vw;
+        padding: 0;
+    
+    }
+
 }
