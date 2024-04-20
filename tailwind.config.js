@@ -6,14 +6,22 @@ module.exports = {
     extend: {
       colors: {
         background: '#010517',
-        'primary': '#CE8459',
+        'primary': '#242044',
         'secondary': {
-          100: '#242044',
+          100: '#CE8459',
           200: '#F1C6B9',
         }
       },
     },
   },
-  plugins: [],
+  corePlugins: {
+    aspectRatio: false,
+  },
+  plugins: [
+    require('@tailwindcss/typography'),
+    require('@tailwindcss/forms'),
+    require('@tailwindcss/aspect-ratio'),
+    require('tailwind-scrollbar')({ preferredStrategy: 'pseudoelements' }),
+  ],
 }
 

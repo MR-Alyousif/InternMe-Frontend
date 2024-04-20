@@ -8,7 +8,9 @@
 @import 'tailwindcss/utilities';
 
 @layer base { 
-
+    body {
+        background-color: #010517;
+    }
 }
 
 @layer components {
@@ -23,12 +25,12 @@
   .font-inter {
         font-family: 'Inter', sans-serif;
     }
-    
+
   .intern-me {
     font-size: 32px;
     background: linear-gradient(to right, #F1C6B9, #FB7E65);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
   }
 }
-
