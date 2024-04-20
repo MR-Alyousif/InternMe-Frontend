@@ -138,6 +138,7 @@ a{
     grid-template-columns: auto auto; 
     justify-content: space-between;
     padding-right: 2vw;
+    padding-left: 5vw;
     padding-top:0;
     align-items: center;
     margin: 0;
@@ -166,10 +167,10 @@ a{
 .row2{
     display: grid;
     grid-template-columns: auto auto auto;
-    grid-column-gap: 30px;
+    grid-column-gap: 2vw;
     justify-content: start;
     text-align: start;
-    padding-left: 2vw;
+    padding-left:4vw;
     padding-right: 3vw;
     margin: 0;
 }
@@ -210,7 +211,7 @@ a{
 .row1 > button > label{
     text-align: center;
     font-weight: bold;
-    font-size: 2vw;
+    font-size: 1.5vw;
     margin-left: 15px;
     color: #F1D3B9;
     font-family: "Inter";
@@ -218,7 +219,7 @@ a{
 }
 
 .icons{
-    height: 25px;
+    height: 2vw;
     width: auto;
 }
 
@@ -315,6 +316,7 @@ a{
     height: 4vw;
     border: 0;
     border-radius: 20px;
+    margin-bottom: 20px;
 }
 #shortCut{
     display: none;

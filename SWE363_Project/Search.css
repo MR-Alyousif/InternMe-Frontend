@@ -12,6 +12,7 @@ body{
     position: relative;
 
 
+
 }
 #nav{
     display: grid;
@@ -43,13 +44,15 @@ a{
     font-size: 25px;
 }
 footer{
+    display: block;
     position: relative;
     bottom: 0;
     z-index: -1;
+    height: min-content;
 }
 img{
     max-width: 100%; 
-    height:auto;
+    height:min-content;
     margin-top: 8%;
     position: relative;
     bottom: 0;
@@ -192,8 +195,8 @@ label{
 }
 .icons{
     margin-top: 1vw;
-    width: 2.5vw;
-    height: fit-content;
+    width: 1.5vw;
+    height: min-content;
 
 }
 #shortCut{
@@ -209,17 +212,27 @@ label{
     justify-content: center;
     padding: 0;
     text-align: center;
+    margin-bottom: 0;
 
 }
 
 #page > div{
-    width: 4vw;
-    height: 4vw;
+    width: 3vw;
+    height: fit-content;
     margin: 0;
     padding: 0;
     background-color: #000539;
 }
+.skill{
+    background-color: #010517;
+    width: fit-content;
+    height: min-content;
+    text-align: center;
+    padding: 0.5vw 0.5vw 0.5vw 0.5vw;
+    margin-bottom: 1vw;
+    border-radius: 20px;
 
+}
 
 
 
