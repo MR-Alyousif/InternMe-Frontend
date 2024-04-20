@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Days+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+header {
+  top: 0;
+}
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #010517;
+  text-align: center;
+  color: white;
+}
+#nav {
+  display: grid;
+  grid-template-columns: auto auto;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-top: 20px;
+  background-color: #010517;
+}
+#InternMe {
+  font-size: 32px;
+  font-family: 'Days One';
+  background: linear-gradient(to right, #f1c6b9, #fb7e65);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+#pages {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+
+  grid-column-gap: 30px;
+}
+a {
+  text-decoration: none;
+  color: #f1c6b9;
+  font-size: 25px;
+}
+img {
+  width: 90%;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+h1 {
+  text-align: center;
+  margin: 50px 0 50px 0;
+  font-family: 'Yeseva One';
+  font-weight: bold;
+  background: linear-gradient(to right, #f4dcab, white);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.info {
+  text-align: start;
+  padding-left: 30%;
+  padding-right: 30%;
+  position: absolute;
+  top: 8vw;
+  right: 0;
+  left: 0;
+  font-size: 1.5vw;
+  font-weight: bold;
+  font-family: 'Inter';
+  overflow: hidden;
+  text-align: start;
+}
+
+button {
+  width: 20vw;
+  padding: 0;
+}
+.post {
+  font-weight: bold;
+  font-size: 2vw;
+  width: 20vw;
+  height: 4vw;
+  border-radius: 20px;
+  background: none;
+  background-image: linear-gradient(to right, #262569, #ad925c);
+  color: white;
+  margin-top: 3vw;
+}
+#buttons {
+  text-align: center;
+}

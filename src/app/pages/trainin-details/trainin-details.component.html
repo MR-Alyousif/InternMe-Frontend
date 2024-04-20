@@ -1,47 +1,53 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Training Details</title>
-</head>
-<body>
+  </head>
+  <body>
     <header>
-        <ul id="nav">
-            <li id="InternMe">InternMe</li>
-            <li id="pages">
-                <a href="">Explore</a>
-                <a href="">About</a>
-                <a href="">Contact</a>
-                <a href="">Login</a>
-            </li>
-        </ul>
+      <ul id="nav">
+        <li id="InternMe">InternMe</li>
+        <li id="pages">
+          <a href="">Explore</a>
+          <a href="">About</a>
+          <a href="">Contact</a>
+          <a href="">Login</a>
+        </li>
+      </ul>
     </header>
-    <img src="assets/job.png">
-    <div class="info">
-        <div>
-            <img src={{training.logo}}>
-            <h1>{{training.companyName}}</h1>
+    <img src="assets/job.png" />
+    <div class="info grid grid-cols-1 gap-10">
+      <div class="">
+        <div class="mx-auto mt-10 w-1/2">
+          <img src="{{ training.logo }}" />
         </div>
-        <form id="description">
-            <h2>Description</h2>
-            <p>{{training.description}}</p>
-        </form>
-        <form id="responsibilities">
-            <h2>Responsibilities</h2>
-            <ol>
-                <li *ngFor="let responsibility of training.responsibility">{{ responsibility }}</li>
-            </ol>
-        </form>
-        <form id="qualifications">
-            <h2>Qualifications</h2>
-            <ol>
-                <li *ngFor="let qualification of training.qualification">{{ qualification }}</li>
-            </ol>
-        </form>
-        <div id="buttons">
-            <input class="post" type="submit" value="Post Offer">
-        </div>
+        <h1 class="text-6xl">{{ training.companyName }}</h1>
+      </div>
+      <form id="description">
+        <h2 class="text-secondary-200">Description</h2>
+        <p class="p-3 text-base">{{ training.description }}</p>
+      </form>
+      <form id="responsibilities">
+        <h2 class="text-secondary-200">Responsibilities</h2>
+        <ol class="p-3 text-base">
+          <li *ngFor="let responsibility of training.responsibility">
+            {{ responsibility }}
+          </li>
+        </ol>
+      </form>
+      <form id="qualifications">
+        <h2 class="text-secondary-200">Qualifications</h2>
+        <ol class="p-3 text-base">
+          <li *ngFor="let qualification of training.qualification">
+            {{ qualification }}
+          </li>
+        </ol>
+      </form>
+      <div id="buttons">
+        <input class="post" type="submit" value="Post Offer" />
+      </div>
     </div>
-</body>
+  </body>
 </html>
