@@ -1,6 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Days+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lugrasimo&family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Lugrasimo&family=Pacifico&display=swap');
 header{
     top: 0;
     
@@ -60,26 +63,85 @@ a{
     bottom: 0;
 }
 
+#title{
+    position: absolute;
+    top: 4vw;
+    transform: translate(50%, 0);
+    left: calc(50% - calc(60%));
+    text-align: center;
+    z-index: 2;
+    font-size: 2vw;
+}
+#sTitle{
+    font-size: 1.5vw;
+    font-family: "Yeseva One";
+    color: #FB7E65;
+
+
+}
+#lTitle{
+    font-size: 3.1vw;
+    font-family:"Inter";
+    color: #F1C6B9;
+    margin-top: 0;
+    font-weight: bold;
+    margin-bottom: 0;
+}
+#types{
+    position: relative;
+    font-family: "Pacifico";
+    margin-top: 0;
+    width: 45vw;
+    height: 10vw;
+    margin-left: 6vw;
+}
+#intership{
+    position: absolute;
+    top: 0;
+    left: 7vw;
+    color: #F1D3B9;
+}
+#summer{
+    position: absolute;
+    top: 40%;
+    left: 40%;
+    background: linear-gradient(to right, #F1D3B9,#190692);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+#coop{
+    position: absolute;
+    top: 75%;
+    right: 5vw;
+    color: #190692;
+}
+
 
 .card{
-    margin-top: 100px;
-    margin-left: 18%;
-    margin-right: 18%;
+    margin-top: 50px;
     background-color: #000539;
     border-radius: 20px;
     font-family: "Inter";
-    padding-bottom: 10px;
+    padding-bottom: 20px;
+
     margin-bottom: 0;
+    position: relative;
+    transform: translateX(-50%);
+    left: 50%;
+    width: 70vw;
+    align-self: center;
+
 }
 
 .row1{
     display: grid; 
     grid-template-columns: auto auto; 
     justify-content: space-between;
-    padding-right: 40px;
-    padding-top: 5px;
+    padding-right: 2vw;
+    padding-top:0;
     align-items: center;
     margin: 0;
+
 }
 .row1 > p{
     font-size: 38px;
@@ -96,7 +158,6 @@ a{
 .row1 > button > img{
     padding: 0;
     margin: 0;
-    
 }
 
 
@@ -108,7 +169,8 @@ a{
     grid-column-gap: 30px;
     justify-content: start;
     text-align: start;
-    padding-left: 30px;
+    padding-left: 2vw;
+    padding-right: 3vw;
     margin: 0;
 }
 .row2 > p{
@@ -134,25 +196,25 @@ a{
 }
 
 .row1 > button{
-    margin-top: 40px;
-    margin-bottom: 20px;
-    padding-bottom: 8px;
-    height: 40px;
+    margin-top: 2.5vw;
+    margin-bottom: 2vw;
+    margin-left: 50px;
+    height: 4vw;
     width: 250px;
-    background-color: #110561;
+    background-color:  #190692;;
     border: 0;
     border-radius: 20px;
     text-align: center;
     align-self: center;
-
-    
 }
 .row1 > button > label{
     text-align: center;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 2vw;
     margin-left: 15px;
     color: #F1D3B9;
+    font-family: "Inter";
+    font-weight: bold;
 }
 
 .icons{
@@ -170,5 +232,190 @@ a{
     margin-right: 30px;
 }
 
+
+#cards{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 30px;
+    justify-content: space-between;
+    padding: 0;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 0;
+    align-content: center;
+
+    
+}
+.opportunity{
+    margin: 0 10vw 2vw 10vw;
+    color: rgb(181, 181, 181);
+    text-align: start;
+    border-bottom: 1px solid rgb(181, 181, 181);
+}
+.opportunity > .row1{
+    justify-content: space-between;
+    padding-left: 30%;
+}
+.opportunity > .row1 > p{
+    text-align: center;
+    width: fit-content;
+    font-size: 2vw;
+    color: white;
+}
+.opportunity > .row1 > button{
+    margin-bottom: 1vw;
+}
+.opportunity > .row1 > button > img{
+    width: 3vw;
+}
+.opportunity > p{
+    margin-top: 0;
+}
+#card_footer{
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: space-between;
+    padding: 0;
+}
+#skills{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-column-gap: 2vw;
+    padding: 0;
+}
+#date{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-column-gap: 2vw;
+
+}
+#date > div > img{
+    width: 1vw;
+    height: auto;
+}
+#date > div > label{
+    font-size: 1vw;
+}
+.skill{
+    background-color: #010517;
+    width: fit-content;
+    height: min-content;
+    text-align: center;
+    padding: 0.5vw 0.5vw 0.5vw 0.5vw;
+    border-radius: 20px;
+    font-size: 1vw;
+}
+#add{
+    font-size: 2vw;
+    font-family: "Inter";
+    font-weight: bold;
+    color: #F1D3B9;
+    background-color: #190692;
+    width: 20vw;
+    height: 4vw;
+    border: 0;
+    border-radius: 20px;
+}
+#shortCut{
+    display: none;
+}
+@media only screen and (max-width: 800px){
+ 
+    #pages{
+        grid-column-gap: 2vw;
+    }
+    #pages > a{
+        font-size: 2.8vw;
+    }
+    #InternMe{
+        font-size: 3.7vw;
+    }
+
+    
+}
+@media only screen and (max-width: 1000px){
+    .card{
+        font-size: 1.6vw;
+        padding: 0 1vw 1vw 1vw;
+        height: min-content;
+
+    }
+    .row1{
+        padding-top: 0;
+    }
+    .row1 > p{
+        font-size: 3.8vw;
+    }
+    #edit{
+        width: 2vw;
+        height: 2vw;
+    }
+    .row1 > button{
+        position: relative;
+        width: 28vw;
+        height: 5vw;
+        text-align: start;
+        padding-left: 2vw;
+        
+    }
+    .row1 > button > label{
+        font-size: 2.5vw;
+        text-align: center;
+        justify-self: center;
+        position: absolute;
+        top: 25%;
+        right: 2vw;
+        margin-left: 1vw;
+    }
+    .icons{
+        position: relative;
+        bottom: 0;
+        left: 0;
+    }
+    .signs{
+        padding-top: 0;
+    }
+    #edit > img{
+        width: 5.2vw;
+        height: auto;
+    }
+    .row2{
+        grid-template-columns: auto auto;
+    }
+    .opportunity > .row1 > button > img{
+        width: 3vw;
+    }
+}
+@media only screen and (max-width: 500px){
+    
+    #pages{
+        display: none;
+    }
+    #shortCut{
+        display:contents;
+        width: 1vw;
+        height: 1vw;
+        background-color: transparent;
+        border: 0;
+        padding: 0;
+    }
+    #links{
+        display: grid;
+        grid-template-columns: auto auto auto;
+        grid-template-rows: auto auto auto;
+        grid-column-gap: 0.5vw;
+        grid-row-gap: 0.5vw;
+        padding: 0;
+    
+    }
+    .circle{
+        background-color: #F1C6B9;
+        border-radius: 50%;
+        width: 1vw;
+        height: 1vw;
+        padding: 0;
+    
+    }
+}
 
 

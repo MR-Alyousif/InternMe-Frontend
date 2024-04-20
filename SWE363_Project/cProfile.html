@@ -15,12 +15,33 @@
             <a href="">Contact</a>
             <a href="">Login</a>
         </ul>
+        <button id="shortCut">
+            <ul id="links">
+                <div class="circle"></div>
+                <div class="circle"></div>
+                <div class="circle"></div>
+                <div class="circle"></div>
+                <div class="circle"></div>
+                <div class="circle"></div>
+                <div class="circle"></div>
+                <div class="circle"></div>
+                <div class="circle"></div>
+            </ul>
+        </button>
     </ul>
 </header>
 <body>
     <div style="background-color: #010517; width: 100%; height: 100px; position: absolute;"></div>
     <div id="container">
-        <p id="title"></p>
+        <div id="title">
+            <p id="sTitle">Welcome to Intern Me!</p>
+            <p id="lTitle">Best website to connect with students</p>
+            <div id="types">
+                <p id="intership">Internship</p>
+                <p id="summer">Summer Training</p>
+                <p id="coop">Co-op</p>
+            </div>
+        </div>
         <img id="desk" src="assets/job 2.png">
         <div id="gradient"></div>
     </div>
@@ -28,7 +49,7 @@
     <div class="card">
         <ul class="row1">
             <p>Basic Information</p>
-            <button style="width: 50px; height: 50px; background-color: transparent;"><img src="assets/icons/pensil.png"></button>
+            <button id="edit" style="width: 50px; height: 50px; background-color: transparent;"><img src="assets/icons/pensil.png"></button>
         </ul>
         <ul class="row2">
             <ul>
@@ -67,6 +88,32 @@
         <ul class="row1">
             <button><img class="icons" src="assets/icons/download.png"><label>Company Logo</label></button>
         </ul>
+    </div>
+    <div class="card">
+        <ul class="row1">
+            <p>Posted opportunities</p>
+            <button id="edit" style="width: 50px; height: 50px; background-color: transparent;"><img src="assets/icons/pensil.png"></button>
+        </ul>
+        <div class="opportunity">
+            <ul class="row1">
+                <p>Full Stack Developer</p>
+                <button style="width: 50px; height: 50px; background-color: transparent;"><img src="assets/icons/pensil.png"></button>
+            </ul>
+            <p>We are looking for full stack developer who can help develop the entire mobile application ... As a Microsoft Full Stack Developer, you will play a pivotal role in designing, developing, and maintaining software applications using Microsoft technologies.</p>
+            <ul id="card_footer">
+                <ul id="skills">
+                        <div class="skill">UI Designer</div>
+                        <div class="skill">Figma</div>
+                        <div class="skill">Landing Page</div>
+                </ul>
+                <ul id="date">
+                    <div ><img src="assets/icons/clock.png" class="icons"> <label>8 weeks</label></div>
+                    <div><img src="assets/icons/calendar.png" class="icons" ><label> 2024/5/6</label></div>
+                    <div><img src="assets/icons/location.png" class="icons"><label> Dhahran</label></div>
+                </ul>
+            </ul>
+        </div>
+        <button id="add">Add Opportunity</button>
     </div>
     
 </body>

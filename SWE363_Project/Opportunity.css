@@ -11,6 +11,8 @@ body{
     background-color: #010517;
     text-align: center;
     color: white;
+    
+    
 }
 #nav{
     display: grid;
@@ -45,7 +47,26 @@ img{
     width: 90%; 
     height:auto;
 
-    
+  
+}
+
+h1{
+    text-align: center;
+    margin: 50px 0 50px 0; 
+    font-family: 'Yeseva One'; 
+    font-weight: bold;
+    background: linear-gradient(to right, #f4dcab, white);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+        
+}
+.lightest{
+    color: #f4dcab;
+}
+.lighter{
+    background: linear-gradient(to right, #eedbb6, white);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .info{
@@ -53,17 +74,19 @@ img{
     padding-left: 30%;
     padding-right: 30%;
     position: absolute;
-    top: 130px;
+    top: 8vw;
     right: 0;
     left: 0;
-    font-size: 25px;
+    font-size: 1.5vw;
     font-weight: bold;
     font-family: "Inter";
+    overflow: hidden;
+    text-align: start;
 
 }
 input{
     width: 100%;
-    height: 40px;
+    height: 4vw;
     border: 0;
     border-radius: 10px;
     background: linear-gradient(to right,#E6CE9F,#2E284B);
@@ -71,7 +94,7 @@ input{
 }
 textarea{
     width: 100%;
-    height: 150px;
+    height: 8vw;
     border: 0;
     border-radius: 10px;
     background: linear-gradient(to right,#b19f7b,#2E284B);
@@ -80,7 +103,7 @@ textarea{
 .two_columns{
     display: grid;
     grid-template-columns: auto auto;
-    grid-column-gap: 20px;
+    grid-column-gap: 2vw;
     padding: 0;
 }
 .two_columns > div > input{
@@ -88,18 +111,32 @@ textarea{
     background: linear-gradient(to right,#85775b,#423c5e);
 }
 button{
-    width: 200px;
+    width: 20vw;
     padding: 0;
-    margin-left: 33% ;
+    
 }
 .post{
     font-weight: bold;
-    font-size: 25px;
-    width: 200px;
-    height: 50px;
+    font-size: 2vw;
+    width: 20vw;
+    height: 4vw;
     border-radius: 20px;
     background: none;
-    background-color: #F1C6B9;
-    margin-top: 50px;
-    margin-left: 35%;
+    background-image: linear-gradient(to right,#262569, #ad925c);
+    color: white;
+    margin-top: 3vw;
+    
+}
+#buttons{
+    text-align: center;
+}
+
+@media only screen and (max-width:800px){
+    #buttons{
+        display: grid;
+        grid-template-columns: auto auto;
+        margin: 0;
+        padding: 0;
+        grid-column-gap: 2vw;
+    }
 }

@@ -15,27 +15,51 @@
             <a href="">Contact</a>
             <a href="">Login</a>
         </ul>
+        <button id="shortCut">
+            <ul id="links">
+                <div class="circle"></div>
+                <div class="circle"></div>
+                <div class="circle"></div>
+                <div class="circle"></div>
+                <div class="circle"></div>
+                <div class="circle"></div>
+                <div class="circle"></div>
+                <div class="circle"></div>
+                <div class="circle"></div>
+            </ul>
+        </button>
     </ul>
 </header>
 <body>
     <form id="search">
-        <p >Search for an Opportunity</p>
+        <p id="title_search">Search for an Opportunity</p>
         <div>
             <input type="text" placeholder="     Search...">
             <button type="submit"><i class="fas fa-search" aria-hidden="true"><img src="assets/icons/search.png"></i></button>
         </div>
     </form>
+
+    <div id="filter_box">
+        <img src="assets/icons/sort.png" style="padding-left: 1.5vw; margin: 0; padding-top: 1.1vw; width: 2.5vw; height: auto;">
+        <select id="filter">
+            <option value="filter">Filter</option>
+            <option value="major">Major</option>
+            <option value="city">City</option>
+            <option value="field">Field</option>
+            <option value="Skills">Skills</option>
+        </select>
+    </div>
     
     <form class="cards">
             <ul class="cardColumns">
-                <img src="assets/logos/aramco.png">
+                <img id="logo" src="assets/logos/aramco.png">
                 <ul class="info">
                     <div>Aramco</div>
-                    <div style="font-size: 30px; font-weight: bold; margin-top: 5px;">Mechanical Engineering</div>
+                    <div id="title_major">Mechanical Engineering</div>
                     <ul>
-                        <div><img src="assets/icons/clock.png"> 8 weeks</div>
-                        <div><img src="assets/icons/calendar.png"> 2024/5/6</div>
-                        <div><img src="assets/icons/location.png" > Dhahran</div>
+                        <div ><img src="assets/icons/clock.png" class="icons"> <label>8 weeks</label></div>
+                        <div><img src="assets/icons/calendar.png" class="icons" ><label> 2024/5/6</label></div>
+                        <div><img src="assets/icons/location.png" class="icons"><label> Dhahran</label></div>
                     </ul>
                     <p>We are looking for Mechanical engineering who can help design with Solidwork ...</p>
                     <ul>
@@ -44,14 +68,16 @@
                         <div>Landing Page</div>
                     </ul>
                 </ul>
-                <button><img src="assets/icons/save.png"></button>
+                <button style="width: 5vw; height: 5vw;"><img src="assets/icons/save.png"></button>
             </ul>
-
-
     </form>
-
+    <ul id="page">
+        <div><img src="assets/icons/inline-left.png"></div>
+        <div style="background-color: #623846;">1</div>
+        <div><img src="assets/icons/inline-right.png"></div>
+    </ul>
 </body>
 <footer>
-    <img src="assets/Footer.jpg">
+    <img id="desk" src="assets/Footer.jpg">
 </footer>
 </html>

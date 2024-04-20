@@ -188,3 +188,29 @@ label{
     font-size: 15px;
     color: gray;
 }
+
+#light1{
+    width: 20vw;
+    height: 15vw;
+    background-color: #fad389;
+    border-radius: 50%;
+    position: fixed;
+    z-index: 4;
+    right: 10vw;
+    bottom: 30vw;
+    filter: blur(7vw);
+}
+#light2{
+    width: 20vw;
+    height: 15vw;
+    background-color: #fad389;
+    border-radius: 50%;
+    position: fixed;
+    z-index: 4;
+    left: -4vw;
+    bottom: 30vw;
+    filter: blur(7vw);
+}
+#background{
+    position: relative;
+}
