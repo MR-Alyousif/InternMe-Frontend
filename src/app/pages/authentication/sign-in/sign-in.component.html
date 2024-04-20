@@ -1,98 +1,64 @@
-<form class="my-10 space-y-6">
-  <div class="text-center">
-    <h2 class="mb-1 text-3xl font-semibold text-green">
-      Welcome to InternMe!<span class="text-primary">!</span>
-    </h2>
-    <p class="text-sm text-green">First Website for students</p>
-  </div>
-
-  <div class="space-y-3 text-left">
-    <div class="relative">
-      <input type="password" id="user-name" class="peer block" placeholder="" />
-      <label
-        for="user-name"
-        class="absolute left-1 top-2 z-10 origin-[0] -translate-y-4 scale-95 transform bg-background px-2 text-sm text-secondary-200 duration-300 peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:scale-100 peer-focus:top-2 peer-focus:-translate-y-4 peer-focus:scale-95 peer-focus:px-2 peer-focus:text-primary"
-      >
-        User Name
-      </label>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign In</title>
+  </head>
+  <header>
+    <ul id="nav">
+      <label id="InternMe">InternMe</label>
+      <button id="shortCut">
+        <ul id="pages">
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
+        </ul>
+      </button>
+    </ul>
+  </header>
+  <body>
+    <div id="background">
+      <div id="light"></div>
+      <img id="backImg" src="assets/SignIn 3.jpg" />
     </div>
-    <div class="relative">
-      <input type="password" id="password" class="peer block" placeholder=" " />
-      <label
-        for="password"
-        class="absolute left-1 top-2 z-10 origin-[0] -translate-y-4 scale-95 transform bg-background px-2 text-sm text-secondary-200 duration-300 peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:scale-100 peer-focus:top-2 peer-focus:-translate-y-4 peer-focus:scale-95 peer-focus:px-2 peer-focus:text-primary"
-      >
-        Password
-      </label>
-      <span class="absolute right-5 top-2.5 cursor-pointer text-secondary-200">
-        <svg-icon
-          src="assets/icons/heroicons/outline/eye-off.svg"
-          [svgClass]="'h-5 w-5'"
-        >
-        </svg-icon>
-        <svg-icon
-          src="assets/icons/heroicons/outline/eye.svg"
-          [svgClass]="'h-5 w-5 hidden'"
-        >
-        </svg-icon>
-      </span>
-    </div>
-  </div>
-  <div
-    class="my-4 flex items-center before:mt-0.5 before:flex-1 before:border-t before:border-secondary-100 after:mt-0.5 after:flex-1 after:border-t after:border-secondary-100"
-  >
-    <p class="mx-4 mb-0 text-center text-sm text-secondary-200">
-      Or continue with
-    </p>
-  </div>
-  <div class="mx-auto flex justify-center space-x-4">
-    <div routerLink="/dashboard">
-      <app-button impact="bold" tone="light" shape="rounded" size="medium">
-        <svg-icon src="assets/icons/google-logo.svg" [svgClass]="'h-6 w-6'">
-        </svg-icon>
-      </app-button>
-    </div>
-
-    <div routerLink="/dashboard">
-      <app-button impact="bold" tone="light" shape="rounded" size="medium">
-        <svg-icon src="assets/icons/google-logo.svg" [svgClass]="'h-6 w-6'">
-        </svg-icon>
-      </app-button>
-    </div>
-
-    <div routerLink="/dashboard">
-      <app-button impact="bold" tone="light" shape="rounded" size="medium">
-        <svg-icon src="assets/icons/google-logo.svg" [svgClass]="'h-6 w-6'">
-        </svg-icon>
-      </app-button>
-    </div>
-  </div>
-
-  <div>
-    <app-button impact="bold" tone="primary" shape="rounded" size="medium"
-      >Sign up</app-button
-    >
-  </div>
-
-  <div class="flex items-center text-sm text-secondary-200">
-    Already have an Account?
-    <app-button
-      routerLink="/auth/sign-in"
-      impact="none"
-      tone="primary"
-      shape="rounded"
-      size="small"
-    >
-      Sign in
-    </app-button>
-  </div>
-</form>
-<footer>
-  <div class="aspect-h-7 aspect-w-16">
-    <img
-      src="../../../../../assets/intern-me/SignIn 4.jpg"
-      alt="Footer Image"
-      class="h-full w-full object-cover object-center"
-    />
-  </div>
-</footer>
+    <form class="sign">
+      <p id="title">Welcome to InternMe!</p>
+      <p id="tline">First Website for students</p>
+      <div
+        style="
+          border-bottom: 1px solid #fb7e65;
+          width: 25%;
+          position: absolute;
+          top: 100px;
+          left: 38%;
+        "
+      ></div>
+      <ul class="info">
+        <p>Username</p>
+        <input type="text" placeholder="Username" [(ngModel)]="username" />
+        <p>Password</p>
+        <input
+          type="password"
+          placeholder="**********"
+          [(ngModel)]="password"
+        />
+      </ul>
+      <button id="forgot" (click)="forgotPassword()">Forgot Password?</button>
+      <button type="submit" id="in" (click)="signIn()">Sing In</button>
+      <button id="dont">Don't have an account</button>
+      <label>Or continue with</label>
+      <ul id="options">
+        <button><img src="assets/googleLogo.png" /></button>
+        <button><img src="assets/appleLogo.png" /></button>
+        <button><img src="assets/linckedin.webp" /></button>
+      </ul>
+    </form>
+  </body>
+</html>
