@@ -1,15 +1,27 @@
 import { Component } from '@angular/core';
-import { NavbarComponent } from '../../../global-components/navbar/navbar.component';
-import { ButtonComponent } from '../../../global-components/app-button/app-button.component';
-import { AngularSvgIconModule } from 'angular-svg-icon';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-sign-up',
   standalone: true,
-  imports: [NavbarComponent, ButtonComponent, AngularSvgIconModule],
+  imports: [FormsModule],
   templateUrl: './sign-up.component.html',
-  styleUrl: './sign-up.component.css'
+  styleUrl: './sign-up.component.css',
 })
 export class SignUpComponent {
+  email: string = '';
+  username: string = '';
+  password: string = '';
+  rule: string = '';
 
+  signUp() {
+    console.log(
+      'Signing up with email:',
+      this.email,
+      'username:',
+      this.username,
+      'rule:',
+      this.rule,
+    );
+  }
 }
