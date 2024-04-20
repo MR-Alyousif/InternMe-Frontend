@@ -1,6 +1,143 @@
-<app-navbar></app-navbar>
-<div class="scrollbar-thumb-rounded-full scrollbar-track-rounded-full scrollbar scrollbar-thumb-slate-700 scrollbar-track-slate-300 h-32 overflow-y-scroll">
-    <p>opportunity works!</p>
-    <div class="h-64 bg-slate-400"></div>
-</div>
-
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="Opportunity.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add Opporunity</title>
+  </head>
+  <header>
+    <ul id="nav">
+      <label id="InternMe">InternMe</label>
+      <ul id="pages">
+        <a href="">Explore</a>
+        <a href="">About</a>
+        <a href="">Contact</a>
+        <a href="">Login</a>
+      </ul>
+    </ul>
+  </header>
+  <body>
+    <img src="assets/job.png" />
+    <ul class="info">
+      <h1>Add New Opportunity</h1>
+      <div>
+        <p class="lightest">Name *</p>
+        <input type="text" />
+      </div>
+      <div>
+        <p class="lightest">Major *</p>
+        <input type="text" />
+      </div>
+      <div>
+        <p class="lightest">Description *</p>
+        <textarea cols="10" rows="5"> </textarea>
+      </div>
+      <ul class="two_columns">
+        <div>
+          <p class="lighter">Starting Date *</p>
+          <input type="text" />
+        </div>
+        <div>
+          <p>Duration *</p>
+          <input
+            type="text"
+            style="background: linear-gradient(to right, #423c5e, #2e284b)"
+          />
+        </div>
+      </ul>
+      <ul class="two_columns">
+        <div>
+          <p class="lighter">Location *</p>
+          <input type="text" />
+        </div>
+        <div>
+          <p>URL *</p>
+          <input
+            type="text"
+            style="background: linear-gradient(to right, #423c5e, #2e284b)"
+          />
+        </div>
+      </ul>
+      <div>
+        <p style="color: #f8eedb">Responsibilities *</p>
+        <textarea
+          cols="10"
+          rows="5"
+          style="background: linear-gradient(to top left, #1d1942, #514e65)"
+        >
+        </textarea>
+      </div>
+      <div>
+        <p>Qualifications *</p>
+        <textarea
+          cols="10"
+          rows="5"
+          style="background: linear-gradient(to top left, #1d1942, #514e65)"
+        >
+        </textarea>
+      </div>
+      <div style="position: relative; margin-top: 2vw; margin-bottom: 0">
+        <div
+          style="
+            border-top: 4px solid #514e65;
+            width: 25%;
+            position: absolute;
+            top: 0;
+            left: 38%;
+          "
+        ></div>
+        <p
+          style="
+            text-align: center;
+            color: #615e79;
+            font-size: 3vw;
+            position: static;
+            padding-top: 2vw;
+            padding-bottom: 2vw;
+            margin-top: 0;
+          "
+        >
+          Optional Details
+        </p>
+        <div
+          style="
+            border-bottom: 4px solid #514e65;
+            width: 12%;
+            position: absolute;
+            bottom: 0;
+            left: 44%;
+          "
+        ></div>
+      </div>
+      <ul class="two_columns">
+        <div>
+          <p>Required GPA <label style="font-size: 1.5vw">(out of 4)</label></p>
+          <input
+            class="Optional"
+            type="text"
+            style="background: linear-gradient(to left, #1d1942, #3c3952)"
+          />
+        </div>
+        <div>
+          <p>Required GPA <label style="font-size: 1.5vw">(out of 5)</label></p>
+          <input
+            type="text"
+            style="background: linear-gradient(to left, #1d1942, #3c3952)"
+          />
+        </div>
+      </ul>
+      <div>
+        <p>Skills</p>
+        <input
+          type="text"
+          style="background: linear-gradient(to left, #1d1942, #3c3952)"
+        />
+      </div>
+      <ul id="buttons">
+        <input class="post" type="submit" value="Save" />
+        <input class="post" type="submit" value="Post Offer" />
+      </ul>
+    </ul>
+  </body>
+</html>
