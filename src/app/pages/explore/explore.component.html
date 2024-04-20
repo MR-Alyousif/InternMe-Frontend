@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Explore InternMe</title>
+  </head>
+  <header>
+    <ul id="nav">
+      <label id="InternMe">InternMe</label>
+      <ul id="pages">
+        <a href="">Explore</a>
+        <a href="">About</a>
+        <a href="">Contact</a>
+        <a href="">Login</a>
+      </ul>
+      <button id="shortCut">
+        <ul id="links">
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
+        </ul>
+      </button>
+    </ul>
+  </header>
+  <body>
+    <form id="search">
+      <p id="title_search">Search for an Opportunity</p>
+      <div>
+        <input type="text" placeholder="Search..." [(ngModel)]="searchQuery" />
+        <button type="submit">
+          <i class="fas fa-search" aria-hidden="true"
+            ><img src="assets/icon/search.png"
+          /></i>
+        </button>
+      </div>
+    </form>
+
+    <div id="filter_box" class="flex items-center">
+      <img
+        src="assets/icon/sort.png"
+        class="ml-2 pb-3"
+        style="width: 2.5vw; height: auto"
+        alt="Sort Icon"
+      />
+      <select
+        id="filter"
+        class="rounded border border-gray-300 bg-white px-3 py-2"
+      >
+        <option value="filter">Filter</option>
+        <option value="major">Major</option>
+        <option value="city">City</option>
+        <option value="field">Field</option>
+        <option value="Skills">Skills</option>
+      </select>
+    </div>
+
+    <form class="cards">
+      <ul class="cardColumns" *ngFor="let card of cards">
+        <img id="logo" [src]="card.logo" />
+        <ul class="info">
+          <div>{{ card.company }}</div>
+          <div id="title_major">{{ card.title }}</div>
+          <ul>
+            <div>
+              <img src="assets/icon/clock.png" class="icons" />
+              <label>{{ card.duration }}</label>
+            </div>
+            <div>
+              <img src="assets/icon/calendar.png" class="icons" /><label>{{
+                card.date
+              }}</label>
+            </div>
+            <div>
+              <img src="assets/icon/location.png" class="icons" /><label>{{
+                card.location
+              }}</label>
+            </div>
+          </ul>
+          <p>{{ card.description }}</p>
+          <ul>
+            <div class="skill" *ngFor="let skill of card.skills">
+              {{ skill }}
+            </div>
+          </ul>
+        </ul>
+        <button style="width: 5vw; height: 5vw">
+          <img src="assets/icon/save.png" />
+        </button>
+      </ul>
+    </form>
+
+    <ul id="page" class="flex items-center">
+      <div
+        class="flex h-8 w-8 items-center justify-center"
+        (click)="previousPage()"
+      >
+        <img src="assets/icon/inline-left.png" class="h-full w-full" />
+      </div>
+      <div
+        class="mx-2 flex h-8 w-8 items-center justify-center bg-secondary-100 text-white"
+      >
+        {{ currentPage }}
+      </div>
+      <div
+        class="flex h-8 w-8 items-center justify-center"
+        (click)="nextPage()"
+      >
+        <img src="assets/icon/inline-right.png" class="h-full w-full" />
+      </div>
+    </ul>
+  </body>
+  <footer>
+    <img id="desk" src="assets/Footer.jpg" />
+  </footer>
+</html>
