@@ -26,7 +26,8 @@ body {
   font-size: 32px;
   font-family: 'Days One';
   background: linear-gradient(to right, #f1c6b9, #fb7e65);
-  -webkit-background-clip: text;
+-webkit-background-clip: text;
+background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 #pages {
@@ -54,6 +55,7 @@ h1 {
   font-weight: bold;
   background: linear-gradient(to right, #f4dcab, white);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
