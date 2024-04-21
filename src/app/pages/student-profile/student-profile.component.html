@@ -44,22 +44,14 @@
     "
   ></div>
   <div id="container" class="flex flex-col items-center justify-center">
-    <img
-      class="w-full"
-      id="desk"
-      src="../../../../../assets/profile/student.png"
-    />
+    <img class="w-full" id="desk" src="assets/profile/student.png" />
     <div id="gradient"></div>
     <ul id="profile">
-      <img src="../../../../../assets/profile/model.jpg" />
-      <label id="name">Khalid Ahmed</label>
-      <label id="major">software Engineering</label>
+      <img src="assets/profile/model.jpg" />
+      <label id="name">{{ info.fullName }}</label>
+      <label id="major">{{ info.major }}</label>
       <p>
-        Aspiring front-end developer with a passion for crafting engaging and
-        user-eccentric web experiences. I leverage strong coding skills and a
-        creative eye to translate complex functionalities into intuitive
-        interfaces. Always eager to learn and collaborate, I'm actively seeking
-        opportunities to contribute to innovative front-end projects.
+        {{ info.description }}
       </p>
     </ul>
   </div>
@@ -68,54 +60,49 @@
     <ul class="row1">
       <p>Basic Information</p>
       <button style="width: 50px; height: 50px; background-color: transparent">
-        <img src="../../../../../assets/profile/pensil.png" />
+        <img src="assets/profile/pensil.png" />
       </button>
     </ul>
     <ul class="row2">
       <ul>
         <p class="signs">Full Name</p>
-        <p class="info">Khalid Ahmed</p>
+        <p class="info">{{ info.fullName }}</p>
       </ul>
       <ul>
         <p class="signs">Email</p>
         <ul class="one_row">
-          <img class="icons" src="../../../../../assets/profile/mail.png" />
-          <p class="info">Khalid_Ahmed&#64;gmail.com</p>
+          <img class="icons" src="assets/profile/mail.png" />
+          <p class="info">{{ info.email }}</p>
         </ul>
       </ul>
       <ul>
         <p class="signs">Phone</p>
         <ul class="one_row">
-          <img
-            class="icons"
-            src="../../../../../assets/profile/phone plus.png"
-          />
-          <p class="info">05000020394</p>
+          <img class="icons" src="assets/profile/phone plus.png" />
+          <p class="info">{{ info.phone }}</p>
         </ul>
       </ul>
     </ul>
     <ul class="row2">
       <ul>
         <p class="signs">University</p>
-        <p class="info">king fahd university of petroleum and minerals</p>
+        <p class="info">{{ info.university }}</p>
       </ul>
       <ul>
         <p class="signs">Major</p>
-        <p class="info">software Engineering</p>
+        <p class="info">{{ info.major }}</p>
       </ul>
     </ul>
     <ul class="row1">
-      <button class="flex flex-row justify-evenly items-center">
-        <img
-          class="icons"
-          src="../../../../../assets/profile/download.png"
-        /><label>Upload Resume</label>
+      <button class="flex flex-row items-center justify-evenly">
+        <img class="icons" src="assets/profile/download.png" /><label
+          >Upload Resume</label
+        >
       </button>
-      <button class="flex flex-row justify-evenly items-center">
-        <img
-          class="icons"
-          src="../../../../../assets/profile/download.png"
-        /><label>Image Profile</label>
+      <button class="flex flex-row items-center justify-evenly">
+        <img class="icons" src="assets/profile/download.png" /><label
+          >Image Profile</label
+        >
       </button>
     </ul>
   </div>
@@ -124,15 +111,11 @@
     <ul class="row1">
       <p>Description</p>
       <button style="width: 50px; height: 50px; background-color: transparent">
-        <img src="../../../../../assets/profile/pensil.png" />
+        <img src="assets/profile/pensil.png" />
       </button>
     </ul>
     <p id="description">
-      Aspiring front-end developer with a passion for crafting engaging and
-      user-eccentric web experiences. I leverage strong coding skills and a
-      creative eye to translate complex functionalities into intuitive
-      interfaces. Always eager to learn and collaborate, I'm actively seeking
-      opportunities to contribute to innovative front-end projects.
+      {{ info.description }}
     </p>
   </div>
 
@@ -143,15 +126,11 @@
         <button
           style="width: 50px; height: 50px; background-color: transparent"
         >
-          <img src="../../../../../assets/profile/pensil.png" />
+          <img src="assets/profile/pensil.png" />
         </button>
       </ul>
       <p id="description">
-        Aspiring front-end developer with a passion for crafting engaging and
-        user-eccentric web experiences. I leverage strong coding skills and a
-        creative eye to translate complex functionalities into intuitive
-        interfaces. Always eager to learn and collaborate, I'm actively seeking
-        opportunities to contribute to innovative front-end projects.
+        {{ info.projectsDescription }}
       </p>
     </div>
     <div class="card p-10" style="margin-left: 0; width: auto">
@@ -160,15 +139,13 @@
         <button
           style="width: 50px; height: 50px; background-color: transparent"
         >
-          <img src="../../../../../assets/profile/pensil.png" />
+          <img src="assets/profile/pensil.png" />
         </button>
       </ul>
       <ul id="skills">
-        <div class="skill">UI Designer</div>
-        <div class="skill">Figma</div>
-        <div class="skill">Landing Page</div>
+        <div class="skill" *ngFor="let skill of info.skills">{{ skill }}</div>
       </ul>
     </div>
   </ul>
 </body>
-<footer class="w-full h-24 bg-[#d08261]"></footer>
+<footer class="h-24 w-full bg-[#d08261]"></footer>

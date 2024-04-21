@@ -175,7 +175,7 @@ label {
   height: 35px;
   border-radius: 8px;
   padding: 5px 0 5px 15px;
-  background-image: linear-gradient(to right, #000b42, #021471);
+  background: linear-gradient(to right, #000b42, #021471);
   font-weight: bold;
   font-size: 15px;
   color: gray;

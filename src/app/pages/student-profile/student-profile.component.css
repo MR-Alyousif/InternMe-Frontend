@@ -1,6 +1,6 @@
-@import url("https://fonts.googleapis.com/css2?family=Days+One&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Days+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
 header {
   top: 0;
 }
@@ -25,7 +25,7 @@ body {
 }
 #InternMe {
   font-size: 32px;
-  font-family: "Days One";
+  font-family: 'Days One';
   background: linear-gradient(to right, #f1c6b9, #fb7e65);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -43,13 +43,14 @@ a {
 }
 #container {
   position: relative;
-  width: 100%;
-
+  width: 100vmax;
+  max-width: max-content;
   height: auto;
   overflow: hidden;
   margin-top: 0;
 }
 #desk {
+  width: 1514px;
   height: auto;
   margin-top: 80px;
   position: relative;
@@ -85,16 +86,16 @@ a {
 #name {
   padding-top: 20px;
   font-size: 38px;
-  font-family: "Yeseva one";
+  font-family: 'Yeseva one';
   color: #f1c6b9;
 }
 #major {
-  font-family: "Inter";
+  font-family: 'Inter';
   font-size: 20px;
   color: #c4c4c4;
 }
 #profile > p {
-  font-family: "Inter";
+  font-family: 'Inter';
   font-size: 20px;
   color: #f1d3b9;
 }
@@ -103,7 +104,7 @@ a {
   margin-top: 50px;
   background: linear-gradient(to right, #b0694b, #855162);
   border-radius: 20px;
-  font-family: "Inter";
+  font-family: 'Inter';
   padding-bottom: 20px;
   margin-bottom: 0;
   position: relative;
@@ -126,7 +127,7 @@ a {
 }
 .row1 > p {
   font-size: 38px;
-  font-family: "Inter";
+  font-family: 'Inter';
   margin-bottom: 5px;
 }
 .row1 > button {
@@ -203,7 +204,7 @@ a {
 
 #description {
   text-align: start;
-  font-family: "Inter";
+  font-family: 'Inter';
   font-size: 20px;
   color: #f1d3b9;
   margin-left: 40px;
