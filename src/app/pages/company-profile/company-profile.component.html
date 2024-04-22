@@ -51,150 +51,129 @@
   <div id="container" class="flex flex-col items-center justify-center">
     <h1
       id="sTitle"
-      class="sm:text-7xl text-4xl text-secondary-200 z-20 h-16 sm:h-24 mt-14"
+      class="z-20 mt-14 h-16 text-4xl text-secondary-200 sm:h-24 sm:text-7xl"
     >
       Welcome
     </h1>
-    <img id="desk" src="../../../../../assets/profile/job 2.png" class="z-10" />
+    <img id="desk" src="assets/profile/job 2.png" class="z-10" />
     <div id="gradient"></div>
   </div>
 
   <div
-    class="flex flex-col px-8 md:px-16 py-4 md:py-10 gap-2 md:gap-8 items-center justify-center w-[80vw] md:w-[60vw] bg-[#000539] rounded-xl md:rounded-2xl"
+    class="flex w-[80vw] flex-col items-center justify-center gap-2 rounded-xl bg-[#000539] px-8 py-4 md:w-[60vw] md:gap-8 md:rounded-2xl md:px-16 md:py-10"
   >
-    <div class="flex flex-row items-center justify-between w-full">
-      <h3 class="md:text-4xl text-lg">Basic Information</h3>
+    <div class="flex w-full flex-row items-center justify-between">
+      <h3 class="text-lg md:text-4xl">Basic Information</h3>
       <button>
-        <img
-          class="w-5 md:w-8"
-          src="../../../../../assets/profile/pensil.png"
-        />
+        <img class="w-5 md:w-8" src="assets/profile/pensil.png" />
       </button>
     </div>
     <div
-      class="grid grid-cols-2 gap-y-4 my-2 ml-8 md:ml-24 justify-between w-full"
+      class="my-2 ml-8 grid w-full grid-cols-2 justify-between gap-y-4 md:ml-24"
     >
-      <div class="flex flex-col text-xs items-start justify-center gap-1">
+      <div class="flex flex-col items-start justify-center gap-1 text-xs">
         <h5 class="text-secondary-200 md:text-base md:font-medium">
           Company&nbsp;Name
         </h5>
-        <p class="md:text-xl">Microsoft</p>
+        <p class="md:text-xl">{{ companyInfo.name }}</p>
       </div>
-      <div class="flex flex-col text-xs items-start justify-center gap-1">
+      <div class="flex flex-col items-start justify-center gap-1 text-xs">
         <h5 class="text-secondary-200 md:text-base md:font-medium">Website</h5>
-        <p class="md:text-xl">www.microsoft.com</p>
+        <p class="md:text-xl">{{ companyInfo.website }}</p>
       </div>
-      <div class="flex flex-col text-xs items-start justify-center gap-1">
+      <div class="flex flex-col items-start justify-center gap-1 text-xs">
         <h5 class="text-secondary-200 md:text-base md:font-medium">Location</h5>
         <div class="flex flex-row gap-3">
           <img
-            class="h-3 mt-[3px] md:h-5 md:mt-[5px]"
-            src="../../../../../assets/profile/location.png"
+            class="mt-[3px] h-3 md:mt-[5px] md:h-5"
+            src="assets/profile/location.png"
           />
-          <p class="md:text-xl">Khobar</p>
+          <p class="md:text-xl">{{ companyInfo.location }}</p>
         </div>
       </div>
-      <div class="flex flex-col text-xs items-start justify-center gap-1">
+      <div class="flex flex-col items-start justify-center gap-1 text-xs">
         <h5 class="text-secondary-200 md:text-base md:font-medium">Email</h5>
         <div class="flex flex-row gap-2">
           <img
-            class="h-3 mt-[3px] md:h-5 md:mt-[5px]"
-            src="../../../../../assets/profile/mail.png"
+            class="mt-[3px] h-3 md:mt-[5px] md:h-5"
+            src="assets/profile/mail.png"
           />
-          <p class="md:text-xl">microsoft&commat;mix.org</p>
+          <p class="md:text-xl">{{ companyInfo.email }}</p>
         </div>
       </div>
-      <div class="flex flex-col text-xs items-start justify-center gap-1">
+      <div class="flex flex-col items-start justify-center gap-1 text-xs">
         <h5 class="text-secondary-200 md:text-base md:font-medium">Phone</h5>
         <div class="flex flex-row gap-2">
           <img
-            class="h-3 mt-[3px] md:h-5 md:mt-[5px]"
-            src="../../../../../assets/profile/phone plus.png"
+            class="mt-[3px] h-3 md:mt-[5px] md:h-5"
+            src="assets/profile/phone plus.png"
           />
-          <p class="md:text-xl">05000020394</p>
+          <p class="md:text-xl">{{ companyInfo.phone }}</p>
         </div>
       </div>
     </div>
     <div
-      class="flex flex-row items-start justify-start w-full ml-4 md:ml-20 mt-2"
+      class="ml-4 mt-2 flex w-full flex-row items-start justify-start md:ml-20"
     >
       <button
-        class="flex flex-row items-center justify-center gap-4 px-4 md:px-6 md:py-2 py-1 bg-[#190692] rounded-full"
+        class="flex flex-row items-center justify-center gap-4 rounded-full bg-[#190692] px-4 py-1 md:px-6 md:py-2"
       >
-        <img
-          class="w-3 md:w-6"
-          src="../../../../../assets/profile/download.png"
-        />
+        <img class="w-3 md:w-6" src="assets/profile/download.png" />
         <h4 class="text-[0.5rem] md:text-lg">Company Logo</h4>
       </button>
     </div>
   </div>
 
   <div
-    class="flex flex-col px-8 md:px-16 mt-6 py-4 md:py-10 gap-x-2 gap-y-9 md:gap-8 md:gap-y-16 items-center justify-center w-[80vw] md:w-[60vw] bg-[#000539] rounded-xl md:rounded-2xl"
+    class="mt-6 flex w-[80vw] flex-col items-center justify-center gap-x-2 gap-y-9 rounded-xl bg-[#000539] px-8 py-4 md:w-[60vw] md:gap-8 md:gap-y-16 md:rounded-2xl md:px-16 md:py-10"
   >
-    <div class="flex flex-row items-center justify-between w-full">
-      <h3 class="md:text-4xl text-lg">Posted Opportunities</h3>
+    <div class="flex w-full flex-row items-center justify-between">
+      <h3 class="text-lg md:text-4xl">Posted Opportunities</h3>
       <button>
-        <img
-          class="w-5 md:w-8"
-          src="../../../../../assets/profile/pensil.png"
-        />
+        <img class="w-5 md:w-8" src="assets/profile/pensil.png" />
       </button>
     </div>
     <div
-      class="flex flex-col gap-y-3 md:gap-y-6 w-[80%] border-b border-b-[#b5b5b5] pb-6"
+      class="flex w-[80%] flex-col gap-y-3 border-b border-b-[#b5b5b5] pb-6 md:gap-y-6"
+      *ngFor="let opportunity of opportunities"
     >
-      <div class="flex flex-row items-center justify-between mb-2">
+      <div class="mb-2 flex flex-row items-center justify-between">
         <div></div>
-        <h5 class="text-base md:text-3xl">Full Stack Developer</h5>
-        <img
-          class="h-4 md:h-5 mt-1"
-          src="../../../../../assets/profile/bin.png"
-        />
+        <h5 class="text-base md:text-3xl">{{ opportunity.title }}</h5>
+        <img class="mt-1 h-4 md:h-5" src="assets/profile/bin.png" />
       </div>
-      <p class="w-full text-[#b5b5b5] text-xs md:text-base text-start">
-        We are looking for full stack developer who can help develop the entire
-        mobile application ...
-        <span class="hidden sm:inline">
-          As a Microsoft Full Stack Developer, you will play a pivotal role in
-          designing, developing, and maintaining software applications using
-          Microsoft technologies.</span
-        >
+      <p
+        class="max-h-[40px] w-full max-w-[350] overflow-scroll text-start text-xs text-[#b5b5b5] md:text-base lg:max-h-[72px] lg:max-w-[635px] lg:overflow-hidden"
+      >
+        {{ opportunity.description }}
       </p>
       <div
-        class="grid grid-cols-3 md:grid-cols-7 text-[#b5b5b5] gap-3 text-[0.5rem] md:text-sm"
+        class="grid grid-cols-3 gap-3 text-[0.5rem] text-[#b5b5b5] md:grid-cols-7 md:text-sm"
       >
-        <div class="text-center bg-white/5 rounded-full py-1">UI Designer</div>
-        <div class="text-center bg-white/5 rounded-full py-1">Figma</div>
-        <div class="text-center bg-white/5 rounded-full py-1">HTML</div>
+        <div
+          class="rounded-full bg-white/5 py-1 text-center"
+          *ngFor="let skill of opportunity.skills"
+        >
+          {{ skill }}
+        </div>
         <div class="hidden md:block"></div>
-        <div class="flex flex-row items-center justify-center -ml-4 gap-1">
-          <img
-            class="h-3 md:h-5"
-            src="../../../../../assets/profile/clock.png"
-          />
-          <p>8 weeks</p>
+        <div class="-ml-4 flex flex-row items-center justify-center gap-1">
+          <img class="h-3 md:h-5" src="assets/profile/clock.png" />
+          <p>{{ opportunity.duration }}</p>
         </div>
-        <div class="flex flex-row items-center justify-center -ml-4 gap-1">
-          <img
-            class="h-3 md:h-5"
-            src="../../../../../assets/profile/calendar.png"
-          />
-          <p>2024/5/6</p>
+        <div class="-ml-4 flex flex-row items-center justify-center gap-1">
+          <img class="h-3 md:h-5" src="assets/profile/calendar.png" />
+          <p>{{ opportunity.date }}</p>
         </div>
-        <div class="flex flex-row items-center justify-center -ml-4 gap-1">
-          <img
-            class="h-3 md:h-5"
-            src="../../../../../assets/profile/location.png"
-          />
-          <p>Dhahran</p>
+        <div class="-ml-4 flex flex-row items-center justify-center gap-1">
+          <img class="h-3 md:h-5" src="assets/profile/location.png" />
+          <p>{{ opportunity.location }}</p>
         </div>
       </div>
     </div>
-    <div class="flex flex-row items-center justify-center w-full mt-2">
+    <div class="mt-2 flex w-full flex-row items-center justify-center">
       <button
-        class="text-[0.5rem] md:text-lg px-4 md:px-6 md:py-2 py-1 bg-[#190692] text-[#f1d3b9] rounded-full"
+        class="rounded-full bg-[#190692] px-4 py-1 text-[0.5rem] text-[#f1d3b9] md:px-6 md:py-2 md:text-lg"
       >
         Add Opportunity
       </button>
