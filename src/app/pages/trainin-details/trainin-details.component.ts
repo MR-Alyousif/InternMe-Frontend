@@ -11,7 +11,7 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
 })
 export class TraininDetailsComponent {
   training: any = {
-    logo: 'assets/images/microsoft-logo.png',
+    logo: '../assets/images/microsoft-logo.png',
     companyName: 'Microsoft',
     description:
       "As a Microsoft Full Stack Developer, you will play a pivotal role in designing, developing, and maintaining software applications using Microsoft technologies. You will focus on leveraging Microsoft's suite of tools, languages, and frameworks to create innovative solutions that address business needs and enhance user experiences. Your responsibilities will include collaborating with cross-functional teams, gathering requirements, writing clean and efficient code, conducting testing, and optimizing application performance. Additionally, you will stay updated on emerging Microsoft technologies and best practices to ensure the continued success of projects and contribute to the growth of the team.",
