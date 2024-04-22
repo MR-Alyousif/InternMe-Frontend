@@ -1,5 +1,7 @@
 # InternMe-Frontend
 
+> NOTE: some routes like `/student-profile` can only be accessed through manually appending the path to the URL. This behaviour would change when we integrate with the backend as the project has two types of users `company` and `student` (currently profile opens only the `/company-profile` route). `/trainin-details` too. No pages are missing in compare to figma (maybe I forgot something here).
+
 ## about us
 
 "InternMe" is a flexible online platform designed to connect eager students with reputable companies that provide a variety of training opportunities. Whether it's summer training, internships, or cooperative programs, InternMe is the central hub for students to explore, discover, and ultimately secure their ideal training placement.
@@ -15,7 +17,7 @@ With InternMe, students begin on a journey of personal and professional developm
 ### Prerequisites
 
 - LTS node.js
-- LTS angular.ts
+- LTS angular.ts (`ng` installed with `npm i -g ng`)
 
 ### Get started
 
