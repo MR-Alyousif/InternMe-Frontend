@@ -34,126 +34,166 @@
     </button>
   </ul>
 </header>
-<body>
+<body class="flex flex-col items-center">
   <div
     style="
       background-color: #010517;
       width: 100%;
-      height: 100px;
+      height: 160px;
       position: absolute;
     "
   ></div>
-  <div id="container">
-    <div id="title">
-      <p id="sTitle">Welcome to Intern Me!</p>
-      <p id="lTitle">Best website to connect with students</p>
-      <div id="types">
-        <p id="intership">Internship</p>
-        <p id="summer">Summer Training</p>
-        <p id="coop">Co-op</p>
-      </div>
-    </div>
-    <img id="desk" src="assets/job 2.png" />
+  <div id="container" class="flex flex-col items-center justify-center">
+    <h1
+      id="sTitle"
+      class="sm:text-7xl text-4xl text-secondary-200 z-20 h-16 sm:h-24 mt-14"
+    >
+      Welcome
+    </h1>
+    <img id="desk" src="../../../../../assets/profile/job 2.png" class="z-10" />
     <div id="gradient"></div>
   </div>
 
-  <div class="card">
-    <ul class="row1">
-      <p>Basic Information</p>
-      <button
-        id="edit"
-        style="width: 50px; height: 50px; background-color: transparent"
-      >
-        <img src="assets/icon/pensil.png" />
+  <div
+    class="flex flex-col px-8 md:px-16 py-4 md:py-10 gap-2 md:gap-8 items-center justify-center w-[80vw] md:w-[60vw] bg-[#000539] rounded-xl md:rounded-2xl"
+  >
+    <div class="flex flex-row items-center justify-between w-full">
+      <h3 class="md:text-4xl text-lg">Basic Information</h3>
+      <button>
+        <img
+          class="w-5 md:w-8"
+          src="../../../../../assets/profile/pensil.png"
+        />
       </button>
-    </ul>
-    <ul class="row2">
-      <ul>
-        <p class="signs">Company Name</p>
-        <p class="info">{{ companyInfo.name }}</p>
-      </ul>
-      <ul>
-        <p class="signs">Website</p>
-        <p class="info">{{ companyInfo.website }}</p>
-      </ul>
-    </ul>
-    <ul class="row2">
-      <ul>
-        <p class="signs">Location</p>
-        <ul class="one_row">
-          <img class="icons" src="assets/icon/location.png" />
-          <p class="info">{{ companyInfo.location }}</p>
-        </ul>
-      </ul>
-      <ul>
-        <p class="signs">Email</p>
-        <ul class="one_row">
-          <img class="icons" src="assets/icon/mail.png" />
-          <p class="info">{{ companyInfo.email }}</p>
-        </ul>
-      </ul>
-      <ul>
-        <p class="signs">Phone</p>
-        <ul class="one_row">
-          <img class="icons" src="assets/icon/phone plus.png" />
-          <p class="info">{{ companyInfo.phone }}</p>
-        </ul>
-      </ul>
-    </ul>
-    <ul class="row1">
-      <button class="flex flex-row items-center">
-        <img class="icons" src="assets/icon/download.png" /><label
-          >Company Logo</label
-        >
-      </button>
-    </ul>
-  </div>
-  <div class="card" *ngFor="let opportunity of opportunities">
-    <ul class="row1">
-      <p>Posted opportunities</p>
-      <button
-        id="edit"
-        style="width: 50px; height: 50px; background-color: transparent"
-      >
-        <img src="assets/icon/pensil.png" />
-      </button>
-    </ul>
-    <div class="opportunity">
-      <ul class="row1">
-        <p>{{ opportunity.title }}</p>
-        <button
-          style="width: 50px; height: 50px; background-color: transparent"
-        >
-          <img src="assets/icon/pensil.png" />
-        </button>
-      </ul>
-      <p>
-        {{ opportunity.description }}
-      </p>
-      <ul id="card_footer">
-        <ul id="skills">
-          <div class="skill" *ngFor="let skill of opportunity.skills">
-            {{ skill }}
-          </div>
-        </ul>
-        <ul id="date">
-          <div>
-            <img src="assets/icon/clock.png" class="icons" />
-            <label>{{ opportunity.duration }}</label>
-          </div>
-          <div>
-            <img src="assets/icon/calendar.png" class="icons" /><label>
-              {{ opportunity.date }}</label
-            >
-          </div>
-          <div>
-            <img src="assets/icon/location.png" class="icons" /><label>
-              {{ opportunity.location }}</label
-            >
-          </div>
-        </ul>
-      </ul>
     </div>
-    <button id="add">Add Opportunity</button>
+    <div
+      class="grid grid-cols-2 gap-y-4 my-2 ml-8 md:ml-24 justify-between w-full"
+    >
+      <div class="flex flex-col text-xs items-start justify-center gap-1">
+        <h5 class="text-secondary-200 md:text-base md:font-medium">
+          Company&nbsp;Name
+        </h5>
+        <p class="md:text-xl">Microsoft</p>
+      </div>
+      <div class="flex flex-col text-xs items-start justify-center gap-1">
+        <h5 class="text-secondary-200 md:text-base md:font-medium">Website</h5>
+        <p class="md:text-xl">www.microsoft.com</p>
+      </div>
+      <div class="flex flex-col text-xs items-start justify-center gap-1">
+        <h5 class="text-secondary-200 md:text-base md:font-medium">Location</h5>
+        <div class="flex flex-row gap-3">
+          <img
+            class="h-3 mt-[3px] md:h-5 md:mt-[5px]"
+            src="../../../../../assets/profile/location.png"
+          />
+          <p class="md:text-xl">Khobar</p>
+        </div>
+      </div>
+      <div class="flex flex-col text-xs items-start justify-center gap-1">
+        <h5 class="text-secondary-200 md:text-base md:font-medium">Email</h5>
+        <div class="flex flex-row gap-2">
+          <img
+            class="h-3 mt-[3px] md:h-5 md:mt-[5px]"
+            src="../../../../../assets/profile/mail.png"
+          />
+          <p class="md:text-xl">microsoft&commat;mix.org</p>
+        </div>
+      </div>
+      <div class="flex flex-col text-xs items-start justify-center gap-1">
+        <h5 class="text-secondary-200 md:text-base md:font-medium">Phone</h5>
+        <div class="flex flex-row gap-2">
+          <img
+            class="h-3 mt-[3px] md:h-5 md:mt-[5px]"
+            src="../../../../../assets/profile/phone plus.png"
+          />
+          <p class="md:text-xl">05000020394</p>
+        </div>
+      </div>
+    </div>
+    <div
+      class="flex flex-row items-start justify-start w-full ml-4 md:ml-20 mt-2"
+    >
+      <button
+        class="flex flex-row items-center justify-center gap-4 px-4 md:px-6 md:py-2 py-1 bg-[#190692] rounded-full"
+      >
+        <img
+          class="w-3 md:w-6"
+          src="../../../../../assets/profile/download.png"
+        />
+        <h4 class="text-[0.5rem] md:text-lg">Company Logo</h4>
+      </button>
+    </div>
+  </div>
+
+  <div
+    class="flex flex-col px-8 md:px-16 mt-6 py-4 md:py-10 gap-x-2 gap-y-9 md:gap-8 md:gap-y-16 items-center justify-center w-[80vw] md:w-[60vw] bg-[#000539] rounded-xl md:rounded-2xl"
+  >
+    <div class="flex flex-row items-center justify-between w-full">
+      <h3 class="md:text-4xl text-lg">Posted Opportunities</h3>
+      <button>
+        <img
+          class="w-5 md:w-8"
+          src="../../../../../assets/profile/pensil.png"
+        />
+      </button>
+    </div>
+    <div
+      class="flex flex-col gap-y-3 md:gap-y-6 w-[80%] border-b border-b-[#b5b5b5] pb-6"
+    >
+      <div class="flex flex-row items-center justify-between mb-2">
+        <div></div>
+        <h5 class="text-base md:text-3xl">Full Stack Developer</h5>
+        <img
+          class="h-4 md:h-5 mt-1"
+          src="../../../../../assets/profile/bin.png"
+        />
+      </div>
+      <p class="w-full text-[#b5b5b5] text-xs md:text-base text-start">
+        We are looking for full stack developer who can help develop the entire
+        mobile application ...
+        <span class="hidden sm:inline">
+          As a Microsoft Full Stack Developer, you will play a pivotal role in
+          designing, developing, and maintaining software applications using
+          Microsoft technologies.</span
+        >
+      </p>
+      <div
+        class="grid grid-cols-3 md:grid-cols-7 text-[#b5b5b5] gap-3 text-[0.5rem] md:text-sm"
+      >
+        <div class="text-center bg-white/5 rounded-full py-1">UI Designer</div>
+        <div class="text-center bg-white/5 rounded-full py-1">Figma</div>
+        <div class="text-center bg-white/5 rounded-full py-1">HTML</div>
+        <div class="hidden md:block"></div>
+        <div class="flex flex-row items-center justify-center -ml-4 gap-1">
+          <img
+            class="h-3 md:h-5"
+            src="../../../../../assets/profile/clock.png"
+          />
+          <p>8 weeks</p>
+        </div>
+        <div class="flex flex-row items-center justify-center -ml-4 gap-1">
+          <img
+            class="h-3 md:h-5"
+            src="../../../../../assets/profile/calendar.png"
+          />
+          <p>2024/5/6</p>
+        </div>
+        <div class="flex flex-row items-center justify-center -ml-4 gap-1">
+          <img
+            class="h-3 md:h-5"
+            src="../../../../../assets/profile/location.png"
+          />
+          <p>Dhahran</p>
+        </div>
+      </div>
+    </div>
+    <div class="flex flex-row items-center justify-center w-full mt-2">
+      <button
+        class="text-[0.5rem] md:text-lg px-4 md:px-6 md:py-2 py-1 bg-[#190692] text-[#f1d3b9] rounded-full"
+      >
+        Add Opportunity
+      </button>
+    </div>
   </div>
 </body>
+<footer class="h-24 w-full bg-[#110561]"></footer>

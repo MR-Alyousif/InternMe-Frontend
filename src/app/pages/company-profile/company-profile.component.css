@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Days+One&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Lugrasimo&family=Pacifico&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Lugrasimo&family=Pacifico&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Days+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lugrasimo&family=Pacifico&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Lugrasimo&family=Pacifico&display=swap");
 header {
   top: 0;
 }
@@ -27,10 +27,9 @@ body {
 }
 #InternMe {
   font-size: 32px;
-  font-family: 'Days One';
+  font-family: "Days One";
   background: linear-gradient(to right, #f1c6b9, #fb7e65);
   -webkit-background-clip: text;
-  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 #pages {
@@ -73,13 +72,11 @@ a {
   font-size: 2vw;
 }
 #sTitle {
-  font-size: 1.5vw;
-  font-family: 'Yeseva One';
-  color: #fb7e65;
+  font-family: "Yeseva One";
 }
 #lTitle {
   font-size: 3.1vw;
-  font-family: 'Inter';
+  font-family: "Inter";
   color: #f1c6b9;
   margin-top: 0;
   font-weight: bold;
@@ -87,7 +84,7 @@ a {
 }
 #types {
   position: relative;
-  font-family: 'Pacifico';
+  font-family: "Pacifico";
   margin-top: 0;
   width: 45vw;
   height: 10vw;
@@ -119,7 +116,7 @@ a {
   margin-bottom: 50px;
   background-color: #000539;
   border-radius: 20px;
-  font-family: 'Inter';
+  font-family: "Inter";
   padding-bottom: 20px;
 
   margin-bottom: 0;
@@ -142,7 +139,7 @@ a {
 }
 .row1 > p {
   font-size: 38px;
-  font-family: 'Inter';
+  font-family: "Inter";
   margin-bottom: 5px;
 }
 .row1 > button {
@@ -206,7 +203,7 @@ a {
   font-size: 1.5vw;
   margin-left: 15px;
   color: #f1d3b9;
-  font-family: 'Inter';
+  font-family: "Inter";
   font-weight: bold;
 }
 
@@ -217,7 +214,7 @@ a {
 
 #description {
   text-align: start;
-  font-family: 'Inter';
+  font-family: "Inter";
   font-size: 20px;
   color: #f1d3b9;
   margin-left: 40px;
@@ -295,7 +292,7 @@ a {
 }
 #add {
   font-size: 2vw;
-  font-family: 'Inter';
+  font-family: "Inter";
   font-weight: bold;
   color: #f1d3b9;
   background-color: #190692;
