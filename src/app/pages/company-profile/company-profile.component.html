@@ -108,7 +108,7 @@
       </button>
     </ul>
   </div>
-  <div class="card">
+  <div class="card" *ngFor="let opportunity of opportunities">
     <ul class="row1">
       <p>Posted opportunities</p>
       <button
@@ -120,7 +120,7 @@
     </ul>
     <div class="opportunity">
       <ul class="row1">
-        <p>{{ opportunities[0].title }}</p>
+        <p>{{ opportunity.title }}</p>
         <button
           style="width: 50px; height: 50px; background-color: transparent"
         >
@@ -128,27 +128,27 @@
         </button>
       </ul>
       <p>
-        {{ opportunities[0].description }}
+        {{ opportunity.description }}
       </p>
       <ul id="card_footer">
         <ul id="skills">
-          <div class="skill" *ngFor="let skill of opportunities[0].skills">
+          <div class="skill" *ngFor="let skill of opportunity.skills">
             {{ skill }}
           </div>
         </ul>
         <ul id="date">
           <div>
             <img src="assets/icon/clock.png" class="icons" />
-            <label>{{ opportunities[0].duration }}</label>
+            <label>{{ opportunity.duration }}</label>
           </div>
           <div>
             <img src="assets/icon/calendar.png" class="icons" /><label>
-              {{ opportunities[0].date }}</label
+              {{ opportunity.date }}</label
             >
           </div>
           <div>
             <img src="assets/icon/location.png" class="icons" /><label>
-              {{ opportunities[0].location }}</label
+              {{ opportunity.location }}</label
             >
           </div>
         </ul>
