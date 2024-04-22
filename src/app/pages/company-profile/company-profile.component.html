@@ -1,5 +1,159 @@
-<app-navbar></app-navbar>
-<div class="scrollbar-thumb-rounded-full scrollbar-track-rounded-full scrollbar scrollbar-thumb-slate-700 scrollbar-track-slate-300 h-32 overflow-y-scroll">
-    <p>company-profile works!</p>
-    <div class="h-64 bg-slate-400"></div>
-</div>
+<header>
+  <ul id="nav">
+    <label id="InternMe">InternMe</label>
+    <ul id="pages">
+      <a routerLink="" routerLinkActive="active" ariaCurrentWhenActive="page"
+        >Home</a
+      >
+      <a
+        routerLink="/explore"
+        routerLinkActive="active"
+        ariaCurrentWhenActive="page"
+        >Explore</a
+      >
+      <a href="">Contact</a>
+      <a
+        routerLink="/sign-in"
+        routerLinkActive="active"
+        ariaCurrentWhenActive="page"
+        >Login</a
+      >
+    </ul>
+    <button id="shortCut">
+      <ul id="links">
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+      </ul>
+    </button>
+  </ul>
+</header>
+<body>
+  <div
+    style="
+      background-color: #010517;
+      width: 100%;
+      height: 100px;
+      position: absolute;
+    "
+  ></div>
+  <div id="container">
+    <div id="title">
+      <p id="sTitle">Welcome to Intern Me!</p>
+      <p id="lTitle">Best website to connect with students</p>
+      <div id="types">
+        <p id="intership">Internship</p>
+        <p id="summer">Summer Training</p>
+        <p id="coop">Co-op</p>
+      </div>
+    </div>
+    <img id="desk" src="assets/job 2.png" />
+    <div id="gradient"></div>
+  </div>
+
+  <div class="card">
+    <ul class="row1">
+      <p>Basic Information</p>
+      <button
+        id="edit"
+        style="width: 50px; height: 50px; background-color: transparent"
+      >
+        <img src="assets/icon/pensil.png" />
+      </button>
+    </ul>
+    <ul class="row2">
+      <ul>
+        <p class="signs">Company Name</p>
+        <p class="info">{{ companyInfo.name }}</p>
+      </ul>
+      <ul>
+        <p class="signs">Website</p>
+        <p class="info">{{ companyInfo.website }}</p>
+      </ul>
+    </ul>
+    <ul class="row2">
+      <ul>
+        <p class="signs">Location</p>
+        <ul class="one_row">
+          <img class="icons" src="assets/icon/location.png" />
+          <p class="info">{{ companyInfo.location }}</p>
+        </ul>
+      </ul>
+      <ul>
+        <p class="signs">Email</p>
+        <ul class="one_row">
+          <img class="icons" src="assets/icon/mail.png" />
+          <p class="info">{{ companyInfo.email }}</p>
+        </ul>
+      </ul>
+      <ul>
+        <p class="signs">Phone</p>
+        <ul class="one_row">
+          <img class="icons" src="assets/icon/phone plus.png" />
+          <p class="info">{{ companyInfo.phone }}</p>
+        </ul>
+      </ul>
+    </ul>
+    <ul class="row1">
+      <button class="flex flex-row items-center">
+        <img class="icons" src="assets/icon/download.png" /><label
+          >Company Logo</label
+        >
+      </button>
+    </ul>
+  </div>
+  <div class="card">
+    <ul class="row1">
+      <p>Posted opportunities</p>
+      <button
+        id="edit"
+        style="width: 50px; height: 50px; background-color: transparent"
+      >
+        <img src="assets/icon/pensil.png" />
+      </button>
+    </ul>
+    <div class="opportunity">
+      <ul class="row1">
+        <p>{{ opportunities[0].title }}</p>
+        <button
+          style="width: 50px; height: 50px; background-color: transparent"
+        >
+          <img src="assets/icon/pensil.png" />
+        </button>
+      </ul>
+      <p>
+        {{ opportunities[0].description }}
+      </p>
+      <ul id="card_footer">
+        <ul id="skills">
+          <div class="skill" *ngFor="let skill of opportunities[0].skills">
+            {{ skill }}
+          </div>
+        </ul>
+        <ul id="date">
+          <div>
+            <img src="assets/icon/clock.png" class="icons" />
+            <label>{{ opportunities[0].duration }}</label>
+          </div>
+          <div>
+            <img src="assets/icon/calendar.png" class="icons" /><label>
+              {{ opportunities[0].date }}</label
+            >
+          </div>
+          <div>
+            <img src="assets/icon/location.png" class="icons" /><label>
+              {{ opportunities[0].location }}</label
+            >
+          </div>
+        </ul>
+      </ul>
+    </div>
+    <button id="add">Add Opportunity</button>
+  </div>
+</body>
