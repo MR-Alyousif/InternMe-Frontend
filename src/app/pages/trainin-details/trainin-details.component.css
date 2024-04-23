@@ -50,7 +50,7 @@ img {
 
 h1 {
   text-align: center;
-  margin: 50px 0 50px 0;
+  
   font-family: 'Yeseva One';
   font-weight: bold;
   background: linear-gradient(to right, #f4dcab, white);
@@ -91,4 +91,51 @@ button {
 }
 #buttons {
   text-align: center;
+}
+
+#shortCut{
+  display: none;
+}
+
+@media only screen and (max-width: 900px){
+  #pages {
+    grid-column-gap: 2vw;
+  }
+  #pages > a {
+    font-size: 2.8vw;
+  }
+    #InternMe{
+        font-size: 3.7vw;
+    }
+    
+}
+@media only screen and (max-width: 500px){
+    #pages{
+        display: none;
+    }
+    #shortCut{
+        display:contents;
+        width: 1vw;
+        height: 1vw;
+        background-color: transparent;
+        border: 0;
+        padding: 0;
+    }
+    #links{
+        display: grid;
+        grid-template-columns: auto auto auto;
+        grid-template-rows: auto auto auto;
+        grid-column-gap: 1vw;
+        grid-row-gap: 1vw;
+        padding: 0;
+    
+    }
+    .circle{
+        background-color: #F1C6B9;
+        border-radius: 50%;
+        width: 1.5vw;
+        height: 1.5vw;
+        padding: 0;
+    
+    }
 }

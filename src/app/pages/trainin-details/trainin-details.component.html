@@ -1,73 +1,101 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Training Details</title>
-  </head>
-  <body>
-    <header>
-      <ul id="nav">
-        <li id="InternMe">InternMe</li>
-        <li id="pages">
-          <a
-            routerLink=""
-            routerLinkActive="active"
-            ariaCurrentWhenActive="page"
-            >Home</a
-          >
-          <a
-            routerLink="/explore"
-            routerLinkActive="active"
-            ariaCurrentWhenActive="page"
-            >Explore</a
-          >
-          <a
-            routerLink="/company-profile"
-            routerLinkActive="active"
-            ariaCurrentWhenActive="page"
-            >Profile</a
-          >
-          <a
-            routerLink="/sign-in"
-            routerLinkActive="active"
-            ariaCurrentWhenActive="page"
-            >Login</a
-          >
-        </li>
+<header>
+  <ul id="nav">
+    <label id="InternMe">InternMe</label>
+    <ul id="pages">
+      <a routerLink="" routerLinkActive="active" ariaCurrentWhenActive="page"
+        >Home</a
+      >
+      <a
+        routerLink="/explore"
+        routerLinkActive="active"
+        ariaCurrentWhenActive="page"
+        >Explore</a
+      >
+      <a
+        routerLink="/company-profile"
+        routerLinkActive="active"
+        ariaCurrentWhenActive="page"
+        >Profile</a
+      >
+      <a
+        routerLink="/sign-in"
+        routerLinkActive="active"
+        ariaCurrentWhenActive="page"
+        >Login</a
+      >
+    </ul>
+    <button id="shortCut">
+      <ul id="links">
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
       </ul>
-    </header>
-    <img src="assets/job.png" />
-    <div class="info grid grid-cols-1 gap-10">
-      <div class="">
-        <div class="mx-auto mt-16 w-1/3">
-          <img src="{{ training.logo }}" />
-        </div>
-        <h1 class="text-6xl">{{ training.companyName }}</h1>
+    </button>
+  </ul>
+</header>
+<body>
+  <img src="assets/job.png" />
+  <div
+    class="info grid grid-cols-1 gap-5 sm:gap-6 md:gap-7 lg:gap-10 xl:gap-14"
+  >
+    <div class="">
+      <div class="mx-auto mt-16 w-1/3">
+        <img src="{{ training.logo }}" />
       </div>
-      <form id="description">
-        <h2 class="text-secondary-200">Description</h2>
-        <p class="p-3 text-base">{{ training.description }}</p>
-      </form>
-      <form id="responsibilities">
-        <h2 class="text-secondary-200">Responsibilities</h2>
-        <ol class="p-3 text-base">
-          <li *ngFor="let responsibility of training.responsibility">
-            {{ responsibility }}
-          </li>
-        </ol>
-      </form>
-      <form id="qualifications">
-        <h2 class="text-secondary-200">Qualifications</h2>
-        <ol class="p-3 text-base">
-          <li *ngFor="let qualification of training.qualification">
-            {{ qualification }}
-          </li>
-        </ol>
-      </form>
-      <div id="buttons">
-        <input class="post" type="submit" value="Post Offer" />
-      </div>
+      <h1
+        class="mt-3 text-4xl md:text-5xl lg:mt-5 lg:text-6xl xl:mt-8 xl:text-7xl 2xl:text-8xl"
+      >
+        {{ training.companyName }}
+      </h1>
     </div>
-  </body>
-</html>
+    <form id="description">
+      <h2
+        class="text-sm text-secondary-200 sm:mb-1 sm:text-lg md:mb-2 md:text-xl lg:mb-3 lg:text-3xl xl:mb-5 xl:text-4xl 2xl:text-4xl"
+      >
+        Description
+      </h2>
+      <p
+        class="max-h-[100px] overflow-auto p-3 text-[9px] sm:max-h-[150px] sm:text-xs md:max-h-[200px] md:text-sm lg:max-h-[260px] lg:text-base xl:max-h-[300px] xl:text-lg 2xl:max-h-[350px] 2xl:text-xl"
+      >
+        {{ training.description }}
+      </p>
+    </form>
+    <form id="responsibilities">
+      <h2
+        class="text-sm text-secondary-200 sm:mb-1 sm:text-lg md:mb-2 md:text-xl lg:mb-3 lg:text-3xl xl:mb-5 xl:text-4xl 2xl:text-4xl"
+      >
+        Responsibilities
+      </h2>
+      <ol
+        class="max-h-[100px] overflow-auto p-3 text-[9px] sm:max-h-[150px] sm:text-xs md:max-h-[200px] md:text-sm lg:max-h-[260px] lg:text-base xl:max-h-[300px] xl:text-lg 2xl:max-h-[350px] 2xl:text-xl"
+      >
+        <li *ngFor="let responsibility of training.responsibility">
+          {{ responsibility }}
+        </li>
+      </ol>
+    </form>
+    <form id="qualifications">
+      <h2
+        class="text-sm text-secondary-200 sm:mb-1 sm:text-lg md:mb-2 md:text-xl lg:mb-3 lg:text-3xl xl:mb-5 xl:text-4xl 2xl:text-4xl"
+      >
+        Qualifications
+      </h2>
+      <ol
+        class="max-h-[100px] overflow-auto p-3 text-[9px] sm:max-h-[150px] sm:text-xs md:max-h-[200px] md:text-sm lg:max-h-[260px] lg:text-base xl:max-h-[300px] xl:text-lg 2xl:max-h-[350px] 2xl:text-xl"
+      >
+        <li *ngFor="let qualification of training.qualification">
+          {{ qualification }}
+        </li>
+      </ol>
+    </form>
+    <div id="buttons">
+      <input class="post" type="submit" value="Post Offer" />
+    </div>
+  </div>
+</body>
