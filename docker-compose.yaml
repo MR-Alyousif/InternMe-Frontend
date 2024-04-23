@@ -11,6 +11,7 @@ services:
     volumes:
       #- ./fs-storage:/app/fs-storage  # storing images?
       - ./:/app
+      - /app/node_modules
     networks:
       - intern_me-network
 
