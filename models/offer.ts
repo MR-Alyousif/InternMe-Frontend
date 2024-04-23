@@ -7,7 +7,7 @@ interface IOffer {
   description: string
   startingDate: Date
   duration: string
-  locaiton: string
+  location: string
   url: string
   major: string
   requiredGPA: {
@@ -20,7 +20,6 @@ interface IOffer {
   company: {
     name: string
     logo: string // fs path
-    id: ObjectId
     username: string
   }
 }
@@ -30,7 +29,7 @@ const offerSchema = new Schema<IOffer>({
   description: { type: String, required: true },
   startingDate: { type: Date, required: true },
   duration: { type: String, required: true },
-  locaiton: { type: String, required: true },
+  location: { type: String, required: true },
   url: { type: String, required: true },
   major: { type: String, required: true },
   requiredGPA: {
@@ -45,7 +44,6 @@ const offerSchema = new Schema<IOffer>({
       // redundent? this is nosql son! otherwise we'll sacrifice the performance.
       name: { type: String, required: true },
       logo: { type: String, required: true }, // fs path
-      id: { type: Schema.ObjectId, required: true },
       username: { type: String, required: true }
     },
     required: true

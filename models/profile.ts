@@ -72,14 +72,14 @@ interface IProfileCompany {
 
 const profileCompanySchema = new Schema<IProfileCompany>({
   basicInfo: {
-    name: { type: String, required: true, default: '' },
-    website: { type: String, required: true, default: '' },
-    location: { type: String, required: true, default: '' },
+    name: { type: String, required: false, default: '' },
+    website: { type: String, required: false, default: '' },
+    location: { type: String, required: false, default: '' },
     // email: String, [this is ommited as the User object already has this info]
-    phone: { type: String, required: true, default: '' },
+    phone: { type: String, required: false, default: '' },
     logo: String // fs path
   },
-  userUsername: { type: String, required: true, unique: true }
+  userUsername: { type: String, required: false, unique: true }
 })
 
 const ProfileCompany = db.model<IProfileCompany>(
