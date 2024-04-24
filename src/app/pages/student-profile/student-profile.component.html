@@ -39,7 +39,7 @@
     </button>
   </ul>
 </header>
-<body>
+<body class="flex flex-col items-center gap-6">
   <div
     style="
       background-color: #010517;
@@ -61,96 +61,129 @@
     </ul>
   </div>
 
-  <div class="card p-10">
-    <ul class="row1">
-      <p>Basic Information</p>
-      <button style="width: 50px; height: 50px; background-color: transparent">
-        <img src="assets/profile/pensil.png" />
+  <div
+    class="flex flex-col px-8 md:px-16 py-4 md:py-10 gap-2 md:gap-8 items-center justify-center w-[85vw] md:w-[65vw] bg-gradient-to-r from-[#b0694b] to-[#855162] rounded-xl md:rounded-2xl"
+  >
+    <div class="flex flex-row items-center justify-between w-full">
+      <h3 class="md:text-4xl text-lg">Basic Information</h3>
+      <button>
+        <img
+          class="w-5 md:w-8"
+          src="../../../../../assets/profile/pensil.png"
+        />
       </button>
-    </ul>
-    <ul class="row2">
-      <ul>
-        <p class="signs">Full Name</p>
-        <p class="info">{{ info.fullName }}</p>
-      </ul>
-      <ul>
-        <p class="signs">Email</p>
-        <ul class="one_row">
-          <img class="icons" src="assets/profile/mail.png" />
-          <p class="info">{{ info.email }}</p>
-        </ul>
-      </ul>
-      <ul>
-        <p class="signs">Phone</p>
-        <ul class="one_row">
-          <img class="icons" src="assets/profile/phone plus.png" />
-          <p class="info">{{ info.phone }}</p>
-        </ul>
-      </ul>
-    </ul>
-    <ul class="row2">
-      <ul>
-        <p class="signs">University</p>
-        <p class="info">{{ info.university }}</p>
-      </ul>
-      <ul>
-        <p class="signs">Major</p>
-        <p class="info">{{ info.major }}</p>
-      </ul>
-    </ul>
-    <ul class="row1">
-      <button class="flex flex-row items-center justify-evenly">
-        <img class="icons" src="assets/profile/download.png" /><label
-          >Upload Resume</label
-        >
+    </div>
+    <div
+      class="grid grid-cols-2 md:grid-cols-3 gap-y-4 my-2 md:ml-24 justify-between w-full"
+    >
+      <div class="flex flex-col text-xs items-start justify-center gap-1">
+        <h5 class="text-secondary-200 md:text-base md:font-medium">
+          Full&nbsp;Name
+        </h5>
+        <p class="md:text-xl">{{ info.fullName }}</p>
+      </div>
+      <div class="flex flex-col text-xs items-start justify-center gap-1">
+        <h5 class="text-secondary-200 md:text-base md:font-medium">Email</h5>
+        <div class="flex flex-row gap-2">
+          <img
+            class="h-3 mt-[3px] md:h-5 md:mt-[5px]"
+            src="../../../../../assets/profile/mail.png"
+          />
+          <p class="md:text-xl">{{ info.email }}</p>
+        </div>
+      </div>
+      <div class="flex flex-col items-start justify-center gap-1 text-xs">
+        <h5 class="text-secondary-200 md:text-base md:font-medium">Phone</h5>
+        <div class="flex flex-row gap-2">
+          <img
+            class="mt-[3px] h-3 md:mt-[5px] md:h-5"
+            src="assets/profile/phone plus.png"
+          />
+          <p class="md:text-xl">{{ info.phone }}</p>
+        </div>
+      </div>
+      <div class="flex flex-col text-xs items-start justify-center gap-1">
+        <h5 class="text-secondary-200 md:text-base md:font-medium">
+          University
+        </h5>
+        <p class="md:text-xl">{{ info.university }}</p>
+      </div>
+      <div class="flex flex-col text-xs items-start justify-center gap-1">
+        <h5 class="text-secondary-200 md:text-base md:font-medium">Major</h5>
+        <p class="md:text-xl">{{ info.major }}</p>
+      </div>
+    </div>
+    <div class="flex flex-row items-start justify-between w-full md:ml-20 mt-2">
+      <button
+        class="flex flex-row items-center justify-center gap-4 px-4 md:px-6 md:py-2 py-1 bg-[#f1c6b9] text-[#b0694b] rounded-full"
+      >
+        <img
+          class="w-2 md:w-6"
+          src="../../../../../assets/profile/download.png"
+        />
+        <h4 class="text-[0.5rem] md:text-lg font-medium">Company Logo</h4>
       </button>
-      <button class="flex flex-row items-center justify-evenly">
-        <img class="icons" src="assets/profile/download.png" /><label
-          >Image Profile</label
-        >
+      <button
+        class="flex flex-row items-center justify-center gap-4 px-4 md:px-6 md:py-2 py-1 bg-[#f1c6b9] text-[#b0694b] rounded-full"
+      >
+        <img
+          class="w-2 md:w-6"
+          src="../../../../../assets/profile/download.png"
+        />
+        <h4 class="text-[0.5rem] md:text-lg font-medium">Profile Image</h4>
       </button>
-    </ul>
+    </div>
   </div>
 
-  <div class="card p-10">
-    <ul class="row1">
-      <p>Description</p>
-      <button style="width: 50px; height: 50px; background-color: transparent">
-        <img src="assets/profile/pensil.png" />
-      </button>
-    </ul>
-    <p id="description">
-      {{ info.description }}
-    </p>
-  </div>
+  <div
+    class="gap-6 flex flex-col items-center justify-center md:grid md:grid-cols-2 w-full md:w-[65vw]"
+  >
+    <div
+      class="flex flex-col px-8 h-full md:px-16 py-4 md:py-10 gap-2 md:gap-8 items-center justify-center w-[85vw] md:w-full bg-gradient-to-r from-[#b0694b] to-[#855162] rounded-xl md:rounded-2xl"
+    >
+      <div class="flex flex-row items-center justify-between w-full">
+        <h3 class="md:text-4xl text-lg">Skills</h3>
+        <button>
+          <img
+            class="w-5 md:w-8"
+            src="../../../../../assets/profile/pensil.png"
+          />
+        </button>
+      </div>
+      <div class="grid grid-cols-3 gap-3 text-white pb-3 pt-1">
+        <div
+          class="rounded-full bg-[#CE8459] py-1 px-2 text-center text-sm md:text-lg"
+          *ngFor="let skill of info.skills"
+        >
+          {{ skill }}
+        </div>
+      </div>
+    </div>
 
-  <ul id="cards">
-    <div class="card p-10" style="margin-right: 0; width: auto">
-      <ul class="row1">
-        <p>Projects</p>
-        <button
-          style="width: 50px; height: 50px; background-color: transparent"
-        >
-          <img src="assets/profile/pensil.png" />
+    <div
+      class="flex flex-col px-8 h-full md:px-16 pt-8 pb-12 md:py-10 gap-4 md:gap-8 items-center justify-center w-[85vw] md:w-full bg-gradient-to-r from-[#b0694b] to-[#855162] rounded-xl md:rounded-2xl"
+    >
+      <div class="flex flex-row items-center justify-between w-full">
+        <h3 class="md:text-4xl text-lg">Projects</h3>
+        <button>
+          <img
+            class="w-5 md:w-8"
+            src="../../../../../assets/profile/pensil.png"
+          />
         </button>
-      </ul>
-      <p id="description">
-        {{ info.projectsDescription }}
-      </p>
+      </div>
+      <div
+        class="flex flex-col items-start w-[80%] justify-center md:gap-2 border-b border-b-[#F1C6B9] pb-4 pt-1"
+        *ngFor="let project of info.projects"
+      >
+        <h5 class="text-base md:text-xl font-medium">
+          {{ project.title }}
+        </h5>
+        <p class="text-sm md:text-base text-left text-[#F1C6B9]">
+          {{ project.description }}
+        </p>
+      </div>
     </div>
-    <div class="card p-10" style="margin-left: 0; width: auto">
-      <ul class="row1">
-        <p>Skills</p>
-        <button
-          style="width: 50px; height: 50px; background-color: transparent"
-        >
-          <img src="assets/profile/pensil.png" />
-        </button>
-      </ul>
-      <ul id="skills">
-        <div class="skill" *ngFor="let skill of info.skills">{{ skill }}</div>
-      </ul>
-    </div>
-  </ul>
+  </div>
 </body>
 <footer class="h-24 w-full bg-[#d08261]"></footer>

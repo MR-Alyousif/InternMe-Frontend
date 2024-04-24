@@ -13,11 +13,31 @@ export class StudentProfileComponent {
   info: any = {
     fullName: 'Khalid Ahmed',
     major: 'Software Engineering',
-    description: "Aspiring front-end developer with a passion for crafting engaging and user-eccentric web experiences. I leverage strong coding skills and a creative eye to translate complex functionalities into intuitive interfaces. Always eager to learn and collaborate, I'm actively seeking opportunities to contribute to innovative front-end projects.",
+    description:
+      "Aspiring front-end developer with a passion for crafting engaging and user-eccentric web experiences. I leverage strong coding skills and a creative eye to translate complex functionalities into intuitive interfaces. Always eager to learn and collaborate, I'm actively seeking opportunities to contribute to innovative front-end projects.",
     email: 'khalid_ahmed@gmail.com',
     phone: '05000020394',
-    university: 'King Fahd University of Petroleum and Minerals',
-    projectsDescription: "Aspiring front-end developer with a passion for crafting engaging and user-eccentric web experiences. I leverage strong coding skills and a creative eye to translate complex functionalities into intuitive interfaces. Always eager to learn and collaborate, I'm actively seeking opportunities to contribute to innovative front-end projects.",
-    skills: ['UI Designer', 'Figma', 'Landing Page']
+    university: 'KFUPM',
+    projects: [
+      {
+        title: 'InternMe',
+        description: 'Website to help student to find internships',
+      },
+      {
+        title: 'Blood Donation',
+        description: 'Mobile app to help organize blood donation events',
+      },
+    ],
+    skills: [
+      'UI Designer',
+      'Figma',
+      'HTML/CSS',
+      'Golang',
+      'Javascript',
+      'DevOps',
+      'Git',
+      'Bitbucket',
+      'Angular',
+    ],
   };
 }
