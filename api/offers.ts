@@ -101,40 +101,48 @@ router.post('/create', authorizeOnlyCompany, async (req, res) => {
 
 // list all offers (with filters)
 router.get('/list', async (req, res) => {
-  // HERE should get the one and only parameter to the filter
-  const filter = req.query.filter
+  const majors = req.query.majors as string
+  const skills = req.query.skills as string
+  const gpaOutOf4 = req.query.gpaOutOf4 as string
+  const durationInWeeks = req.query.durationInWeeks as string
+  const page = req.query.page as string
+
+  const showAmount = 1
+  const requiredOutput =
+    'company.name company.logo name startingDate durationInWeeks location description skills'
+  const baseQuery = { startingDate: { $gt: new Date() } }
 
   try {
-    const offers = await Offer.find(
-      { startingDate: { $gt: new Date() } },
-      'company.name company.logo name startingDate durationInWeeks location description skills'
-    )
-    // This code is commented until it's fixed. stop being dumb.
-    /*
-    let filteredOffers
-    switch (filter) {
-      case 'gpa':
-        filteredOffers = offers.filter((offer) => {
-          return offer.requiredGPA.outOf4 <= 3 || offer.requiredGPA.outOf5 <= 4
-        })
-        break
-      case 'date':
-        // Apply date filter logic here
-        // Example: query = { ...query, startingDate: { $gt: req.query.startDate } };
-        break
-      case 'location':
-        // Apply location filter logic here
-        // Example: query = { ...query, location: req.query.location };
-        break
-      default:
-        break
+    let query
+    if (majors) {
+      query = { ...baseQuery, majors: { $in: majors.split(',') } }
+    } else if (skills) {
+      query = { ...baseQuery, skills: { $in: skills.split(',') } }
+    } else if (gpaOutOf4) {
+      query = {
+        ...baseQuery,
+        'requiredGPA.outOf4': { $lte: parseFloat(gpaOutOf4) }
+      }
+    } else if (durationInWeeks) {
+      query = {
+        ...baseQuery,
+        durationInWeeks: { $lte: parseInt(durationInWeeks) }
+      }
+    } else {
+      query = baseQuery
     }
-    */
-    //if (filteredOffers.length > 0) {
-    res.status(200).json({ error: null, offers: offers })
-    //} else {
-    //  res.status(404).json({ error: 'no offers available', offers: null })
-    //}
+
+    // skip accepts zero but err if negative, -1 to make request accept only 1 and above
+    const offers = await Offer.find(query, requiredOutput, {
+      limit: showAmount,
+      skip: parseInt(page) * showAmount - 1
+    })
+
+    if (offers.length > 0) {
+      res.status(200).json({ error: null, offers: offers })
+    } else {
+      res.status(404).json({ error: 'no offers available', offers: null })
+    }
   } catch (err) {
     res.status(400).json({ error: err, offers: null })
   }
