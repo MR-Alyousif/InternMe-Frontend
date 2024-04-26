@@ -45,7 +45,7 @@ router.get('/me', async (req, res) => {
 
 // get profile data by username
 router.get('/:username', async (req, res) => {
-  const username = req.params.username
+  const username = req.params.username.toLowerCase()
   try {
     const user = await User.findOne({ username: username })
     if (!user)

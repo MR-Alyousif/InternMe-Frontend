@@ -12,10 +12,10 @@ const secret = process.env.JWT_SECRET || '' // TODO: panic when no secret is pro
 
 // create a new account
 router.post('/register', async (req, res) => {
-  const email = req.body.email
-  const username = req.body.username
+  const email = req.body.email.toLowerCase()
+  const username = req.body.username.toLowerCase()
   const password = req.body.password
-  const role = req.body.role
+  const role = req.body.role.toLowerCase()
 
   // TODO: validate with regex
   if (
@@ -56,7 +56,7 @@ router.post('/register', async (req, res) => {
 
 // login (get a jwt token)
 router.post('/login', async (req, res) => {
-  const username = req.body.username
+  const username = req.body.username.toLowerCase()
   const password = req.body.password
 
   // TODO: validate with regex
@@ -112,7 +112,7 @@ router.get('/me', authenticate, async (req, res) => {
 
 // get a user by username
 router.get('/:username', authenticate, async (req, res) => {
-  const username = req.params.username
+  const username = req.params.username.toLowerCase()
   try {
     const user = await User.findOne(
       { username: username },
