@@ -16,7 +16,7 @@ router.post('/create', authorizeOnlyCompany, async (req, res) => {
   const durationInWeeks = req.body.durationInWeeks
   const location = req.body.location
   const url = req.body.url
-  const major = req.body.major
+  const majors = req.body.majors
   const requiredGPA4 = req.body.requiredGPA.outOf4
   const requiredGPA5 = req.body.requiredGPA.outOf5
   const skills = req.body.skills
@@ -32,7 +32,7 @@ router.post('/create', authorizeOnlyCompany, async (req, res) => {
       durationInWeeks &&
       location &&
       url &&
-      major &&
+      majors &&
       requiredGPA4 &&
       requiredGPA5 &&
       skills &&
@@ -71,7 +71,7 @@ router.post('/create', authorizeOnlyCompany, async (req, res) => {
     durationInWeeks: durationInWeeks,
     location: location,
     url: url,
-    major: major,
+    majors: majors,
     requiredGPA: {
       outOf4: requiredGPA4,
       outOf5: requiredGPA5

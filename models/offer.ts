@@ -9,7 +9,7 @@ interface IOffer {
   durationInWeeks: number // integer
   location: string
   url: string
-  major: string
+  majors: string[]
   requiredGPA: {
     outOf4: number
     outOf5: number
@@ -31,7 +31,7 @@ const offerSchema = new Schema<IOffer>({
   durationInWeeks: { type: Number, required: true }, // integer
   location: { type: String, required: true },
   url: { type: String, required: true },
-  major: { type: String, required: true },
+  majors: { type: [String], required: true },
   requiredGPA: {
     outOf4: { type: Number, required: true },
     outOf5: { type: Number, required: true }
