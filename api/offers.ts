@@ -61,7 +61,7 @@ router.post('/create', authorizeOnlyCompany, async (req, res) => {
     companyName = profile.basicInfo.name
     companyLogo = profile.logo
   } catch (err) {
-    res.status(400).json({ error: err })
+    return res.status(400).json({ error: err })
   }
 
   const newOffer = new Offer({
@@ -148,7 +148,9 @@ router.get('/:offerId', async (req, res) => {
     if (offer) {
       res.status(200).json({ error: null, offer: offer })
     } else {
-      res.status(404).json({ error: `id '${id}' not found`, offer: null })
+      res
+        .status(404)
+        .json({ error: `offer with id '${id}' not found`, offer: null })
     }
   } catch (err) {
     res.status(400).json({ error: err, offer: null })
@@ -164,7 +166,7 @@ router.delete('/:offerId', authorizeOnlyCompany, async (req, res) => {
     if (offer) {
       res.status(200).json({ error: null })
     } else {
-      res.status(404).json({ error: `id '${id}' not found` })
+      res.status(404).json({ error: `offer with id '${id}' not found` })
     }
   } catch (err) {
     res.status(400).json({ error: err })
@@ -188,7 +190,7 @@ router.put('/:offerId', authorizeOnlyCompany, async (req, res) => {
       await offer.save()
       res.status(200).json({ error: null })
     } else {
-      res.status(404).json({ error: `id '${id}' not found` })
+      res.status(404).json({ error: `offer with id '${id}' not found` })
     }
   } catch (err) {
     res.status(400).json({ error: err })
