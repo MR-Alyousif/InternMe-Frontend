@@ -44,7 +44,7 @@ const profileStudentSchema = new Schema<IProfileStudent>({
     bio: { type: String, required: false, default: '' },
     photo: String // fs path
   },
-  skills: [{ _type: String, skill: String }],
+  skills: [{ type: String }],
   projects: [{ title: String, brief: String }],
   userUsername: { type: String, required: true, unique: true }
 })

@@ -112,18 +112,6 @@ router.put('/skills', authorizeOnlyStudent, async (req, res) => {
     res.status(400).json({ error: 'skills should be an array' })
     return
   }
-  for (const skill of skills) {
-    if (!(skill._type === 'technical' || skill._type === 'soft')) {
-      res
-        .status(400)
-        .json({ error: "skill._type should be either 'technical' or 'soft'" })
-      return
-    }
-    if (typeof skill.skill !== 'string') {
-      res.status(400).json({ error: 'skill.skill should be of type string' })
-      return
-    }
-  }
 
   const username = req.user?.username
   try {
