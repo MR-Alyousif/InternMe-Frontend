@@ -160,7 +160,7 @@ router.get('/list', async (req, res) => {
     // skip accepts zero but err if negative, -1 to make request accept only 1 and above
     const offers = await Offer.find(query, requiredOutput, {
       limit: _limit,
-      skip: (parseInt(page) - 1) * _limit
+      skip: (_page - 1) * _limit
     })
 
     res.status(200).json({ error: null, offers: offers })
