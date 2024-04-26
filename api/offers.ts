@@ -59,7 +59,7 @@ router.post('/create', authorizeOnlyCompany, async (req, res) => {
         .json({ error: `profile '${companyUsername}' not found` })
     }
     companyName = profile.basicInfo.name
-    companyLogo = profile.basicInfo.logo
+    companyLogo = profile.logo
   } catch (err) {
     res.status(400).json({ error: err })
   }

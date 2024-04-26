@@ -206,7 +206,7 @@ const FS_STORAGE = multer({
   }
 }).single('file')
 
-// TODO: update all company's offers if logo changed!
+// upload company.profile.logo or student.profile.photo
 router.post('/img/upload', (req, res) => {
   FS_STORAGE(req, res, async (err) => {
     if (err instanceof multer.MulterError) {
@@ -224,15 +224,15 @@ router.post('/img/upload', (req, res) => {
         const profileAttr = isStudent ? 'photo' : 'logo'
         const profile = await (profileModel as any).findOne(
           { userUsername: username },
-          `basicInfo.${profileAttr}`
+          profileAttr
         )
         if (profile) {
           // remove old file associated with user
-          const oldFileName = profile.basicInfo[profileAttr] || ''
+          const oldFileName = profile[profileAttr] || ''
           const oldFilePath = path.join(FS_STORAGE_PATH, oldFileName)
           removeFileIfExists(oldFilePath)
 
-          await profile.set(`basicInfo.${profileAttr}`, req.filename).save()
+          await profile.set(profileAttr, req.filename).save()
           res.status(201).json({ error: null, filename: req.filename })
         } else {
           // rollback first

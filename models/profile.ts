@@ -22,8 +22,8 @@ interface IProfileStudent {
       major: string
     }
     bio: string
-    photo: string // fs path
   }
+  photo: string // fs path
   skills: Skill[]
   projects: Project[]
   userUsername: string
@@ -41,9 +41,9 @@ const profileStudentSchema = new Schema<IProfileStudent>({
       university: { type: String, required: false, default: '' },
       major: { type: String, required: false, default: '' }
     },
-    bio: { type: String, required: false, default: '' },
-    photo: String // fs path
+    bio: { type: String, required: false, default: '' }
   },
+  photo: { type: String, required: false }, // fs path
   skills: [{ type: String }],
   projects: [{ title: String, brief: String }],
   userUsername: { type: String, required: true, unique: true }
@@ -65,8 +65,8 @@ interface IProfileCompany {
     location: string
     // email: string [this is ommited as the User object already has this info]
     phone: string
-    logo: string // fs path
   }
+  logo: string // fs path
   userUsername: string
 }
 
@@ -76,9 +76,9 @@ const profileCompanySchema = new Schema<IProfileCompany>({
     website: { type: String, required: false, default: '' },
     location: { type: String, required: false, default: '' },
     // email: String, [this is ommited as the User object already has this info]
-    phone: { type: String, required: false, default: '' },
-    logo: String // fs path
+    phone: { type: String, required: false, default: '' }
   },
+  logo: { type: String, required: false }, // fs path
   userUsername: { type: String, required: false, unique: true }
 })
 
