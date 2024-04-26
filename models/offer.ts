@@ -15,8 +15,8 @@ interface IOffer {
     outOf5: number
   }
   skills: string[]
-  responsibilities: string
-  qualifications: string
+  responsibilities: string[]
+  qualifications: string[]
   company: {
     name: string
     logo: string // fs path
@@ -37,8 +37,8 @@ const offerSchema = new Schema<IOffer>({
     outOf5: { type: Number, required: true }
   },
   skills: { type: [String], required: true },
-  responsibilities: { type: String, required: true },
-  qualifications: { type: String, required: true },
+  responsibilities: { type: [String], required: true },
+  qualifications: { type: [String], required: true },
   company: {
     type: {
       // redundent? this is nosql son! otherwise we'll sacrifice the performance.
