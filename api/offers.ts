@@ -106,8 +106,21 @@ router.get('/list', async (req, res) => {
   const gpaOutOf4 = req.query.gpaOutOf4 as string
   const durationInWeeks = req.query.durationInWeeks as string
   const page = req.query.page as string
+  const showAmountStr = req.query.showAmount as string
+  let showAmountInt = parseInt(showAmountStr)
 
-  const showAmount = 1
+  if (!showAmountStr) {
+    showAmountInt = 10
+  } else if (showAmountInt < 1) {
+    res
+      .status(400)
+      .json({
+        error: 'showAmount must be an integer greater than 0',
+        offers: null
+      })
+    return
+  }
+
   const requiredOutput =
     'company.name company.logo name startingDate durationInWeeks location description skills'
   const baseQuery = { startingDate: { $gt: new Date() } }
@@ -134,8 +147,8 @@ router.get('/list', async (req, res) => {
 
     // skip accepts zero but err if negative, -1 to make request accept only 1 and above
     const offers = await Offer.find(query, requiredOutput, {
-      limit: showAmount,
-      skip: parseInt(page) * showAmount - 1
+      limit: showAmountInt,
+      skip: (parseInt(page) - 1) * showAmountInt
     })
 
     if (offers.length > 0) {
