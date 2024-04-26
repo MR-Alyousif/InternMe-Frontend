@@ -104,21 +104,29 @@ router.get('/list', async (req, res) => {
   const majors = req.query.majors as string
   const skills = req.query.skills as string
   const gpaOutOf4 = req.query.gpaOutOf4 as string
+  const gpaOutOf5 = req.query.gpaOutOf5 as string
   const durationInWeeks = req.query.durationInWeeks as string
-  const page = req.query.page as string
-  const showAmountStr = req.query.showAmount as string
-  let showAmountInt = parseInt(showAmountStr)
 
-  if (!showAmountStr) {
-    showAmountInt = 10
-  } else if (showAmountInt < 1) {
-    res
-      .status(400)
-      .json({
-        error: 'showAmount must be an integer greater than 0',
+  const page = req.query.page as string
+  let _page = 1
+  if (page) {
+    _page = parseInt(page)
+    if (_page < 1)
+      return res.status(400).json({
+        error: 'page must be an integer greater than 0',
         offers: null
       })
-    return
+  }
+
+  const limit = req.query.limit as string
+  let _limit = 10
+  if (limit) {
+    _limit = parseInt(limit)
+    if (_limit < 1)
+      return res.status(400).json({
+        error: 'limit must be an integer greater than 0',
+        offers: null
+      })
   }
 
   const requiredOutput =
@@ -126,36 +134,36 @@ router.get('/list', async (req, res) => {
   const baseQuery = { startingDate: { $gt: new Date() } }
 
   try {
-    let query
+    let query: object = baseQuery
     if (majors) {
-      query = { ...baseQuery, majors: { $in: majors.split(',') } }
-    } else if (skills) {
-      query = { ...baseQuery, skills: { $in: skills.split(',') } }
-    } else if (gpaOutOf4) {
+      query = { ...query, majors: { $in: majors.split(',') } }
+    }
+    if (skills) {
+      query = { ...query, skills: { $in: skills.split(',') } }
+    }
+    if (gpaOutOf4) {
       query = {
-        ...baseQuery,
+        ...query,
         'requiredGPA.outOf4': { $lte: parseFloat(gpaOutOf4) }
       }
-    } else if (durationInWeeks) {
+    }
+    if (gpaOutOf5) {
       query = {
-        ...baseQuery,
-        durationInWeeks: { $lte: parseInt(durationInWeeks) }
+        ...query,
+        'requiredGPA.outOf5': { $lte: parseFloat(gpaOutOf5) }
       }
-    } else {
-      query = baseQuery
+    }
+    if (durationInWeeks) {
+      query = { ...query, durationInWeeks: { $lte: parseInt(durationInWeeks) } }
     }
 
     // skip accepts zero but err if negative, -1 to make request accept only 1 and above
     const offers = await Offer.find(query, requiredOutput, {
-      limit: showAmountInt,
-      skip: (parseInt(page) - 1) * showAmountInt
+      limit: _limit,
+      skip: (parseInt(page) - 1) * _limit
     })
 
-    if (offers.length > 0) {
-      res.status(200).json({ error: null, offers: offers })
-    } else {
-      res.status(404).json({ error: 'no offers available', offers: null })
-    }
+    res.status(200).json({ error: null, offers: offers })
   } catch (err) {
     res.status(400).json({ error: err, offers: null })
   }
