@@ -6,7 +6,7 @@ interface IOffer {
   name: string
   description: string
   startingDate: Date
-  duration: string
+  durationInWeeks: number // integer
   location: string
   url: string
   major: string
@@ -28,7 +28,7 @@ const offerSchema = new Schema<IOffer>({
   name: { type: String, required: true },
   description: { type: String, required: true },
   startingDate: { type: Date, required: true },
-  duration: { type: String, required: true },
+  durationInWeeks: { type: Number, required: true }, // integer
   location: { type: String, required: true },
   url: { type: String, required: true },
   major: { type: String, required: true },

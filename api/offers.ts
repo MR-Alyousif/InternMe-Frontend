@@ -13,7 +13,7 @@ router.post('/create', authorizeOnlyCompany, async (req, res) => {
   const name = req.body.name
   const description = req.body.description
   const startingDate = req.body.startingDate
-  const duration = req.body.duration
+  const durationInWeeks = req.body.durationInWeeks
   const location = req.body.location
   const url = req.body.url
   const major = req.body.major
@@ -29,7 +29,7 @@ router.post('/create', authorizeOnlyCompany, async (req, res) => {
       name &&
       description &&
       startingDate &&
-      duration &&
+      durationInWeeks &&
       location &&
       url &&
       major &&
@@ -68,7 +68,7 @@ router.post('/create', authorizeOnlyCompany, async (req, res) => {
     name: name,
     description: description,
     startingDate: startingDate,
-    duration: duration,
+    durationInWeeks: durationInWeeks,
     location: location,
     url: url,
     major: major,
@@ -102,7 +102,7 @@ router.get('/list', async (req, res) => {
   try {
     const offers = await Offer.find(
       { startingDate: { $gt: new Date() } },
-      'company.name company.logo name startingDate duration location description skills'
+      'company.name company.logo name startingDate durationInWeeks location description skills'
     )
     // This code is commented until it's fixed. stop being dumb.
     /*
