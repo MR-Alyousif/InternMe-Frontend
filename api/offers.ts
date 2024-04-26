@@ -129,13 +129,12 @@ router.get('/list', async (req, res) => {
       default:
         break
     }
-
-    if (filteredOffers.length > 0) {
-      res.status(200).json({ error: null, offers: offers })
-    } else {
-      res.status(404).json({ error: 'no offers available', offers: null })
-    }
     */
+    //if (filteredOffers.length > 0) {
+    res.status(200).json({ error: null, offers: offers })
+    //} else {
+    //  res.status(404).json({ error: 'no offers available', offers: null })
+    //}
   } catch (err) {
     res.status(400).json({ error: err, offers: null })
   }
