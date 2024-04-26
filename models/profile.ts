@@ -32,16 +32,16 @@ interface IProfileStudent {
 const profileStudentSchema = new Schema<IProfileStudent>({
   basicInfo: {
     name: {
-      first: { type: String, required: true, default: 'FIRST' },
-      last: { type: String, required: true, default: 'LAST' }
+      first: { type: String, required: false, default: '' },
+      last: { type: String, required: false, default: '' }
     },
     // email: String [this is ommited as the User object already has this info]
-    phone: { type: String, required: true, default: '05XXXXXXXX' },
+    phone: { type: String, required: false, default: '' },
     education: {
-      university: { type: String, required: true, default: 'XXXX XXXXXX' },
-      major: { type: String, required: true, default: 'XXXXXX XXXXXX' }
+      university: { type: String, required: false, default: '' },
+      major: { type: String, required: false, default: '' }
     },
-    bio: { type: String, required: true, default: 'XXXXXXXXXXXXXXXX' },
+    bio: { type: String, required: false, default: '' },
     photo: String // fs path
   },
   skills: [{ _type: String, skill: String }],
