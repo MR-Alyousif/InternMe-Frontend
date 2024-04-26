@@ -140,6 +140,20 @@ router.get('/list', async (req, res) => {
   }
 })
 
+// list all calling company offers
+router.get('/list/self', authorizeOnlyCompany, async (req, res) => {
+  const username = req.user?.username
+  try {
+    const offers = await Offer.find(
+      { 'company.username': username },
+      'company.name company.logo name startingDate durationInWeeks location description skills'
+    )
+    res.status(200).json({ error: null, offers: offers })
+  } catch (err) {
+    res.status(400).json({ error: err, offers: null })
+  }
+})
+
 // get an offer by id
 router.get('/:offerId', async (req, res) => {
   const id = req.params.offerId
