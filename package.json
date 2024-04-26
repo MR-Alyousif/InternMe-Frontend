@@ -2,7 +2,13 @@
   "name": "swe363_internme",
   "version": "1.0.0",
   "scripts": {
-    "start": "node --watch -r ts-node/register --env-file=.env server.ts  # using ts-node in production env isn't advised; however, I'm relaxing best practices here because this project is only for educational purposes."
+    "start": "node --watch -r ts-node/register --env-file=.env server.ts  # using ts-node in production env isn't advised; however, I'm relaxing best practices here because this project is only for educational purposes.",
+    "lint": "prettier . --check",
+    "lint:fix": "prettier . --write",
+    "prepare": "husky"
+  },
+  "lint-staged": {
+    "*.{ts}": "prettier --write --ignore-unknown"
   },
   "dependencies": {
     "base64url": "^3.0.1",
@@ -23,6 +29,9 @@
     "@types/multer": "^1.4.11",
     "@types/node": "^20.12.7",
     "@types/uuid": "^9.0.8",
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.2",
+    "prettier": "3.2.5",
     "ts-node": "^10.9.2",
     "typescript": "^5.4.5"
   }
