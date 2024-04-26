@@ -9,8 +9,10 @@ import { v4 } from 'uuid'
 import { authenticate, authorizeOnlyStudent } from '../middlewares/auth'
 import { ProfileCompany, ProfileStudent } from '../models/profile'
 import { autoSetFields } from '../models/utils/helper'
+import Offer from '../models/offer'
 import User from '../models/user'
 import diskStorageEngine from './utils/diskStorageEngine'
+import db from '../db'
 
 const FS_STORAGE_PATH = 'fs-storage'
 
@@ -86,8 +88,21 @@ router.put('/basic', async (req, res) => {
       userUsername: username
     })
     if (profile) {
-      autoSetFields(profile, basicInfo, 'basicInfo')
-      await profile.save()
+      const session = await db.startSession()
+      try {
+        await session.withTransaction(async () => {
+          autoSetFields(profile, basicInfo, 'basicInfo')
+          await profile.save()
+          if (!isStudent && basicInfo.name)
+            await Offer.updateMany(
+              // compromising write performance for read performance. tradeoff baby.
+              { 'company.username': username },
+              { 'company.name': basicInfo.name }
+            ).exec()
+        })
+      } finally {
+        session.endSession()
+      }
       res.status(200).json({ error: null })
     } else {
       res.status(404).json({
@@ -232,7 +247,20 @@ router.post('/img/upload', (req, res) => {
           const oldFilePath = path.join(FS_STORAGE_PATH, oldFileName)
           removeFileIfExists(oldFilePath)
 
-          await profile.set(profileAttr, req.filename).save()
+          const session = await db.startSession()
+          try {
+            await session.withTransaction(async () => {
+              await profile.set(profileAttr, req.filename).save()
+              if (!isStudent)
+                await Offer.updateMany(
+                  // compromising write performance for read performance. tradeoff baby.
+                  { 'company.username': username },
+                  { 'company.logo': req.filename }
+                ).exec()
+            })
+          } finally {
+            session.endSession()
+          }
           res.status(201).json({ error: null, filename: req.filename })
         } else {
           // rollback first
