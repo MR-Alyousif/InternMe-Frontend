@@ -104,6 +104,8 @@ router.get('/list', async (req, res) => {
       { startingDate: { $gt: new Date() } },
       'company.name company.logo name startingDate duration location description skills'
     )
+    // This code is commented until it's fixed. stop being dumb.
+    /*
     let filteredOffers
     switch (filter) {
       case 'gpa':
@@ -128,6 +130,7 @@ router.get('/list', async (req, res) => {
     } else {
       res.status(404).json({ error: 'no offers available', offers: null })
     }
+    */
   } catch (err) {
     res.status(400).json({ error: err, offers: null })
   }
