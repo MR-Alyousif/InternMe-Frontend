@@ -35,6 +35,7 @@ router.post('/create', authorizeOnlyCompany, async (req, res) => {
       major &&
       requiredGPA4 &&
       requiredGPA5 &&
+      skills &&
       skills.length > 0 &&
       responsibilities &&
       qualifications
