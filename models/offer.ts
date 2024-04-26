@@ -1,4 +1,4 @@
-import { ObjectId, Schema } from 'mongoose'
+import { Schema } from 'mongoose'
 
 import db from '../db'
 
