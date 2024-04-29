@@ -17,8 +17,8 @@ services:
 
   db:
     image: mongo:7.0
-    ports:
-      - 27017:27017
+    expose:
+      - "27017"
     volumes:
       - intern_me-db:/data/db
     networks:
