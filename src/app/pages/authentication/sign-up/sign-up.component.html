@@ -44,14 +44,16 @@
       <ul class="info">
         <p>Email</p>
         <input
+          id ="emailReg"
           type="text"
           placeholder="Your Personal Email"
           [(ngModel)]="email"
         />
         <p>Username</p>
-        <input type="text" placeholder="Username" [(ngModel)]="username" />
+        <input type="text" placeholder="Username" id="usernameReg"[(ngModel)]="username" />
         <p>Password</p>
         <input
+          id="passwordReg"
           type="password"
           placeholder="**********"
           [(ngModel)]="password"
@@ -62,8 +64,8 @@
           <option>Company</option>
         </select>
       </ul>
-      <button type="submit" id="in" (click)="signUp()">Sing Up</button>
-      <button id="dont">Already have an account</button>
+      <button type="submit" id="in" (click)="signUp()">Sign Up</button>
+      <button id="dont" (click)="HaveAccount()">Already have an account</button>
       <label>Then continue with</label>
       <ul id="options">
         <button>

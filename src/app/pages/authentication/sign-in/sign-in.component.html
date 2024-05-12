@@ -42,17 +42,18 @@
       ></div>
       <ul class="info">
         <p>Username</p>
-        <input type="text" placeholder="Username" [(ngModel)]="username" />
+        <input id="usernameLogin" type="text" placeholder="Username" [(ngModel)]="username" />
         <p>Password</p>
         <input
+          id="passwordLogin"
           type="password"
           placeholder="**********"
           [(ngModel)]="password"
         />
       </ul>
       <button id="forgot" (click)="forgotPassword()">Forgot Password?</button>
-      <button type="submit" id="in" (click)="signIn()">Sing In</button>
-      <button id="dont">Don't have an account</button>
+      <button type="submit" id="in" (click)="signIn()">Sign In</button>
+      <button id="dont" (click)="dontHaveAc()">Don't have an account</button>
       <label>Or continue with</label>
       <ul id="options">
         <button>
@@ -64,5 +65,14 @@
         </button>
       </ul>
     </form>
+    <div id="forgotPasswordModal" class="modal" [style.display]="showModal ? 'block' : 'none'">
+      <div class="modal-content">
+        <span class="close" (click)="closeModal()">&times;</span>
+        <h2>Forgot Password</h2>
+        <p>Please enter your email address to recover your password:</p>
+        <input type="email" [(ngModel)]="emailForRecovery" placeholder="Your email address">
+        <button (click)="sendPasswordRecovery()">Send</button>
+      </div>
+    </div>
   </body>
 </html>
