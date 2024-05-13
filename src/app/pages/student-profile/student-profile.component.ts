@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { NavbarComponent } from '../../global-components/navbar/navbar.component';
 
 @Component({
@@ -10,7 +11,11 @@ import { NavbarComponent } from '../../global-components/navbar/navbar.component
   templateUrl: './student-profile.component.html',
   styleUrl: './student-profile.component.css',
 })
-export class StudentProfileComponent {
+export class StudentProfileComponent implements OnInit {
+  baseUrl: string = 'https://intern-me.ddns.net/api/v1';
+  token: string | null = localStorage.getItem('token');
+  studentInfo: any = {};
+
   info: any = {
     fullName: 'Khalid Ahmed',
     major: 'Software Engineering',
@@ -41,4 +46,32 @@ export class StudentProfileComponent {
       'Angular',
     ],
   };
+
+  constructor(private http: HttpClient) {}
+
+  ngOnInit(): void {
+    this.fetchStudentProfile();
+  }
+
+  fetchStudentProfile() {
+    const url = `${this.baseUrl}/profiles/:username`;
+
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'x-auth': `Bearer ${this.token}`,
+    });
+
+    this.http.get<any>(url, { headers }).subscribe({
+      next: (response) => {
+        this.studentInfo = response.profile.basicInfo;
+        this.studentInfo.fullName =
+          `${this.studentInfo.name.first} ${this.studentInfo.name.last}`.trim();
+        this.studentInfo.skills = response.profile.skills;
+        this.studentInfo.projects = response.profile.projects;
+      },
+      error: (error) => {
+        console.error('Error fetching student profile:', error);
+      },
+    });
+  }
 }

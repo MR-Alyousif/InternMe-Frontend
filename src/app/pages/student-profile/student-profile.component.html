@@ -13,8 +13,8 @@
     <div id="gradient"></div>
     <ul id="profile">
       <img src="assets/profile/model.jpg" />
-      <label id="name">{{ info.fullName }}</label>
-      <label id="major">{{ info.major }}</label>
+      <label id="name">{{ studentInfo.fullName }}</label>
+      <label id="major">{{ studentInfo.education.major }}</label>
       <p>
         {{ info.description }}
       </p>
@@ -37,7 +37,7 @@
         <h5 class="text-secondary-200 md:text-base md:font-medium">
           Full&nbsp;Name
         </h5>
-        <p class="md:text-xl">{{ info.fullName }}</p>
+        <p class="md:text-xl">{{ studentInfo.fullName }}</p>
       </div>
       <div class="flex flex-col text-xs items-start justify-center gap-1">
         <h5 class="text-secondary-200 md:text-base md:font-medium">Email</h5>
@@ -56,18 +56,18 @@
             class="mt-[3px] h-3 md:mt-[5px] md:h-5"
             src="assets/profile/phone plus.png"
           />
-          <p class="md:text-xl">{{ info.phone }}</p>
+          <p class="md:text-xl">{{ studentInfo.phone }}</p>
         </div>
       </div>
       <div class="flex flex-col text-xs items-start justify-center gap-1">
         <h5 class="text-secondary-200 md:text-base md:font-medium">
           University
         </h5>
-        <p class="md:text-xl">{{ info.university }}</p>
+        <p class="md:text-xl">{{ studentInfo.education.university }}</p>
       </div>
       <div class="flex flex-col text-xs items-start justify-center gap-1">
         <h5 class="text-secondary-200 md:text-base md:font-medium">Major</h5>
-        <p class="md:text-xl">{{ info.major }}</p>
+        <p class="md:text-xl">{{ studentInfo.education.major }}</p>
       </div>
     </div>
     <div
@@ -97,7 +97,7 @@
       <div class="grid grid-cols-3 gap-3 text-white pb-3 pt-1">
         <div
           class="rounded-full bg-[#CE8459] py-1 px-2 text-center text-sm md:text-lg"
-          *ngFor="let skill of info.skills"
+          *ngFor="let skill of studentInfo.skills"
         >
           {{ skill }}
         </div>
@@ -115,7 +115,7 @@
       </div>
       <div
         class="flex flex-col items-start w-[80%] justify-center md:gap-2 border-b border-b-[#F1C6B9] pb-4 pt-1"
-        *ngFor="let project of info.projects"
+        *ngFor="let project of studentInfo.projects"
       >
         <h5 class="text-base md:text-xl font-medium">
           {{ project.title }}
