@@ -1,6 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+
 import { NavbarComponent } from '../../global-components/navbar/navbar.component';
 
 @Component({
@@ -10,14 +12,10 @@ import { NavbarComponent } from '../../global-components/navbar/navbar.component
   templateUrl: './company-profile.component.html',
   styleUrl: './company-profile.component.css',
 })
-export class CompanyProfileComponent {
-  companyInfo: any = {
-    name: 'Microsoft',
-    website: 'www.microsoft.com',
-    location: 'Riyadh',
-    email: 'microsoft@mix.org',
-    phone: '05000020394',
-  };
+export class CompanyProfileComponent implements OnInit{
+  baseUrl: string = 'https://intern-me.ddns.net/api/v1';
+  token: string | null = localStorage.getItem('token');
+  companyInfo: any = {};
 
   opportunities: any[] = [
     {
@@ -30,4 +28,28 @@ export class CompanyProfileComponent {
       location: 'Dhahran',
     },
   ];
+
+  constructor(private http: HttpClient) {}
+
+  ngOnInit(): void {
+    this.fetchCompanyProfile();
+  }
+
+  fetchCompanyProfile() {
+    const url = `${this.baseUrl}/profiles/me`;
+
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'x-auth': `Bearer ${this.token}`,
+    });
+
+    this.http.get<any>(url, { headers }).subscribe({
+      next: (response) => {
+        this.companyInfo = response.profile.basicInfo;
+      },
+      error: (error) => {
+        console.error('Error fetching company profile:', error);
+      },
+    });
+  }
 }
