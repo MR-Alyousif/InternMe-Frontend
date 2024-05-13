@@ -35,11 +35,11 @@
         <h5 class="text-secondary-200 md:text-base md:font-medium">
           Company&nbsp;Name
         </h5>
-        <p class="md:text-xl">{{ companyInfo.name }}</p>
+        <p class="md:text-xl">{{ company.basicInfo.name }}</p>
       </div>
       <div class="flex flex-col items-start justify-center gap-1 text-xs">
         <h5 class="text-secondary-200 md:text-base md:font-medium">Website</h5>
-        <p class="md:text-xl">{{ companyInfo.website }}</p>
+        <p class="md:text-xl">{{ company.basicInfo.website }}</p>
       </div>
       <div class="flex flex-col items-start justify-center gap-1 text-xs">
         <h5 class="text-secondary-200 md:text-base md:font-medium">Location</h5>
@@ -48,7 +48,7 @@
             class="mt-[3px] h-3 md:mt-[5px] md:h-5"
             src="assets/profile/location.png"
           />
-          <p class="md:text-xl">{{ companyInfo.location }}</p>
+          <p class="md:text-xl">{{ company.basicInfo.location }}</p>
         </div>
       </div>
       <div class="flex flex-col items-start justify-center gap-1 text-xs">
@@ -58,7 +58,7 @@
             class="mt-[3px] h-3 md:mt-[5px] md:h-5"
             src="assets/profile/mail.png"
           />
-          <p class="md:text-xl">{{ companyInfo.email }}</p>
+          <p class="md:text-xl">{{ company.basicInfo.email }}</p>
         </div>
       </div>
       <div class="flex flex-col items-start justify-center gap-1 text-xs">
@@ -68,7 +68,7 @@
             class="mt-[3px] h-3 md:mt-[5px] md:h-5"
             src="assets/profile/phone plus.png"
           />
-          <p class="md:text-xl">{{ companyInfo.phone }}</p>
+          <p class="md:text-xl">{{ company.basicInfo.phone }}</p>
         </div>
       </div>
     </div>
@@ -99,7 +99,7 @@
     >
       <div class="mb-2 flex flex-row items-center justify-between">
         <div></div>
-        <h5 class="text-base md:text-3xl">{{ opportunity.title }}</h5>
+        <h5 class="text-base md:text-3xl">{{ opportunity.name }}</h5>
         <img class="mt-1 h-4 md:h-5" src="assets/profile/bin.png" />
       </div>
       <p
@@ -123,7 +123,7 @@
         </div>
         <div class="-ml-4 flex flex-row items-center justify-center gap-1">
           <img class="h-3 md:h-5" src="assets/profile/calendar.png" />
-          <p>{{ opportunity.date }}</p>
+          <p>{{ opportunity.startingDate }}</p>
         </div>
         <div class="-ml-4 flex flex-row items-center justify-center gap-1">
           <img class="h-3 md:h-5" src="assets/profile/location.png" />
