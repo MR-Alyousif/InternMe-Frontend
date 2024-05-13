@@ -1,33 +1,33 @@
-@import url('https://fonts.googleapis.com/css2?family=Days+One&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
-header{
-    top: 0;
+@import url("https://fonts.googleapis.com/css2?family=Days+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+header {
+  top: 0;
 }
-body{
-    margin: 0;
-    padding: 0;
-    background-color: #010517;
-    position: relative;
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #010517;
+  position: relative;
 }
-#nav{
-    display: grid;
-    grid-template-columns: auto auto;
-    align-items: center;
-    justify-content: space-between;
-    margin: 0;
-    padding-left: 40px;
-    padding-right: 40px;
-    padding-top: 20px;
-    background-color: #010517;
+#nav {
+  display: grid;
+  grid-template-columns: auto auto;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-top: 20px;
+  background-color: #010517;
 }
-#InternMe{
-    font-size:32px;
-    font-family:'Days One';
-    background: linear-gradient(to right,#F1C6B9,#FB7E65);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+#InternMe {
+  font-size: 32px;
+  font-family: "Days One";
+  background: linear-gradient(to right, #f1c6b9, #fb7e65);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 #pages {
   display: grid;
@@ -35,65 +35,60 @@ body{
 
   grid-column-gap: 30px;
 }
-a{
-    text-decoration: none;
-    color: #F1C6B9;
-    font-size: 25px;
+a {
+  text-decoration: none;
+  color: #f1c6b9;
+  font-size: 25px;
 }
 
-
-footer{
-    display: block;
-    position: relative;
-    bottom: 0;
-    z-index: -1;
-    height: min-content;
+footer {
+  display: block;
+  position: relative;
+  bottom: 0;
+  z-index: -1;
+  height: min-content;
 }
 
-
-#shortCut{
-    display: none;
+#shortCut {
+  display: none;
 }
 
-@media only screen and (max-width: 900px){
+@media only screen and (max-width: 900px) {
   #pages {
     grid-column-gap: 2vw;
   }
   #pages > a {
     font-size: 2.8vw;
   }
-    #InternMe{
-        font-size: 3.7vw;
-    }
-    
+  #InternMe {
+    font-size: 3.7vw;
+  }
 }
-@media only screen and (max-width: 500px){
-    #pages{
-        display: none;
-    }
-    #shortCut{
-        display:contents;
-        width: 1vw;
-        height: 1vw;
-        background-color: transparent;
-        border: 0;
-        padding: 0;
-    }
-    #links{
-        display: grid;
-        grid-template-columns: auto auto auto;
-        grid-template-rows: auto auto auto;
-        grid-column-gap: 1vw;
-        grid-row-gap: 1vw;
-        padding: 0;
-    
-    }
-    .circle{
-        background-color: #F1C6B9;
-        border-radius: 50%;
-        width: 1.5vw;
-        height: 1.5vw;
-        padding: 0;
-    
-    }
+@media only screen and (max-width: 500px) {
+  #pages {
+    display: none;
+  }
+  #shortCut {
+    display: contents;
+    width: 1vw;
+    height: 1vw;
+    background-color: transparent;
+    border: 0;
+    padding: 0;
+  }
+  #links {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto auto;
+    grid-column-gap: 1vw;
+    grid-row-gap: 1vw;
+    padding: 0;
+  }
+  .circle {
+    background-color: #f1c6b9;
+    border-radius: 50%;
+    width: 1.5vw;
+    height: 1.5vw;
+    padding: 0;
+  }
 }

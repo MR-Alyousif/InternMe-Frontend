@@ -50,13 +50,18 @@
       <ul class="info">
         <p>Email</p>
         <input
-          id ="emailReg"
+          id="emailReg"
           type="text"
           placeholder="Your Personal Email"
           [(ngModel)]="email"
         />
         <p>Username</p>
-        <input type="text" placeholder="Username" id="usernameReg"[(ngModel)]="username" />
+        <input
+          type="text"
+          placeholder="Username"
+          id="usernameReg"
+          [(ngModel)]="username"
+        />
         <p>Password</p>
         <input
           id="passwordReg"
@@ -70,16 +75,26 @@
           <option>Company</option>
         </select>
       </ul>
-      <button type="submit" id="in" (click)="signUp()">Sign Up</button>
-      <button id="dont" (click)="HaveAccount()">Already have an account</button>
+      <button
+        type="submit"
+        id="in"
+        class="hover:scale-105 hover:shadow-lg mt-2"
+        (click)="signUp()"
+      >
+        Sign Up
+      </button>
+      <button id="dont" (click)="HaveAccount()" class="hover:opacity-45">
+        Already have an account?
+      </button>
       <label>Then continue with</label>
       <ul id="options">
-        <button>
         <button class="hover:scale-105 hover:shadow-lg">
           <img class="mx-auto" src="assets/logo/googleLogo.png" />
         </button>
-        <button><img class="mx-auto" src="assets/logo/appleLogo.png" /></button>
-        <button>
+        <button class="hover:scale-105 hover:shadow-lg">
+          <img class="mx-auto" src="assets/logo/appleLogo.png" />
+        </button>
+        <button class="hover:scale-105 hover:shadow-lg">
           <img class="mx-auto" src="assets/logo/linckedin.webp" />
         </button>
       </ul>

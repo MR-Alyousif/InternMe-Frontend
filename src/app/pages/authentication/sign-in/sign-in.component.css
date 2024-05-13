@@ -1,6 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Days+One&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Days+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
 header {
   left: 0;
   top: 0;
@@ -27,7 +27,7 @@ body {
 }
 #InternMe {
   font-size: 32px;
-  font-family: 'Days One';
+  font-family: "Days One";
   background: linear-gradient(to right, #f1c6b9, #fb7e65);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -83,13 +83,13 @@ a {
 }
 #title {
   font-size: 44px;
-  font-family: 'Yeseva One';
+  font-family: "Yeseva One";
   color: #f1c6b9;
   margin: 0;
   padding: 0;
 }
 #tline {
-  font-family: 'Yeseva One';
+  font-family: "Yeseva One";
   color: #fb7e65;
 
   padding-bottom: 10px;
@@ -105,7 +105,7 @@ a {
 .info > p {
   text-align: start;
   font-size: 20px;
-  font-family: 'Inter';
+  font-family: "Inter";
   color: #f1c6b9;
 }
 .info > input {
@@ -225,7 +225,6 @@ label {
   color: #fff; /* White text color on hover/focus */
 }
 
-
 input[type="email"] {
   width: 100%;
   padding: 10px;
@@ -238,7 +237,7 @@ input[type="email"] {
 
 /* Send Button */
 button {
-  background-color: #4CAF50; /* Green background color */
+  background-color: #4caf50; /* Green background color */
   color: white; /* White text color */
   padding: 10px 20px;
   border: none;
