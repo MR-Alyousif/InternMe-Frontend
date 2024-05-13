@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { NavbarComponent } from '../../global-components/navbar/navbar.component';
 
 @Component({
   selector: 'app-company-profile',
   standalone: true,
-  imports: [RouterLink, RouterLinkActive, CommonModule],
+  imports: [RouterLink, RouterLinkActive, CommonModule, NavbarComponent],
   templateUrl: './company-profile.component.html',
   styleUrl: './company-profile.component.css',
 })

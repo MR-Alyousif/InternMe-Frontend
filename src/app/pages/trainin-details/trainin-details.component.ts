@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink, RouterLinkActive } from '@angular/router';
+import { NavbarComponent } from '../../global-components/navbar/navbar.component';
 
 @Component({
   selector: 'app-trainin-details',
   standalone: true,
-  imports: [RouterLink, RouterLinkActive, CommonModule],
+  imports: [RouterLink, RouterLinkActive, CommonModule, NavbarComponent],
   templateUrl: './trainin-details.component.html',
   styleUrl: './trainin-details.component.css',
 })

@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { NavbarComponent } from '../../global-components/navbar/navbar.component';
 
 @Component({
   selector: 'app-student-profile',
   standalone: true,
-  imports: [RouterLink, RouterLinkActive, CommonModule],
+  imports: [RouterLink, RouterLinkActive, CommonModule, NavbarComponent],
   templateUrl: './student-profile.component.html',
   styleUrl: './student-profile.component.css',
 })

@@ -1,201 +1,163 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Add Opporunity</title>
-  </head>
-  <header>
-    <ul id="nav">
-      <label id="InternMe">InternMe</label>
-      <ul id="pages">
-        <a routerLink="" routerLinkActive="active" ariaCurrentWhenActive="page"
-          >Home</a
+<app-navbar></app-navbar>
+<body>
+  <img src="assets/job.png" />
+  <ul class="info">
+    <h1>Add New Opportunity</h1>
+    <form (ngSubmit)="onSubmit()">
+      <div>
+        <p class="lightest">Name *</p>
+        <input type="text" [(ngModel)]="opportunityData.name" name="name" />
+      </div>
+      <div>
+        <p class="lightest">Major *</p>
+        <input type="text" [(ngModel)]="opportunityData.major" name="major" />
+      </div>
+      <div>
+        <p class="lightest">Description *</p>
+        <textarea
+          cols="10"
+          rows="5"
+          [(ngModel)]="opportunityData.description"
+          name="description"
         >
-        <a
-          routerLink="/explore"
-          routerLinkActive="active"
-          ariaCurrentWhenActive="page"
-          >Explore</a
-        >
-        <a
-          routerLink="/company-profile"
-          routerLinkActive="active"
-          ariaCurrentWhenActive="page"
-          >Profile</a
-        >
-        <a
-          routerLink="/sign-in"
-          routerLinkActive="active"
-          ariaCurrentWhenActive="page"
-          >Login</a
-        >
+        </textarea>
+      </div>
+      <ul class="two_columns">
+        <div>
+          <p class="lighter">Starting Date *</p>
+          <input
+            type="text"
+            [(ngModel)]="opportunityData.startingDate"
+            name="startingDate"
+          />
+        </div>
+        <div>
+          <p>Duration *</p>
+          <input
+            type="text"
+            style="background: linear-gradient(to right, #423c5e, #2e284b)"
+            [(ngModel)]="opportunityData.duration"
+            name="duration"
+          />
+        </div>
       </ul>
-    </ul>
-  </header>
-  <body>
-    <img src="assets/job.png" />
-    <ul class="info">
-      <h1>Add New Opportunity</h1>
-      <form (ngSubmit)="onSubmit()">
+      <ul class="two_columns">
         <div>
-          <p class="lightest">Name *</p>
-          <input type="text" [(ngModel)]="opportunityData.name" name="name" />
+          <p class="lighter">Location *</p>
+          <input
+            type="text"
+            [(ngModel)]="opportunityData.location"
+            name="location"
+          />
         </div>
         <div>
-          <p class="lightest">Major *</p>
-          <input type="text" [(ngModel)]="opportunityData.major" name="major" />
+          <p>URL *</p>
+          <input
+            type="text"
+            style="background: linear-gradient(to right, #423c5e, #2e284b)"
+            [(ngModel)]="opportunityData.url"
+            name="url"
+          />
+        </div>
+      </ul>
+      <div>
+        <p style="color: #f8eedb">Responsibilities *</p>
+        <textarea
+          cols="10"
+          rows="5"
+          style="background: linear-gradient(to top left, #1d1942, #514e65)"
+          [(ngModel)]="opportunityData.responsibilities"
+          name="responsibilities"
+        >
+        </textarea>
+      </div>
+      <div>
+        <p>Qualifications *</p>
+        <textarea
+          cols="10"
+          rows="5"
+          style="background: linear-gradient(to top left, #1d1942, #514e65)"
+          [(ngModel)]="opportunityData.qualifications"
+          name="qualifications"
+        >
+        </textarea>
+      </div>
+      <div style="position: relative; margin-top: 2vw; margin-bottom: 0">
+        <div
+          style="
+            border-top: 4px solid #514e65;
+            width: 25%;
+            position: absolute;
+            top: 0;
+            left: 38%;
+          "
+        ></div>
+        <p
+          style="
+            text-align: center;
+            color: #615e79;
+            font-size: 3vw;
+            position: static;
+            padding-top: 2vw;
+            padding-bottom: 2vw;
+            margin-top: 0;
+          "
+        >
+          Optional Details
+        </p>
+        <div
+          style="
+            border-bottom: 4px solid #514e65;
+            width: 12%;
+            position: absolute;
+            bottom: 0;
+            left: 44%;
+          "
+        ></div>
+      </div>
+      <ul class="two_columns">
+        <div>
+          <p>Required GPA <label style="font-size: 1.5vw">(out of 4)</label></p>
+          <input
+            class="Optional"
+            type="text"
+            style="background: linear-gradient(to left, #1d1942, #3c3952)"
+            [(ngModel)]="opportunityData.requiredGPA4"
+            name="requiredGPA4"
+          />
         </div>
         <div>
-          <p class="lightest">Description *</p>
-          <textarea
-            cols="10"
-            rows="5"
-            [(ngModel)]="opportunityData.description"
-            name="description"
-          >
-          </textarea>
-        </div>
-        <ul class="two_columns">
-          <div>
-            <p class="lighter">Starting Date *</p>
-            <input
-              type="text"
-              [(ngModel)]="opportunityData.startingDate"
-              name="startingDate"
-            />
-          </div>
-          <div>
-            <p>Duration *</p>
-            <input
-              type="text"
-              style="background: linear-gradient(to right, #423c5e, #2e284b)"
-              [(ngModel)]="opportunityData.duration"
-              name="duration"
-            />
-          </div>
-        </ul>
-        <ul class="two_columns">
-          <div>
-            <p class="lighter">Location *</p>
-            <input
-              type="text"
-              [(ngModel)]="opportunityData.location"
-              name="location"
-            />
-          </div>
-          <div>
-            <p>URL *</p>
-            <input
-              type="text"
-              style="background: linear-gradient(to right, #423c5e, #2e284b)"
-              [(ngModel)]="opportunityData.url"
-              name="url"
-            />
-          </div>
-        </ul>
-        <div>
-          <p style="color: #f8eedb">Responsibilities *</p>
-          <textarea
-            cols="10"
-            rows="5"
-            style="background: linear-gradient(to top left, #1d1942, #514e65)"
-            [(ngModel)]="opportunityData.responsibilities"
-            name="responsibilities"
-          >
-          </textarea>
-        </div>
-        <div>
-          <p>Qualifications *</p>
-          <textarea
-            cols="10"
-            rows="5"
-            style="background: linear-gradient(to top left, #1d1942, #514e65)"
-            [(ngModel)]="opportunityData.qualifications"
-            name="qualifications"
-          >
-          </textarea>
-        </div>
-        <div style="position: relative; margin-top: 2vw; margin-bottom: 0">
-          <div
-            style="
-              border-top: 4px solid #514e65;
-              width: 25%;
-              position: absolute;
-              top: 0;
-              left: 38%;
-            "
-          ></div>
-          <p
-            style="
-              text-align: center;
-              color: #615e79;
-              font-size: 3vw;
-              position: static;
-              padding-top: 2vw;
-              padding-bottom: 2vw;
-              margin-top: 0;
-            "
-          >
-            Optional Details
-          </p>
-          <div
-            style="
-              border-bottom: 4px solid #514e65;
-              width: 12%;
-              position: absolute;
-              bottom: 0;
-              left: 44%;
-            "
-          ></div>
-        </div>
-        <ul class="two_columns">
-          <div>
-            <p>
-              Required GPA <label style="font-size: 1.5vw">(out of 4)</label>
-            </p>
-            <input
-              class="Optional"
-              type="text"
-              style="background: linear-gradient(to left, #1d1942, #3c3952)"
-              [(ngModel)]="opportunityData.requiredGPA4"
-              name="requiredGPA4"
-            />
-          </div>
-          <div>
-            <p>
-              Required GPA <label style="font-size: 1.5vw">(out of 5)</label>
-            </p>
-            <input
-              type="text"
-              style="background: linear-gradient(to left, #1d1942, #3c3952)"
-              [(ngModel)]="opportunityData.requiredGPA5"
-              name="requiredGPA5"
-            />
-          </div>
-        </ul>
-        <div>
-          <p>Skills</p>
+          <p>Required GPA <label style="font-size: 1.5vw">(out of 5)</label></p>
           <input
             type="text"
             style="background: linear-gradient(to left, #1d1942, #3c3952)"
-            [(ngModel)]="opportunityData.skills"
-            name="skills"
+            [(ngModel)]="opportunityData.requiredGPA5"
+            name="requiredGPA5"
           />
         </div>
-        <ul id="buttons">
-          <input
-            class="post hover:scale-105 hover:shadow-lg"
-            type="submit"
-            value="Save"
-          />
-          <input
-            class="post hover:scale-105 hover:shadow-lg"
-            type="submit"
-            value="Post Offer"
-          />
-        </ul>
-      </form>
-    </ul>
-  </body>
-</html>
+      </ul>
+      <div>
+        <p>Skills</p>
+        <input
+          type="text"
+          style="background: linear-gradient(to left, #1d1942, #3c3952)"
+          [(ngModel)]="opportunityData.skills"
+          name="skills"
+        />
+      </div>
+      <ul id="buttons">
+        <input
+          class="post hover:scale-105 hover:shadow-lg"
+          type="submit"
+          value="Save"
+        />
+        <input
+          class="post hover:scale-105 hover:shadow-lg"
+          type="submit"
+          value="Post Offer"
+        />
+      </ul>
+    </form>
+  </ul>
+</body>
+

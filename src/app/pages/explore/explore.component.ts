@@ -3,10 +3,18 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 
+import { NavbarComponent } from '../../global-components/navbar/navbar.component';
+
 @Component({
   selector: 'app-explore',
   standalone: true,
-  imports: [CommonModule, FormsModule, RouterLink, RouterLinkActive],
+  imports: [
+    CommonModule,
+    FormsModule,
+    RouterLink,
+    RouterLinkActive,
+    NavbarComponent,
+  ],
   templateUrl: './explore.component.html',
   styleUrl: './explore.component.css',
 })

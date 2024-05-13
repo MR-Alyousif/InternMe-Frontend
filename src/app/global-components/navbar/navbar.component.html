@@ -1,14 +1,71 @@
-<header class="bg-background">
-  <nav class="flex px-4 py-6">
-    <h1 class="intern-me basis-3/4">InternMe</h1>
-    <ul
-      class="flex basis-1/4 flex-row-reverse items-center justify-between"
-    >
-      <li><img src="../../../assets/icon/menu.svg"></li>
-      <li><a href="#" class="font-yeseva-one text-secondary-200">Explore</a></li>
-      <li><a href="#" class="font-yeseva-one text-secondary-200">About</a></li>
-      <li><a href="#" class="font-yeseva-one text-secondary-200">Contact</a></li>
-      <li><a href="#" class="font-yeseva-one text-secondary-200">Login</a></li>
+<header>
+  <ul id="nav">
+    <label id="InternMe">InternMe</label>
+    <ul id="pages">
+      <a routerLink="" routerLinkActive="active" ariaCurrentWhenActive="page"
+        >Home</a
+      >
+
+      <ng-container *ngIf="token; else loggedOut">
+        <a
+          routerLink="/explore"
+          routerLinkActive="active"
+          ariaCurrentWhenActive="page"
+          >Explore</a
+        >
+        <ng-container *ngIf="role === 'company'">
+          <a
+            routerLink="/company-profile"
+            routerLinkActive="active"
+            ariaCurrentWhenActive="page"
+            >Profile</a
+          >
+        </ng-container>
+        <ng-container *ngIf="role === 'student'">
+          <a
+            routerLink="/student-profile"
+            routerLinkActive="active"
+            ariaCurrentWhenActive="page"
+            >Profile</a
+          >
+        </ng-container>
+        <button id="logout" (click)="logout()">Logout</button>
+      </ng-container>
+
+      <ng-template #loggedOut>
+        <a
+          routerLink="/sign-in"
+          routerLinkActive="active"
+          ariaCurrentWhenActive="page"
+          >Explore</a
+        >
+        <a
+          routerLink="/sign-in"
+          routerLinkActive="active"
+          ariaCurrentWhenActive="page"
+          >Profile</a
+        >
+        <a
+          routerLink="/sign-in"
+          routerLinkActive="active"
+          ariaCurrentWhenActive="page"
+          >Login</a
+        >
+      </ng-template>
     </ul>
-  </nav>
+
+    <button id="shortCut">
+      <ul id="links">
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+      </ul>
+    </button>
+  </ul>
 </header>
