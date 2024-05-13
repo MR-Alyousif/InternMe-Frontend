@@ -1,7 +1,7 @@
 import express from 'express'
 
-import Major from '../models/predefined/major'
-import Skill from '../models/predefined/skill'
+import Major from '../models/predefineds/major'
+import Skill from '../models/predefineds/skill'
 
 const router = express.Router()
 

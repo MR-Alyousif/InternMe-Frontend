@@ -2,7 +2,7 @@ import express from 'express'
 import cors from 'cors'
 import bodyParser from 'body-parser'
 
-import './models/predefined/initialize' // importing this will initialize the predefined data.
+import './models/predefineds/initialize' // importing this will initialize the predefined data.
 
 import routerUsers from './api/users'
 import routerProfiles from './api/profiles'
