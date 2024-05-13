@@ -46,7 +46,7 @@ export class OpportunityComponent {
     const url = `${this.baseUrl}/offers/create`;
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
-      'x-auth': `Bearer ${this.token}`,
+      'x-auth': `${this.token}`,
     });
 
     this.http.post<any>(url, this.opportunityData, { headers }).subscribe({

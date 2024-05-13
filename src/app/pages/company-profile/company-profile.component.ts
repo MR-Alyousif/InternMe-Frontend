@@ -12,7 +12,7 @@ import { NavbarComponent } from '../../global-components/navbar/navbar.component
   templateUrl: './company-profile.component.html',
   styleUrl: './company-profile.component.css',
 })
-export class CompanyProfileComponent implements OnInit{
+export class CompanyProfileComponent implements OnInit {
   baseUrl: string = 'https://intern-me.ddns.net/api/v1';
   token: string | null = localStorage.getItem('token');
   companyInfo: any = {};
@@ -40,7 +40,7 @@ export class CompanyProfileComponent implements OnInit{
 
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
-      'x-auth': `Bearer ${this.token}`,
+      'x-auth': `${this.token}`,
     });
 
     this.http.get<any>(url, { headers }).subscribe({

@@ -58,7 +58,7 @@ export class StudentProfileComponent implements OnInit {
 
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
-      'x-auth': `Bearer ${this.token}`,
+      'x-auth': `${this.token}`,
     });
 
     this.http.get<any>(url, { headers }).subscribe({

@@ -28,7 +28,7 @@ export class TraininDetailsComponent {
 
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
-      Authorization: `Bearer ${this.token}`,
+      Authorization: `${this.token}`,
     });
 
     this.http.get<any>(url, { headers }).subscribe({
