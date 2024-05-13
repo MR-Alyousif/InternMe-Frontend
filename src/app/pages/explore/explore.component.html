@@ -79,7 +79,10 @@
     </div>
 
     <form class="cards">
-      <ul class="cardColumns" *ngFor="let card of cards">
+      <ul
+        class="cardColumns hover:scale-105 hover:shadow-lg"
+        *ngFor="let card of cards"
+      >
         <img id="logo" [src]="card.logo" />
         <ul class="info">
           <div>{{ card.company }}</div>
