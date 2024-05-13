@@ -41,8 +41,8 @@ router.post('/register', async (req, res) => {
   })
   const newProfile = // this shit is full of defaults, don't worry.
     role === 'student'
-      ? new ProfileStudent({ userUsername: username })
-      : new ProfileCompany({ userUsername: username })
+      ? new ProfileStudent({ userUsername: username, 'basicInfo.email': email })
+      : new ProfileCompany({ userUsername: username, 'basicInfo.email': email })
 
   try {
     const user = await newUser.save()

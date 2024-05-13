@@ -15,7 +15,7 @@ interface IProfileStudent {
       first: string
       last: string
     }
-    // email: string [this is ommited as the User object already has this info]
+    email: string
     phone: string
     education: {
       university: string
@@ -35,7 +35,7 @@ const profileStudentSchema = new Schema<IProfileStudent>({
       first: { type: String, required: false, default: '' },
       last: { type: String, required: false, default: '' }
     },
-    // email: String [this is ommited as the User object already has this info]
+    email: { type: String, required: false },
     phone: { type: String, required: false, default: '' },
     education: {
       university: { type: String, required: false, default: '' },
@@ -63,7 +63,7 @@ interface IProfileCompany {
     name: string
     website: string
     location: string
-    // email: string [this is ommited as the User object already has this info]
+    email: string
     phone: string
   }
   logo: string // fs path
@@ -75,7 +75,7 @@ const profileCompanySchema = new Schema<IProfileCompany>({
     name: { type: String, required: false, default: '' },
     website: { type: String, required: false, default: '' },
     location: { type: String, required: false, default: '' },
-    // email: String, [this is ommited as the User object already has this info]
+    email: { type: String, required: false },
     phone: { type: String, required: false, default: '' }
   },
   logo: { type: String, required: false }, // fs path
