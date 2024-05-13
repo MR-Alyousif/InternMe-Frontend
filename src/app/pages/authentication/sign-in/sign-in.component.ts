@@ -75,6 +75,7 @@ export class SignInComponent {
       console.log('Login successful. Token:', data.token);
       // Handle success, the token in local storage to later use
       localStorage.setItem('token', data.token);
+      localStorage.setItem('role', data.role);
       this.router.navigate(['/']);
     } catch (error) {
       console.error('Login failed. Error:', error);

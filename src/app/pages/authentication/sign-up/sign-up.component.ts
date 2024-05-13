@@ -153,6 +153,7 @@ export class SignUpComponent {
       // Handle success, store the token in local storage for later use
       alert('Registration successful!');
       localStorage.setItem('token', data.token);
+      localStorage.setItem('role', data.role);
       this.router.navigate(['/']);
     } catch (error) {
       console.error('Login failed. Error:', error);

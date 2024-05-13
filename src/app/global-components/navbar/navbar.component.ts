@@ -12,22 +12,15 @@ import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 export class NavbarComponent implements OnInit {
   baseUrl: string = 'https://intern-me.ddns.net/api/v1';
   token: string | null = localStorage.getItem('token');
-  role: string | null = null;
+  role: string | null = localStorage.getItem('role');
 
   constructor(private router: Router) {}
 
-  ngOnInit(): void {
-    if (this.token) {
-      this.fetchUserRole();
-    }
-  }
-
-  fetchUserRole() {
-    this.role = 'company';
-  }
+  ngOnInit(): void {}
 
   logout() {
     localStorage.removeItem('token');
+    localStorage.removeItem('role');
     this.router.navigate(['/sign-in']);
   }
 }
