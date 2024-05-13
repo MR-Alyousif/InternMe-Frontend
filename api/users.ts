@@ -63,7 +63,8 @@ router.post('/login', async (req, res) => {
   if (!(username && password)) {
     res.status(401).json({
       error: 'Missing username and/or password',
-      token: null
+      token: null,
+      role: null
     })
     return
   }
@@ -78,15 +79,17 @@ router.post('/login', async (req, res) => {
           role: user.role
         }
         const jwtToken = jwt.encode(onFlyUser, secret)
-        res.status(200).json({ error: null, token: jwtToken })
+        res.status(200).json({ error: null, token: jwtToken, role: user.role })
         return
       }
     }
-    res
-      .status(401)
-      .json({ error: 'Incorrect username or password', token: null })
+    res.status(401).json({
+      error: 'Incorrect username or password',
+      token: null,
+      role: null
+    })
   } catch (err) {
-    res.status(400).json({ error: err, token: null })
+    res.status(400).json({ error: err, token: null, role: null })
   }
 })
 
