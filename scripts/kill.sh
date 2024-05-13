@@ -4,4 +4,4 @@ set -e
 
 docker-compose -f docker-compose.production.yaml down
 
-docker volume prune --force
+#docker volume prune --force
