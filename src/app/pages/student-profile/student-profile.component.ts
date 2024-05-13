@@ -14,24 +14,26 @@ import { NavbarComponent } from '../../global-components/navbar/navbar.component
 export class StudentProfileComponent implements OnInit {
   baseUrl: string = 'https://intern-me.ddns.net/api/v1';
   token: string | null = localStorage.getItem('token');
-  studentInfo: any = {};
-
-  info: any = {
-    fullName: 'Khalid Ahmed',
-    major: 'Software Engineering',
-    description:
-      "Aspiring front-end developer with a passion for crafting engaging and user-eccentric web experiences. I leverage strong coding skills and a creative eye to translate complex functionalities into intuitive interfaces. Always eager to learn and collaborate, I'm actively seeking opportunities to contribute to innovative front-end projects.",
-    email: 'khalid_ahmed@gmail.com',
-    phone: '05000020394',
-    university: 'KFUPM',
+  student: any = {
+    basicInfo: {
+      fullName: 'Khalid Ahmed',
+      education: {
+        university: 'KFUPM',
+        major: 'SWE',
+      },
+      bio: "Aspiring front-end developer with a passion for crafting engaging and user-eccentric web experiences. I leverage strong coding skills and a creative eye to translate complex functionalities into intuitive interfaces. Always eager to learn and collaborate, I'm actively seeking opportunities to contribute to innovative front-end projects.",
+      phone: '05000020394',
+      email: 'khalid_ahmed@gmail.com',
+    },
+    photo: 'assets/profile/default_avatar.jpg',
     projects: [
       {
         title: 'InternMe',
-        description: 'Website to help student to find internships',
+        brief: 'Website to help student to find internships',
       },
       {
         title: 'Blood Donation',
-        description: 'Mobile app to help organize blood donation events',
+        brief: 'Mobile app to help organize blood donation events',
       },
     ],
     skills: [
@@ -54,7 +56,7 @@ export class StudentProfileComponent implements OnInit {
   }
 
   fetchStudentProfile() {
-    const url = `${this.baseUrl}/profiles/:username`;
+    const url = `${this.baseUrl}/profiles/me`;
 
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
@@ -63,11 +65,16 @@ export class StudentProfileComponent implements OnInit {
 
     this.http.get<any>(url, { headers }).subscribe({
       next: (response) => {
-        this.studentInfo = response.profile.basicInfo;
-        this.studentInfo.fullName =
-          `${this.studentInfo.name.first} ${this.studentInfo.name.last}`.trim();
-        this.studentInfo.skills = response.profile.skills;
-        this.studentInfo.projects = response.profile.projects;
+        this.student.basicInfo = response.profile.basicInfo;
+        this.student.basicInfo.fullName =
+          `${this.student.basicInfo.name.first} ${this.student.basicInfo.name.last}`.trim();
+        this.student.skills = response.profile.skills;
+        this.student.projects = response.profile.projects;
+
+        let photoUrl = 'assets/profile/default_avatar.jpg';
+        if (response.profile.photo)
+          photoUrl = `${this.baseUrl}/profiles/static/${response.profile.photo}`;
+        this.student.photo = photoUrl;
       },
       error: (error) => {
         console.error('Error fetching student profile:', error);

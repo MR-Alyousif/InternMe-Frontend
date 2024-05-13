@@ -1,5 +1,5 @@
 <app-navbar></app-navbar>
-<body class="flex flex-col items-center gap-6">
+<body class="flex flex-col items-center gap-6 overflow-x-hidden">
   <div
     style="
       background-color: #010517;
@@ -12,11 +12,11 @@
     <img class="w-full" id="desk" src="assets/profile/student.png" />
     <div id="gradient"></div>
     <ul id="profile">
-      <img src="assets/profile/model.jpg" />
-      <label id="name">{{ studentInfo.fullName }}</label>
-      <label id="major">{{ studentInfo.education.major }}</label>
+      <img src="{{ student.photo }}" />
+      <label id="name">{{ student.basicInfo.fullName }}</label>
+      <label id="major">{{ student.basicInfo.education.major }}</label>
       <p>
-        {{ studentInfo.bio }}
+        {{ student.basicInfo.bio }}
       </p>
     </ul>
   </div>
@@ -37,7 +37,7 @@
         <h5 class="text-secondary-200 md:text-base md:font-medium">
           Full&nbsp;Name
         </h5>
-        <p class="md:text-xl">{{ studentInfo.fullName }}</p>
+        <p class="md:text-xl">{{ student.basicInfo.fullName }}</p>
       </div>
       <div class="flex flex-col text-xs items-start justify-center gap-1">
         <h5 class="text-secondary-200 md:text-base md:font-medium">Email</h5>
@@ -46,7 +46,7 @@
             class="h-3 mt-[3px] md:h-5 md:mt-[5px]"
             src="assets/profile/mail.png"
           />
-          <p class="md:text-xl">{{ studentInfo.email }}</p>
+          <p class="md:text-xl">{{ student.basicInfo.email }}</p>
         </div>
       </div>
       <div class="flex flex-col items-start justify-center gap-1 text-xs">
@@ -56,18 +56,18 @@
             class="mt-[3px] h-3 md:mt-[5px] md:h-5"
             src="assets/profile/phone plus.png"
           />
-          <p class="md:text-xl">{{ studentInfo.phone }}</p>
+          <p class="md:text-xl">{{ student.basicInfo.phone }}</p>
         </div>
       </div>
       <div class="flex flex-col text-xs items-start justify-center gap-1">
         <h5 class="text-secondary-200 md:text-base md:font-medium">
           University
         </h5>
-        <p class="md:text-xl">{{ studentInfo.education.university }}</p>
+        <p class="md:text-xl">{{ student.basicInfo.education.university }}</p>
       </div>
       <div class="flex flex-col text-xs items-start justify-center gap-1">
         <h5 class="text-secondary-200 md:text-base md:font-medium">Major</h5>
-        <p class="md:text-xl">{{ studentInfo.education.major }}</p>
+        <p class="md:text-xl">{{ student.basicInfo.education.major }}</p>
       </div>
     </div>
     <div
@@ -97,7 +97,7 @@
       <div class="grid grid-cols-3 gap-3 text-white pb-3 pt-1">
         <div
           class="rounded-full bg-[#CE8459] py-1 px-2 text-center text-sm md:text-lg"
-          *ngFor="let skill of studentInfo.skills"
+          *ngFor="let skill of student.skills"
         >
           {{ skill }}
         </div>
@@ -115,13 +115,13 @@
       </div>
       <div
         class="flex flex-col items-start w-[80%] justify-center md:gap-2 border-b border-b-[#F1C6B9] pb-4 pt-1"
-        *ngFor="let project of studentInfo.projects"
+        *ngFor="let project of student.projects"
       >
         <h5 class="text-base md:text-xl font-medium">
           {{ project.title }}
         </h5>
         <p class="text-sm md:text-base text-left text-[#F1C6B9]">
-          {{ project.description }}
+          {{ project.brief }}
         </p>
       </div>
     </div>
