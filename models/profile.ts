@@ -32,16 +32,21 @@ interface IProfileStudent {
 const profileStudentSchema = new Schema<IProfileStudent>({
   basicInfo: {
     name: {
-      first: { type: String, required: false, default: '' },
-      last: { type: String, required: false, default: '' }
+      first: { type: String, required: false, default: '#####' },
+      last: { type: String, required: false, default: '#####' }
     },
-    email: { type: String, required: false },
-    phone: { type: String, required: false, default: '' },
+    email: { type: String, required: false, default: '#####@#######.###' },
+    phone: { type: String, required: false, default: '#########' },
     education: {
-      university: { type: String, required: false, default: '' },
-      major: { type: String, required: false, default: '' }
+      university: { type: String, required: false, default: '#####' },
+      major: { type: String, required: false, default: '###' }
     },
-    bio: { type: String, required: false, default: '' }
+    bio: {
+      type: String,
+      required: false,
+      default:
+        '######## #####-### ######### #### # ####### ### ######## ######## ### ####-######### ### ###########. # ######## ###### ###### ###### ### # ######## ### ## ######### ####### ############### #### ######### ##########. ###### ##### ## ##### ### ############ ### ######## ####### #############.'
+    }
   },
   photo: { type: String, required: false }, // fs path
   skills: [{ type: String }],
