@@ -69,7 +69,6 @@ export class OpportunityComponent {
 
     this.http.post<any>(url, JSON.stringify(body), { headers }).subscribe({
       next: (response) => {
-        this.successMessage();
         this.formData = {
           name: '',
           description: '',
@@ -92,8 +91,5 @@ export class OpportunityComponent {
         console.error('Error adding opportunity:', error);
       },
     });
-  }
-  private successMessage() {
-    alert('Opportunity added successfully');
   }
 }

@@ -151,7 +151,7 @@ export class SignUpComponent {
 
       const data = await response.json();
       // Handle success, store the token in local storage for later use
-      alert('Registration successful!');
+      alert('Registration succeeded!');
       localStorage.setItem('token', data.token);
       localStorage.setItem('role', data.role);
       this.router.navigate(['/']);
