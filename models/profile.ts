@@ -72,11 +72,11 @@ interface IProfileCompany {
 
 const profileCompanySchema = new Schema<IProfileCompany>({
   basicInfo: {
-    name: { type: String, required: false, default: '' },
-    website: { type: String, required: false, default: '' },
-    location: { type: String, required: false, default: '' },
-    email: { type: String, required: false },
-    phone: { type: String, required: false, default: '' }
+    name: { type: String, required: false, default: '#########' },
+    website: { type: String, required: false, default: '###.#######.###' },
+    location: { type: String, required: false, default: '#####' },
+    email: { type: String, required: false, default: '#####@#######.###' },
+    phone: { type: String, required: false, default: '#########' }
   },
   logo: { type: String, required: false }, // fs path
   userUsername: { type: String, required: false, unique: true }

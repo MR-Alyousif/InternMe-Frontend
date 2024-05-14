@@ -60,7 +60,7 @@ router.post('/create', authorizeOnlyCompany, async (req, res) => {
     }
     companyName = profile.basicInfo.name
     companyLogo = profile.logo
-    if (!companyName) {
+    if (!companyName || companyName === '#########') {
       return res.status(400).json({
         error: `company '${companyName}' profile is incomplete: missing company name`
       })
