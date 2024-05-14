@@ -81,4 +81,58 @@ export class StudentProfileComponent implements OnInit {
       },
     });
   }
+  enableEditStudentInfo(){
+    const saveButton = document.querySelector(".save-button") as HTMLButtonElement;
+    saveButton.style.display = "inline-block"; // Display the button
+    this.makeEditable(["fullNameInfo", "emailInfo", "phoneInfo", "universityInfo", "majorInfo"]);
+  
+  }
+
+
+  // if user want to edit the information 
+  makeEditable(elementIds: string[]) {
+    let fieldValues: string[] = [];
+
+    elementIds.forEach(elementId => {
+      const element = document.getElementById(elementId);
+      if (element) {
+        const currentText = element.textContent || "";
+        const inputField = document.createElement("input");
+        inputField.type = "text";
+        inputField.value = currentText;
+        this.applyInputFieldStyles(inputField);
+    
+        element.parentNode?.replaceChild(inputField, element);
+        inputField.focus();
+    
+        const saveButton = document.querySelector(".save-button");
+        if (saveButton) {
+          saveButton.addEventListener("click", () => {
+            const newText = inputField.value;
+            element.textContent = newText;
+            console.log("New text:", newText);
+            inputField.parentNode?.replaceChild(element, inputField);
+            fieldValues.push(newText);
+            
+          });
+        } else {
+          console.error("Save button not found.");
+        }
+      } else {
+        console.error(`Element with ID '${elementId}' not found.`);
+      }
+      
+      
+    });
+    
+    console.log(fieldValues)
+  }
+
+  applyInputFieldStyles(inputField: HTMLInputElement) {
+    inputField.style.color = "black"; // Text color black
+    inputField.style.backgroundColor = "beige"; // Background color
+    inputField.style.border = "1px solid black"; // Border
+    inputField.style.padding = "4px 8px"; // Padding
+    inputField.style.borderRadius = "8px"; // Border radius
+  }
 }
