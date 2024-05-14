@@ -1,5 +1,8 @@
 # InternMe-Frontend (backend codebase)
 
+### [Backend Postman docs](https://www.postman.com/hadialqattan/workspace/internme/api/06822ff6-3f2f-4851-bcb4-2c52e3f50eb1?action=share&creator=11813816&active-environment=11813816-96a3d8c5-0843-40ce-beb1-cf185cf5803c) <~ open to see usage examples
+
+
 ## about us
 
 "InternMe" is a flexible online platform designed to connect eager students with reputable companies that provide a variety of training opportunities. Whether it's summer training, internships, or cooperative programs, InternMe is the central hub for students to explore, discover, and ultimately secure their ideal training placement.
