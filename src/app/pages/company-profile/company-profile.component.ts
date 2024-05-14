@@ -84,54 +84,82 @@ export class CompanyProfileComponent implements OnInit {
     });
   }
 
+  updateCompanyProfile(inputElementsIds: string[]) {
+    const url = `${this.baseUrl}/profiles/basic`;
+
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'x-auth': `${this.token}`,
+    });
+
+    const body = {
+      basicInfo: this.getUpdatedProfileBasicInfo(inputElementsIds),
+    };
+
+    if (Object.keys(body.basicInfo).length > 0) {
+      this.http.put<any>(url, JSON.stringify(body), { headers }).subscribe({
+        next: (res) => {
+          console.log('basicInfo has been updated successfully');
+          location.reload();
+        },
+        error: (err) => {
+          console.error('Error updating company basicInfo:', err);
+        },
+      });
+    } else {
+      console.log('no updates: basicInfo is empty');
+    }
+  }
+
+  private getUpdatedProfileBasicInfo(inputElementsIds: string[]) {
+    const basicInfo: { [key: string]: string } = {};
+    for (const elementId of inputElementsIds) {
+      const id = `input-${elementId}`;
+      const input = document.getElementById(id) as HTMLInputElement;
+      if (input) {
+        basicInfo[elementId] = input.value;
+      } else {
+        console.error(`Input element with ID '${elementId}' not found.`);
+      }
+    }
+    return basicInfo;
+  }
+
   enableEditCompanyInfo() {
     const saveButton = document.querySelector(
       '.save-button',
     ) as HTMLButtonElement;
     saveButton.style.display = 'inline-block'; // Display the button
-    this.makeEditable([
-      'companyNameInfo',
-      'websiteInfo',
-      'locationInfo',
-      'emailInfo',
-      'phoneInfo',
-    ]);
+    this.makeEditable(['name', 'website', 'location', 'email', 'phone']);
   }
 
   // if user want to edit the information
   makeEditable(elementIds: string[]) {
-    let fieldValues: string[] = [];
-
     elementIds.forEach((elementId) => {
-      const element = document.getElementById(elementId);
+      const id = `basic-${elementId}`;
+      const element = document.getElementById(id);
       if (element) {
         const currentText = element.textContent || '';
         const inputField = document.createElement('input');
+        inputField.id = `input-${elementId}`;
         inputField.type = 'text';
         inputField.value = currentText;
         this.applyInputFieldStyles(inputField);
-
         element.parentNode?.replaceChild(inputField, element);
         inputField.focus();
-
-        const saveButton = document.querySelector('.save-button');
-        if (saveButton) {
-          saveButton.addEventListener('click', () => {
-            const newText = inputField.value;
-            element.textContent = newText;
-            console.log('New text:', newText);
-            inputField.parentNode?.replaceChild(element, inputField);
-            fieldValues.push(newText);
-          });
-        } else {
-          console.error('Save button not found.');
-        }
       } else {
         console.error(`Element with ID '${elementId}' not found.`);
       }
     });
 
-    console.log(fieldValues);
+    const saveButton = document.querySelector('.save-button');
+    if (saveButton) {
+      saveButton.addEventListener('click', () =>
+        this.updateCompanyProfile(elementIds),
+      );
+    } else {
+      console.error('Save button not found.');
+    }
   }
 
   applyInputFieldStyles(inputField: HTMLInputElement) {

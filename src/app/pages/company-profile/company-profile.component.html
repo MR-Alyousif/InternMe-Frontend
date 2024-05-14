@@ -35,11 +35,13 @@
         <h5 class="text-secondary-200 md:text-base md:font-medium">
           Company&nbsp;Name
         </h5>
-        <p id ="companyNameInfo" class="md:text-xl">{{ company.basicInfo.name }}</p>
+        <p id="basic-name" class="md:text-xl">{{ company.basicInfo.name }}</p>
       </div>
       <div class="flex flex-col items-start justify-center gap-1 text-xs">
         <h5 class="text-secondary-200 md:text-base md:font-medium">Website</h5>
-        <p id ="websiteInfo" class="md:text-xl">{{ company.basicInfo.website }}</p>
+        <p id="basic-website" class="md:text-xl">
+          {{ company.basicInfo.website }}
+        </p>
       </div>
       <div class="flex flex-col items-start justify-center gap-1 text-xs">
         <h5 class="text-secondary-200 md:text-base md:font-medium">Location</h5>
@@ -48,7 +50,9 @@
             class="mt-[3px] h-3 md:mt-[5px] md:h-5"
             src="assets/profile/location.png"
           />
-          <p id ="locationInfo" class="md:text-xl">{{ company.basicInfo.location }}</p>
+          <p id="basic-location" class="md:text-xl">
+            {{ company.basicInfo.location }}
+          </p>
         </div>
       </div>
       <div class="flex flex-col items-start justify-center gap-1 text-xs">
@@ -58,7 +62,9 @@
             class="mt-[3px] h-3 md:mt-[5px] md:h-5"
             src="assets/profile/mail.png"
           />
-          <p id ="emailInfo" class="md:text-xl">{{ company.basicInfo.email }}</p>
+          <p id="basic-email" class="md:text-xl">
+            {{ company.basicInfo.email }}
+          </p>
         </div>
       </div>
       <div class="flex flex-col items-start justify-center gap-1 text-xs">
@@ -68,7 +74,9 @@
             class="mt-[3px] h-3 md:mt-[5px] md:h-5"
             src="assets/profile/phone plus.png"
           />
-          <p id ="phoneInfo" class="md:text-xl">{{ company.basicInfo.phone }}</p>
+          <p id="basic-phone" class="md:text-xl">
+            {{ company.basicInfo.phone }}
+          </p>
         </div>
       </div>
     </div>
@@ -83,7 +91,10 @@
       </button>
     </div>
     <div class="flex justify-end">
-      <button class="save-button flex flex-row items-center justify-center gap-4 rounded-full bg-[#190692] px-4 py-1 md:px-6 md:py-2 hover:scale-105 hover:shadow-lg" style="display: none;">
+      <button
+        class="save-button flex flex-row items-center justify-center gap-4 rounded-full bg-[#190692] px-4 py-1 md:px-6 md:py-2 hover:scale-105 hover:shadow-lg"
+        style="display: none"
+      >
         <h4 class="text-[0.5rem] md:text-lg">Save</h4>
       </button>
     </div>
