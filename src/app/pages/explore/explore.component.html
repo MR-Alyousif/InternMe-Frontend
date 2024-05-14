@@ -38,16 +38,16 @@
     >
       <img id="logo" [src]="card.logo" />
       <ul class="info">
-        <div>{{ card.company }}</div>
-        <div id="title_major">{{ card.title }}</div>
+        <div>{{ card.company.name }}</div>
+        <div id="title_major">{{ card.name }}</div>
         <ul>
           <div>
             <img src="assets/icon/clock.png" class="icons" />
-            <label>{{ card.duration }}</label>
+            <label>{{ card.durationInWeeks }}</label>
           </div>
           <div>
             <img src="assets/icon/calendar.png" class="icons" /><label>{{
-              card.date
+              card.startingDate
             }}</label>
           </div>
           <div>

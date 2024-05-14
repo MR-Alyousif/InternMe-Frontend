@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 
 import { NavbarComponent } from '../../global-components/navbar/navbar.component';
@@ -19,16 +20,34 @@ import { NavbarComponent } from '../../global-components/navbar/navbar.component
   styleUrl: './explore.component.css',
 })
 export class ExploreComponent {
+  baseUrl: string = 'https://intern-me.ddns.net/api/v1';
+  token: string | null = localStorage.getItem('token');
   searchQuery: string = '';
   cards: any[] = [];
   currentPage: number = 1;
   cardsPerPage: number = 4;
 
-  constructor() {}
+  constructor(private http: HttpClient) {}
 
   ngOnInit(): void {
     // Initialize cards for testing
     this.initializeCards();
+  }
+
+  fetchStudentProfile() {
+    const url = `${this.baseUrl}/offers/list?page=${this.currentPage}&limit=${this.cardsPerPage}`;
+
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'x-auth': `${this.token}`,
+    });
+
+    this.http.get<any>(url, { headers }).subscribe({
+      next: (response) => {
+        this.cards = response.offers
+      },
+      
+    });
   }
 
   initializeCards() {
