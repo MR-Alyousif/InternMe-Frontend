@@ -66,6 +66,7 @@ export class CompanyProfileComponent implements OnInit {
           this.opportunities = response.offers.map((offer: any) => {
             const date = new Date(offer.startingDate);
             return {
+              _id: offer._id,
               name: offer.name,
               description: offer.description,
               startingDate: `${date.getFullYear()}/${date.getMonth() + 1}/${date.getDate()}`,
@@ -82,6 +83,29 @@ export class CompanyProfileComponent implements OnInit {
         console.error('Error fetching company opportunities:', error);
       },
     });
+  }
+
+  deleteCompanyOpportunity(e: any) {
+    const offerId = e.target.id;
+    if (offerId) {
+      const url = `${this.baseUrl}/offers/${offerId}`;
+
+      const headers = new HttpHeaders({
+        'Content-Type': 'application/json',
+        'x-auth': `${this.token}`,
+      });
+
+      this.http.delete<any>(url, { headers }).subscribe({
+        next: (res) => {
+          this.opportunities = this.opportunities.filter(
+            (opportunity) => opportunity._id !== offerId,
+          );
+        },
+        error: (err) => {
+          console.error(`Error removing opportunity '${offerId}': ${err}`);
+        },
+      });
+    }
   }
 
   updateCompanyLogo(e: any) {
