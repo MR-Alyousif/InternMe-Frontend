@@ -16,14 +16,14 @@ export class StudentProfileComponent implements OnInit {
   token: string | null = localStorage.getItem('token');
   student: any = {
     basicInfo: {
-      fullName: 'Khalid Ahmed',
+      fullName: '##### #####',
       education: {
-        university: 'KFUPM',
-        major: 'SWE',
+        university: '#####',
+        major: '###',
       },
-      bio: "Aspiring front-end developer with a passion for crafting engaging and user-eccentric web experiences. I leverage strong coding skills and a creative eye to translate complex functionalities into intuitive interfaces. Always eager to learn and collaborate, I'm actively seeking opportunities to contribute to innovative front-end projects.",
-      phone: '05000020394',
-      email: 'khalid_ahmed@gmail.com',
+      bio: '######## #####-### ######### #### # ####### ### ######## ######## ### ####-######### ### ###########. # ######## ###### ###### ###### ### # ######## ### ## ######### ####### ############### #### ######### ##########. ###### ##### ## ##### ### ############ ### ######## ####### #############.',
+      phone: '#########',
+      email: '#####@#######.###',
     },
     photo: 'assets/profile/default_avatar.jpg',
     projects: [
@@ -81,58 +81,61 @@ export class StudentProfileComponent implements OnInit {
       },
     });
   }
-  enableEditStudentInfo(){
-    const saveButton = document.querySelector(".save-button") as HTMLButtonElement;
-    saveButton.style.display = "inline-block"; // Display the button
-    this.makeEditable(["fullNameInfo", "emailInfo", "phoneInfo", "universityInfo", "majorInfo"]);
-  
+  enableEditStudentInfo() {
+    const saveButton = document.querySelector(
+      '.save-button',
+    ) as HTMLButtonElement;
+    saveButton.style.display = 'inline-block'; // Display the button
+    this.makeEditable([
+      'fullNameInfo',
+      'emailInfo',
+      'phoneInfo',
+      'universityInfo',
+      'majorInfo',
+    ]);
   }
 
-
-  // if user want to edit the information 
+  // if user want to edit the information
   makeEditable(elementIds: string[]) {
     let fieldValues: string[] = [];
 
-    elementIds.forEach(elementId => {
+    elementIds.forEach((elementId) => {
       const element = document.getElementById(elementId);
       if (element) {
-        const currentText = element.textContent || "";
-        const inputField = document.createElement("input");
-        inputField.type = "text";
+        const currentText = element.textContent || '';
+        const inputField = document.createElement('input');
+        inputField.type = 'text';
         inputField.value = currentText;
         this.applyInputFieldStyles(inputField);
-    
+
         element.parentNode?.replaceChild(inputField, element);
         inputField.focus();
-    
-        const saveButton = document.querySelector(".save-button");
+
+        const saveButton = document.querySelector('.save-button');
         if (saveButton) {
-          saveButton.addEventListener("click", () => {
+          saveButton.addEventListener('click', () => {
             const newText = inputField.value;
             element.textContent = newText;
-            console.log("New text:", newText);
+            console.log('New text:', newText);
             inputField.parentNode?.replaceChild(element, inputField);
             fieldValues.push(newText);
-            
           });
         } else {
-          console.error("Save button not found.");
+          console.error('Save button not found.');
         }
       } else {
         console.error(`Element with ID '${elementId}' not found.`);
       }
-      
-      
     });
-    
-    console.log(fieldValues)
+
+    console.log(fieldValues);
   }
 
   applyInputFieldStyles(inputField: HTMLInputElement) {
-    inputField.style.color = "black"; // Text color black
-    inputField.style.backgroundColor = "beige"; // Background color
-    inputField.style.border = "1px solid black"; // Border
-    inputField.style.padding = "4px 8px"; // Padding
-    inputField.style.borderRadius = "8px"; // Border radius
+    inputField.style.color = 'black'; // Text color black
+    inputField.style.backgroundColor = 'beige'; // Background color
+    inputField.style.border = '1px solid black'; // Border
+    inputField.style.padding = '4px 8px'; // Padding
+    inputField.style.borderRadius = '8px'; // Border radius
   }
 }
