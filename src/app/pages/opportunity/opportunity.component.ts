@@ -22,19 +22,21 @@ import { ButtonComponent } from '../../global-components/app-button/app-button.c
 export class OpportunityComponent {
   baseUrl: string = 'https://intern-me.ddns.net/api/v1';
   token: string | null = localStorage.getItem('token');
-  opportunityData: any = {
+  formData: any = {
     name: '',
-    major: '',
     description: '',
     startingDate: '',
-    duration: '',
+    durationInWeeks: '',
     location: '',
     url: '',
+    majors: '',
+    requiredGPA: {
+      outOf4: '',
+      outOf5: '',
+    },
+    skills: '',
     responsibilities: '',
     qualifications: '',
-    requiredGPA4: '',
-    requiredGPA5: '',
-    skills: '',
   };
 
   constructor(
@@ -48,23 +50,41 @@ export class OpportunityComponent {
       'Content-Type': 'application/json',
       'x-auth': `${this.token}`,
     });
+    const body = {
+      name: this.formData.name,
+      description: this.formData.description,
+      startingDate: new Date(this.formData.startingDate),
+      durationInWeeks: parseInt(this.formData.durationInWeeks),
+      location: this.formData.location,
+      url: this.formData.url,
+      majors: this.formData.majors.toUpperCase().replace(/\s/g, '').split(','),
+      requiredGPA: {
+        outOf4: parseFloat(this.formData.requiredGPA.outOf4) || 0,
+        outOf5: parseFloat(this.formData.requiredGPA.outOf5) || 0,
+      },
+      skills: this.formData.skills.replace(/\s/g, '').split(','),
+      responsibilities: this.formData.responsibilities.split(','),
+      qualifications: this.formData.qualifications.split(','),
+    };
 
-    this.http.post<any>(url, this.opportunityData, { headers }).subscribe({
+    this.http.post<any>(url, JSON.stringify(body), { headers }).subscribe({
       next: (response) => {
         this.successMessage();
-        this.opportunityData = {
+        this.formData = {
           name: '',
-          major: '',
           description: '',
           startingDate: '',
-          duration: '',
+          durationInWeeks: '',
           location: '',
           url: '',
+          majors: '',
+          requiredGPA: {
+            outOf4: '',
+            outOf5: '',
+          },
+          skills: '',
           responsibilities: '',
           qualifications: '',
-          requiredGPA4: '',
-          requiredGPA5: '',
-          skills: '',
         };
         this.router.navigate(['/company-profile']);
       },
