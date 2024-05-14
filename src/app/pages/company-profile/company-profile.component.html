@@ -83,12 +83,21 @@
     <div
       class="ml-4 mt-2 flex w-full flex-row items-start justify-start md:ml-20"
     >
-      <button
-        class="flex flex-row items-center justify-center gap-4 rounded-full bg-[#190692] px-4 py-1 md:px-6 md:py-2 hover:scale-105 hover:shadow-lg"
+      <input
+        (change)="updateCompanyLogo($event)"
+        type="file"
+        name="file"
+        id="photoUpload"
+        accept=".jpg, .jpeg, .png"
+        hidden
+      />
+      <label
+        for="photoUpload"
+        class="flex flex-row items-center justify-center gap-4 cursor-pointer rounded-full bg-[#190692] px-4 py-1 md:px-6 md:py-2 hover:scale-105 hover:shadow-lg"
       >
         <img class="w-3 md:w-6" src="assets/profile/download.png" />
         <h4 class="text-[0.5rem] md:text-lg">Company Logo</h4>
-      </button>
+      </label>
     </div>
     <div class="flex justify-end">
       <button

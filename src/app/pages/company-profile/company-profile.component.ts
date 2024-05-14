@@ -84,6 +84,29 @@ export class CompanyProfileComponent implements OnInit {
     });
   }
 
+  updateCompanyLogo(e: any) {
+    if (e.target.files.length === 1) {
+      const url = `${this.baseUrl}/profiles/img/upload`;
+
+      const headers = new HttpHeaders({
+        enctype: 'multipart/form-data',
+        'x-auth': `${this.token}`,
+      });
+
+      const formData = new FormData();
+      formData.append('file', e.target.files[0]);
+
+      this.http.post<any>(url, formData, { headers }).subscribe({
+        next: (res) => {
+          alert('The logo has been updated successfully');
+        },
+        error: (err) => {
+          console.error('Error updating company logo:', err);
+        },
+      });
+    }
+  }
+
   updateCompanyBasicInfo(inputElementsIds: string[]) {
     const url = `${this.baseUrl}/profiles/basic`;
 
