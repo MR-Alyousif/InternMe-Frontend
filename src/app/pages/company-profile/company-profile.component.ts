@@ -84,7 +84,7 @@ export class CompanyProfileComponent implements OnInit {
     });
   }
 
-  updateCompanyProfile(inputElementsIds: string[]) {
+  updateCompanyBasicInfo(inputElementsIds: string[]) {
     const url = `${this.baseUrl}/profiles/basic`;
 
     const headers = new HttpHeaders({
@@ -155,7 +155,7 @@ export class CompanyProfileComponent implements OnInit {
     const saveButton = document.querySelector('.save-button');
     if (saveButton) {
       saveButton.addEventListener('click', () =>
-        this.updateCompanyProfile(elementIds),
+        this.updateCompanyBasicInfo(elementIds),
       );
     } else {
       console.error('Save button not found.');
