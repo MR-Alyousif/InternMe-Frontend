@@ -135,7 +135,7 @@ export class CompanyProfileComponent implements OnInit {
   }
 
   applyInputFieldStyles(inputField: HTMLInputElement) {
-    inputField.style.color = 'black'; // Text color black
+    inputField.style.color = 'white'; // Text color black
     inputField.style.backgroundColor = 'darkblue'; // Background color dark blue
     inputField.style.border = '1px solid black'; // Border
     inputField.style.padding = '4px 8px'; // Padding
