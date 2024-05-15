@@ -98,15 +98,17 @@ export class ExploreComponent {
   previousPage() {
     if (this.pageNumber > 1) {
       this.pageNumber--;
+      this.fetchOpportunities();
     }
   }
 
   nextPage() {
     if (this.opportunities.length >= this.opportunitiesPerPage) {
       this.pageNumber++;
+      this.fetchOpportunities();
     }
   }
-  
+
   onSelectFilter(event: Event): void {
     const selectElement = event.target as HTMLSelectElement;
     const selectedValue = selectElement.value;
