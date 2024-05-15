@@ -27,6 +27,14 @@ export class ExploreComponent {
   searchQuery: string = '';
   pageNumber: number = 1;
   opportunitiesPerPage: number = 4;
+  filters = [
+    { label: 'Filter', value: 'filter' },
+    { label: 'Major', value: 'major' },
+    { label: 'City', value: 'city' },
+    { label: 'Field', value: 'field' },
+    { label: 'Skills', value: 'skills' },
+  ];
+  displayedFilters: string[] = [];
 
   constructor(
     private http: HttpClient,
@@ -97,5 +105,26 @@ export class ExploreComponent {
     if (this.opportunities.length >= this.opportunitiesPerPage) {
       this.pageNumber++;
     }
+  }
+  
+  onSelectFilter(event: Event): void {
+    const selectElement = event.target as HTMLSelectElement;
+    const selectedValue = selectElement.value;
+
+    if (
+      selectedValue !== 'filter' &&
+      !this.displayedFilters.includes(selectedValue)
+    ) {
+      this.displayedFilters.push(selectedValue);
+    }
+  }
+
+  removeFilter(filter: string): void {
+    this.displayedFilters = this.displayedFilters.filter((f) => f !== filter);
+  }
+
+  getFilterLabel(filterValue: string): string {
+    const filter = this.filters.find((f) => f.value === filterValue);
+    return filter ? filter.label : '';
   }
 }
