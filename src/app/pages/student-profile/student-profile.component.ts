@@ -68,8 +68,8 @@ export class StudentProfileComponent implements OnInit {
         this.student.basicInfo = response.profile.basicInfo;
         this.student.basicInfo.fullName =
           `${this.student.basicInfo.name.first} ${this.student.basicInfo.name.last}`.trim();
-        this.student.skills = response.profile.skills;
-        this.student.projects = response.profile.projects;
+        //this.student.skills = response.profile.skills;
+        //this.student.projects = response.profile.projects;
 
         let photoUrl = 'assets/profile/default_avatar.jpg';
         if (response.profile.photo)
