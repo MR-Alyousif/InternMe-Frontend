@@ -119,6 +119,16 @@ export class StudentProfileComponent implements OnInit {
       basicInfo: this.getUpdatedProfileBasicInfo(inputElementsIds),
     };
 
+    if (body.basicInfo['fullName']) {
+      const safeFirstLast = body.basicInfo['fullName'].trim().split(' ');
+      if (safeFirstLast.length === 2) {
+        body.basicInfo['name'] = {
+          first: safeFirstLast[0],
+          last: safeFirstLast[1],
+        };
+      }
+    }
+
     if (Object.keys(body.basicInfo).length > 0) {
       this.http.put<any>(url, JSON.stringify(body), { headers }).subscribe({
         next: (res) => {
@@ -135,12 +145,19 @@ export class StudentProfileComponent implements OnInit {
   }
 
   private getUpdatedProfileBasicInfo(inputElementsIds: string[]) {
-    const basicInfo: { [key: string]: string } = {};
+    const basicInfo: { [key: string]: any } = {};
     for (const elementId of inputElementsIds) {
       const id = `input-${elementId}`;
       const input = document.getElementById(id) as HTMLInputElement;
       if (input) {
-        basicInfo[elementId] = input.value;
+        if (elementId === 'university' || elementId === 'major') {
+          if (!basicInfo['education']) {
+            basicInfo['education'] = {};
+          }
+          basicInfo['education'][elementId] = input.value;
+        } else {
+          basicInfo[elementId] = input.value;
+        }
       } else {
         console.error(`Input element with ID '${elementId}' not found.`);
       }
