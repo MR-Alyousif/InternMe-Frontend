@@ -33,8 +33,9 @@
 
   <div class="cards">
     <ul
-      class="cardColumns hover:scale-105 hover:shadow-lg"
+      class="cardColumns hover:scale-105 hover:shadow-lg cursor-pointer"
       *ngFor="let opportunity of opportunities"
+      (click)="redirectToOpportunityDetails(opportunity._id)"
     >
       <img id="logo" [src]="opportunity.company.logo" />
       <ul class="info">

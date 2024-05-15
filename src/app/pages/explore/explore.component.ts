@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { RouterLink, RouterLinkActive } from '@angular/router';
+import { RouterLink, RouterLinkActive, Router } from '@angular/router';
 
 import { NavbarComponent } from '../../global-components/navbar/navbar.component';
 
@@ -28,7 +28,10 @@ export class ExploreComponent {
   pageNumber: number = 1;
   opportunitiesPerPage: number = 4;
 
-  constructor(private http: HttpClient) {}
+  constructor(
+    private http: HttpClient,
+    private router: Router,
+  ) {}
 
   ngOnInit(): void {
     this.fetchOpportunities();
@@ -74,6 +77,14 @@ export class ExploreComponent {
         console.error('Error fetching opportunities:', error);
       },
     });
+  }
+
+  redirectToOpportunityDetails(offerId: string) {
+    if (!offerId) {
+      console.error(`Opportunity id '${offerId}' is not valid`);
+      return;
+    }
+    this.router.navigate(['/opportunity/details', offerId]);
   }
 
   previousPage() {
