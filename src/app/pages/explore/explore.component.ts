@@ -58,6 +58,11 @@ export class ExploreComponent {
     urlWithSearchQuery += `page=${this.pageNumber}`;
     urlWithSearchQuery += `&limit=${this.opportunitiesPerPage}`;
 
+    console.log(this.searchQuery);
+    if (this.searchQuery) {
+      urlWithSearchQuery += `&${this.searchQuery}`;
+    }
+
     this.http.get<any>(urlWithSearchQuery, { headers }).subscribe({
       next: (response) => {
         if (response.offers) {

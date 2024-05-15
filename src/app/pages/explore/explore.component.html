@@ -4,7 +4,7 @@
     <p id="title_search">Search for an Opportunity</p>
     <div>
       <input type="text" placeholder="Search..." [(ngModel)]="searchQuery" />
-      <button type="submit">
+      <button (click)="fetchOpportunities()">
         <i class="fas fa-search" aria-hidden="true"
           ><img src="assets/icon/search.png"
         /></i>
@@ -24,11 +24,15 @@
       class="rounded border border-gray-300 bg-white px-3 py-2"
       (change)="onSelectFilter($event)"
     >
-      <option *ngFor="let filter of filters" [value]="filter.value">{{ filter.label }}</option>
+      <option *ngFor="let filter of filters" [value]="filter.value">
+        {{ filter.label }}
+      </option>
     </select>
   </div>
 
-  <div class="flex items-center justify-between h-[5rem] w-[20rem] relative left-[10%]">
+  <div
+    class="flex items-center justify-between h-[5rem] w-[20rem] relative left-[10%]"
+  >
     <button
       *ngFor="let filter of displayedFilters"
       class="rounded-full bg-[#000324] py-1 px-2 text-center text-white text-sm md:text-lg hover:scale-105 hover:shadow-lg hover:opacity-60"
