@@ -19,6 +19,6 @@ export const routes: Routes = [
   { path: 'student-profile', component: StudentProfileComponent },
   { path: 'explore', component: ExploreComponent },
   { path: 'opportunity', component: OpportunityComponent },
-  { path: 'trainin-details', component: TraininDetailsComponent },
+  { path: 'opportunity/details/:offerId', component: TraininDetailsComponent },
   { path: '**', component: HomepageComponent },
 ];
