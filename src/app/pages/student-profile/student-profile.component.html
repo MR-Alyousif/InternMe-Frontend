@@ -15,7 +15,7 @@
       <img src="{{ student.photo }}" />
       <label id="name">{{ student.basicInfo.fullName }}</label>
       <label id="major">{{ student.basicInfo.education.major }}</label>
-      <p>
+      <p id ="basic-bio">
         {{ student.basicInfo.bio }}
       </p>
     </ul>
@@ -37,7 +37,7 @@
         <h5 class="text-secondary-200 md:text-base md:font-medium">
           Full&nbsp;Name
         </h5>
-        <p id ="fullNameInfo" class="md:text-xl">{{ student.basicInfo.fullName }}</p>
+        <p id ="basic-fullName" class="md:text-xl">{{ student.basicInfo.fullName }}</p>
       </div>
       <div class="flex flex-col text-xs items-start justify-center gap-1">
         <h5 class="text-secondary-200 md:text-base md:font-medium">Email</h5>
@@ -46,7 +46,7 @@
             class="h-3 mt-[3px] md:h-5 md:mt-[5px]"
             src="assets/profile/mail.png"
           />
-          <p id ="emailInfo" class="md:text-xl">{{ student.basicInfo.email }}</p>
+          <p id ="basic-email" class="md:text-xl">{{ student.basicInfo.email }}</p>
         </div>
       </div>
       <div class="flex flex-col items-start justify-center gap-1 text-xs">
@@ -56,18 +56,18 @@
             class="mt-[3px] h-3 md:mt-[5px] md:h-5"
             src="assets/profile/phone plus.png"
           />
-          <p id ="phoneInfo" class="md:text-xl">{{ student.basicInfo.phone }}</p>
+          <p id ="basic-phone" class="md:text-xl">{{ student.basicInfo.phone }}</p>
         </div>
       </div>
       <div class="flex flex-col text-xs items-start justify-center gap-1">
         <h5 class="text-secondary-200 md:text-base md:font-medium">
           University
         </h5>
-        <p id ="universityInfo" class="md:text-xl">{{ student.basicInfo.education.university }}</p>
+        <p id ="basic-university" class="md:text-xl">{{ student.basicInfo.education.university }}</p>
       </div>
       <div class="flex flex-col text-xs items-start justify-center gap-1">
         <h5 class="text-secondary-200 md:text-base md:font-medium">Major</h5>
-        <p id ="majorInfo" class="md:text-xl">{{ student.basicInfo.education.major }}</p>
+        <p id ="basic-major" class="md:text-xl">{{ student.basicInfo.education.major }}</p>
       </div>
     </div>
     <div

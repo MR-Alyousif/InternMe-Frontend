@@ -81,61 +81,120 @@ export class StudentProfileComponent implements OnInit {
       },
     });
   }
+  updateStudentBasicInfo(inputElementsIds: string[]) {
+    const url = `${this.baseUrl}/profiles/basic`;
+
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'x-auth': `${this.token}`,
+    });
+
+    const body = {
+      basicInfo: this.getUpdatedProfileBasicInfo(inputElementsIds),
+    };
+
+    if (Object.keys(body.basicInfo).length > 0) {
+      this.http.put<any>(url, JSON.stringify(body), { headers }).subscribe({
+        next: (res) => {
+          console.log('basicInfo has been updated successfully');
+          location.reload();
+        },
+        error: (err) => {
+          console.error('Error updating company basicInfo:', err);
+        },
+      });
+    } else {
+      console.log('no updates: basicInfo is empty');
+    }
+  }
+
+  private getUpdatedProfileBasicInfo(inputElementsIds: string[]) {
+    const basicInfo: { [key: string]: string } = {};
+    for (const elementId of inputElementsIds) {
+      const id = `input-${elementId}`;
+      const input = document.getElementById(id) as HTMLInputElement;
+      if (input) {
+        basicInfo[elementId] = input.value;
+      } else {
+        console.error(`Input element with ID '${elementId}' not found.`);
+      }
+    }
+    return basicInfo;
+  }
+
   enableEditStudentInfo() {
     const saveButton = document.querySelector(
       '.save-button',
     ) as HTMLButtonElement;
     saveButton.style.display = 'inline-block'; // Display the button
-    this.makeEditable([
-      'fullNameInfo',
-      'emailInfo',
-      'phoneInfo',
-      'universityInfo',
-      'majorInfo',
-    ]);
+    this.makeEditable(['fullName', 'email', 'phone', 'university', 'major', 'bio']);
   }
 
   // if user want to edit the information
   makeEditable(elementIds: string[]) {
-    let fieldValues: string[] = [];
-
     elementIds.forEach((elementId) => {
-      const element = document.getElementById(elementId);
+      if (elementId === 'bio') {
+        this.makeBioEditable();
+      } else {
+      const id = `basic-${elementId}`;
+      const element = document.getElementById(id);
       if (element) {
         const currentText = element.textContent || '';
         const inputField = document.createElement('input');
+        inputField.id = `input-${elementId}`;
         inputField.type = 'text';
         inputField.value = currentText;
         this.applyInputFieldStyles(inputField);
-
         element.parentNode?.replaceChild(inputField, element);
         inputField.focus();
-
-        const saveButton = document.querySelector('.save-button');
-        if (saveButton) {
-          saveButton.addEventListener('click', () => {
-            const newText = inputField.value;
-            element.textContent = newText;
-            console.log('New text:', newText);
-            inputField.parentNode?.replaceChild(element, inputField);
-            fieldValues.push(newText);
-          });
-        } else {
-          console.error('Save button not found.');
-        }
       } else {
         console.error(`Element with ID '${elementId}' not found.`);
       }
+    }
     });
 
-    console.log(fieldValues);
+    const saveButton = document.querySelector('.save-button');
+    if (saveButton) {
+      saveButton.addEventListener('click', () =>
+        this.updateStudentBasicInfo(elementIds),
+      );
+    } else {
+      console.error('Save button not found.');
+    }
+  }
+
+  makeBioEditable() {
+    const elementId = 'bio';
+    const id = `basic-${elementId}`;
+    const element = document.getElementById(id);
+    if (element) {
+      const currentText = element.textContent || '';
+      const inputField = document.createElement('textarea') as HTMLTextAreaElement;
+      inputField.id = `input-${elementId}`;
+      inputField.value = currentText;
+      inputField.rows = 4; // Set the initial number of rows
+      this.applyTextareaStyles(inputField);
+      element.parentNode?.replaceChild(inputField, element);
+      inputField.focus();
+    } else {
+      console.error(`Element with ID '${elementId}' not found.`);
+    }
   }
 
   applyInputFieldStyles(inputField: HTMLInputElement) {
     inputField.style.color = 'black'; // Text color black
-    inputField.style.backgroundColor = 'beige'; // Background color
+    inputField.style.backgroundColor = 'beige'; // Background color dark blue
     inputField.style.border = '1px solid black'; // Border
     inputField.style.padding = '4px 8px'; // Padding
     inputField.style.borderRadius = '8px'; // Border radius
+  }
+  applyTextareaStyles(textarea: HTMLTextAreaElement) {
+    textarea.style.color = 'white'; // Text color black
+    textarea.style.backgroundColor = '#312a4b'; // Background color dark blue
+    textarea.style.border = '1px solid black'; // Border
+    textarea.style.padding = '4px 8px'; // Padding
+    textarea.style.borderRadius = '8px'; // Border radius
+    textarea.style.height= '150%'
+    textarea.style.width= '500px'
   }
 }
