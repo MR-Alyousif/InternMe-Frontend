@@ -15,7 +15,7 @@
       <img src="{{ student.photo }}" />
       <label id="name">{{ student.basicInfo.fullName }}</label>
       <label id="major">{{ student.basicInfo.education.major }}</label>
-      <p id ="basic-bio">
+      <p id="basic-bio">
         {{ student.basicInfo.bio }}
       </p>
     </ul>
@@ -37,7 +37,9 @@
         <h5 class="text-secondary-200 md:text-base md:font-medium">
           Full&nbsp;Name
         </h5>
-        <p id ="basic-fullName" class="md:text-xl">{{ student.basicInfo.fullName }}</p>
+        <p id="basic-fullName" class="md:text-xl">
+          {{ student.basicInfo.fullName }}
+        </p>
       </div>
       <div class="flex flex-col text-xs items-start justify-center gap-1">
         <h5 class="text-secondary-200 md:text-base md:font-medium">Email</h5>
@@ -46,7 +48,9 @@
             class="h-3 mt-[3px] md:h-5 md:mt-[5px]"
             src="assets/profile/mail.png"
           />
-          <p id ="basic-email" class="md:text-xl">{{ student.basicInfo.email }}</p>
+          <p id="basic-email" class="md:text-xl">
+            {{ student.basicInfo.email }}
+          </p>
         </div>
       </div>
       <div class="flex flex-col items-start justify-center gap-1 text-xs">
@@ -56,32 +60,50 @@
             class="mt-[3px] h-3 md:mt-[5px] md:h-5"
             src="assets/profile/phone plus.png"
           />
-          <p id ="basic-phone" class="md:text-xl">{{ student.basicInfo.phone }}</p>
+          <p id="basic-phone" class="md:text-xl">
+            {{ student.basicInfo.phone }}
+          </p>
         </div>
       </div>
       <div class="flex flex-col text-xs items-start justify-center gap-1">
         <h5 class="text-secondary-200 md:text-base md:font-medium">
           University
         </h5>
-        <p id ="basic-university" class="md:text-xl">{{ student.basicInfo.education.university }}</p>
+        <p id="basic-university" class="md:text-xl">
+          {{ student.basicInfo.education.university }}
+        </p>
       </div>
       <div class="flex flex-col text-xs items-start justify-center gap-1">
         <h5 class="text-secondary-200 md:text-base md:font-medium">Major</h5>
-        <p id ="basic-major" class="md:text-xl">{{ student.basicInfo.education.major }}</p>
+        <p id="basic-major" class="md:text-xl">
+          {{ student.basicInfo.education.major }}
+        </p>
       </div>
     </div>
     <div
       class="ml-4 mt-2 flex w-full flex-row items-start justify-start md:ml-20"
     >
-      <button
-        class="flex flex-row items-center justify-center gap-4 rounded-full bg-[#f1c6b9] text-[#b0694b] px-4 py-1 md:px-6 md:py-2 hover:shadow-lg hover:bg-[#b0694b] hover:text-[#f1c6b9]"
+      <input
+        (change)="updateStudentPhoto($event)"
+        type="file"
+        name="file"
+        id="photoUpload"
+        accept=".jpg, .jpeg, .png"
+        hidden
+      />
+      <label
+        for="photoUpload"
+        class="flex flex-row items-center justify-center cursor-pointer gap-4 rounded-full bg-[#f1c6b9] text-[#b0694b] px-4 py-1 md:px-6 md:py-2 hover:shadow-lg hover:bg-[#b0694b] hover:text-[#f1c6b9]"
       >
         <img class="w-3 md:w-6" src="assets/profile/download.png" />
         <h4 class="text-[0.5rem] md:text-lg font-medium">Profile Image</h4>
-      </button>
+      </label>
     </div>
     <div class="flex justify-end">
-      <button class="save-button flex flex-row items-center justify-center gap-4 rounded-full bg-[#190692] px-4 py-1 md:px-6 md:py-2 hover:scale-105 hover:shadow-lg" style="display: none; background-color: beige; color: #b0694b;">
+      <button
+        class="save-button flex flex-row items-center justify-center gap-4 rounded-full bg-[#190692] px-4 py-1 md:px-6 md:py-2 hover:scale-105 hover:shadow-lg"
+        style="display: none; background-color: beige; color: #b0694b"
+      >
         <h4 class="text-[0.5rem] md:text-lg">Save</h4>
       </button>
     </div>

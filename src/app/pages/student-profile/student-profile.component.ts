@@ -81,6 +81,32 @@ export class StudentProfileComponent implements OnInit {
       },
     });
   }
+
+  updateStudentPhoto(e: any) {
+    if (e.target.files.length === 1) {
+      const url = `${this.baseUrl}/profiles/img/upload`;
+      const photoUrl = `${this.baseUrl}/profiles/static`;
+
+      const headers = new HttpHeaders({
+        enctype: 'multipart/form-data',
+        'x-auth': `${this.token}`,
+      });
+
+      const formData = new FormData();
+      formData.append('file', e.target.files[0]);
+
+      this.http.post<any>(url, formData, { headers }).subscribe({
+        next: (res) => {
+          console.log('The photo has been updated successfully');
+          this.student.photo = `${photoUrl}/${res.filename}`;
+        },
+        error: (err) => {
+          console.error('Error updating company logo:', err);
+        },
+      });
+    }
+  }
+
   updateStudentBasicInfo(inputElementsIds: string[]) {
     const url = `${this.baseUrl}/profiles/basic`;
 
@@ -127,7 +153,14 @@ export class StudentProfileComponent implements OnInit {
       '.save-button',
     ) as HTMLButtonElement;
     saveButton.style.display = 'inline-block'; // Display the button
-    this.makeEditable(['fullName', 'email', 'phone', 'university', 'major', 'bio']);
+    this.makeEditable([
+      'fullName',
+      'email',
+      'phone',
+      'university',
+      'major',
+      'bio',
+    ]);
   }
 
   // if user want to edit the information
@@ -136,21 +169,21 @@ export class StudentProfileComponent implements OnInit {
       if (elementId === 'bio') {
         this.makeBioEditable();
       } else {
-      const id = `basic-${elementId}`;
-      const element = document.getElementById(id);
-      if (element) {
-        const currentText = element.textContent || '';
-        const inputField = document.createElement('input');
-        inputField.id = `input-${elementId}`;
-        inputField.type = 'text';
-        inputField.value = currentText;
-        this.applyInputFieldStyles(inputField);
-        element.parentNode?.replaceChild(inputField, element);
-        inputField.focus();
-      } else {
-        console.error(`Element with ID '${elementId}' not found.`);
+        const id = `basic-${elementId}`;
+        const element = document.getElementById(id);
+        if (element) {
+          const currentText = element.textContent || '';
+          const inputField = document.createElement('input');
+          inputField.id = `input-${elementId}`;
+          inputField.type = 'text';
+          inputField.value = currentText;
+          this.applyInputFieldStyles(inputField);
+          element.parentNode?.replaceChild(inputField, element);
+          inputField.focus();
+        } else {
+          console.error(`Element with ID '${elementId}' not found.`);
+        }
       }
-    }
     });
 
     const saveButton = document.querySelector('.save-button');
@@ -169,7 +202,9 @@ export class StudentProfileComponent implements OnInit {
     const element = document.getElementById(id);
     if (element) {
       const currentText = element.textContent || '';
-      const inputField = document.createElement('textarea') as HTMLTextAreaElement;
+      const inputField = document.createElement(
+        'textarea',
+      ) as HTMLTextAreaElement;
       inputField.id = `input-${elementId}`;
       inputField.value = currentText;
       inputField.rows = 4; // Set the initial number of rows
@@ -194,7 +229,7 @@ export class StudentProfileComponent implements OnInit {
     textarea.style.border = '1px solid black'; // Border
     textarea.style.padding = '4px 8px'; // Padding
     textarea.style.borderRadius = '8px'; // Border radius
-    textarea.style.height= '150%'
-    textarea.style.width= '500px'
+    textarea.style.height = '150%';
+    textarea.style.width = '500px';
   }
 }
