@@ -1,6 +1,6 @@
 <app-navbar></app-navbar>
 <body>
-  <form id="search">
+  <div id="search">
     <p id="title_search">Search for an Opportunity</p>
     <div>
       <input type="text" placeholder="Search..." [(ngModel)]="searchQuery" />
@@ -10,7 +10,7 @@
         /></i>
       </button>
     </div>
-  </form>
+  </div>
 
   <div id="filter_box" class="flex items-center">
     <img
@@ -31,34 +31,34 @@
     </select>
   </div>
 
-  <form class="cards">
+  <div class="cards">
     <ul
       class="cardColumns hover:scale-105 hover:shadow-lg"
-      *ngFor="let card of cards"
+      *ngFor="let opportunity of opportunities"
     >
-      <img id="logo" [src]="card.logo" />
+      <img id="logo" [src]="opportunity.company.logo" />
       <ul class="info">
-        <div>{{ card.company.name }}</div>
-        <div id="title_major">{{ card.name }}</div>
+        <div>{{ opportunity.company.name }}</div>
+        <div id="title_major">{{ opportunity.name }}</div>
         <ul>
           <div>
             <img src="assets/icon/clock.png" class="icons" />
-            <label>{{ card.durationInWeeks }}</label>
+            <label>{{ opportunity.duration }}</label>
           </div>
           <div>
             <img src="assets/icon/calendar.png" class="icons" /><label>{{
-              card.startingDate
+              opportunity.startingDate
             }}</label>
           </div>
           <div>
             <img src="assets/icon/location.png" class="icons" /><label>{{
-              card.location
+              opportunity.location
             }}</label>
           </div>
         </ul>
-        <p>{{ card.description }}</p>
+        <p>{{ opportunity.description }}</p>
         <ul>
-          <div class="skill" *ngFor="let skill of card.skills">
+          <div class="skill" *ngFor="let skill of opportunity.skills">
             {{ skill }}
           </div>
         </ul>
@@ -67,26 +67,30 @@
         <img src="assets/icon/save.png" />
       </button>
     </ul>
-  </form>
+  </div>
 
   <ul id="page" class="flex items-center">
-    <div
-      class="flex h-8 w-8 items-center justify-center"
+    <button
+      class="disabled:opacity-40 cursor-pointer disabled:cursor-not-allowed rounded-md disabled:bg-slate-700 flex h-10 w-8 items-center justify-center"
       (click)="previousPage()"
+      [disabled]="pageNumber < 2"
     >
       <img src="assets/icon/inline-left.png" class="h-full w-full" />
-    </div>
+    </button>
     <div
-      class="mx-2 flex h-8 w-8 items-center justify-center bg-secondary-100 text-white"
+      class="mx-2 flex h-8 w-8 items-center select-none rounded-md justify-center bg-secondary-100 text-white"
     >
-      {{ currentPage }}
+      {{ pageNumber }}
     </div>
-    <div class="flex h-8 w-8 items-center justify-center" (click)="nextPage()">
+    <button
+      class="disabled:opacity-40 cursor-pointer disabled:cursor-not-allowed rounded-md disabled:bg-slate-700 flex h-10 w-8 items-center justify-center"
+      (click)="nextPage()"
+      [disabled]="opportunities.length < opportunitiesPerPage"
+    >
       <img src="assets/icon/inline-right.png" class="h-full w-full" />
-    </div>
+    </button>
   </ul>
 </body>
 <footer>
   <img id="desk" src="assets/Footer.jpg" />
 </footer>
-
